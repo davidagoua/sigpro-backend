@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+
+{% block styles %}
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+{% endblock %}
+
+{% block content %}
+<div class="page-body">
+  <div class="container-fluid">
+    <div class="page-title">
+      <div class="row">
+        <div class="col-6">
+          <h4>Cartographie</h4>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- Container-fluid starts-->
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body"></div>
+            </div>
+        </div>
+        <div class="col-md-9 ">
+            <div id="map" class="" style="height: 500px"></div>
+        </div>
+    </div>
+  </div>
+  <!-- Container-fluid Ends-->
+</div>
+{% endblock %}
+
+
+
+{% block scripts %}
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+
+    <script lang="js" >
+
+        function getColor(d) {
+            if(d === undefined){
+                return "transparent"
+            }
+
+            return d > 10000000 ? '#800026' :
+                d > 20000000  ? '#BD0026' :
+                    d > 30000000  ? '#E31A1C' :
+                        d > 40000000  ? '#FC4E2A' :
+                            d > 50000000   ? '#FD8D3C' :
+                                d > 60000000   ? '#FEB24C' :
+                                    d === 70000000   ? '#FED976' :
+                                        '#faf8f3';
+        }
+
+        var map = L.map('map').setView([7.4431411, -5.4659087], 7);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+        let geoinfo = JSON.parse('{{ dept_geojson|safe }}');
+        let count_dept = JSON.parse('{{ tableau_localites|safe }}');
+
+        console.log(count_dept)
+        L.geoJSON(geoinfo, {
+            style: function(feature){
+                return {
+                    weight: 2,
+                    color: 'grey',
+                    opacity: 0.5,
+                    fillColor: getColor(count_dept[feature.properties.nomdept] ?? ""),
+                    fillOpacity: 0.5
+                };
+            },
+            onEachFeature: function (feature, layer) {
+                layer.on('click', function () {
+                    const properties = feature.properties;
+                    const modalContent = JSON.stringify(properties, null, 2);
+                    console.log(properties)
+                    console.log(count_dept[feature.nomdept])
+
+                });
+                layer.bindPopup(`<h1>${feature.properties.nomdept}</h1><p>Montant prevu: ${count_dept[feature.properties.nomdept] ?? 0} CFA </br><a>
+                Voir plus</a></p>`)
+            }
+        }).addTo(map);
+</script>
+{% endblock %}

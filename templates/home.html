@@ -1,0 +1,1176 @@
+{% extends 'base.html' %}
+{% load static humanize %}
+{% block content %}
+	<div class="page-body">
+          <div class="container-fluid">
+            <div class="page-title">
+              <div class="row">
+                <div class="col-6">
+                  <h4>Tableau de bord</h4>
+                </div>
+
+              </div>
+            </div>
+          </div>
+            <div  class="container-fluid">
+                <div class="user-profile social-app-profile">
+                    <div class="row">
+                <!-- user profile first-style start-->
+                <div class="card hovercard text-center">
+                    <div class="cardheader socialheader" style="border: 2px solid green; background-image: url('/static/assets/images/logo/logo.png'); background-size: cover; background-position: center; background-blend-mode: multiply; background-color: rgba(0,0,0,0.5); filter: blur(3px);"></div>
+                    <div class="user-image">
+                      <div class="avatar"><img alt="" src="/static/assets/images/user/1.jpg"></div>
+                      <div class="icon-wrapper"> <i class="icofont icofont-pencil-alt-5"></i></div>
+                      <ul class="share-icons">
+
+                      </ul>
+                    </div>
+                    <div class="info market-tabs p-0">
+                      <ul class="nav nav-tabs border-tab tabs-scoial" id="top-tab" role="tablist">
+                        <li class="nav-item"><a class="nav-link active" id="top-timeline" data-bs-toggle="tab" href="#timeline" role="tab" aria-controls="timeline" aria-selected="true"></a></li>
+                        <li class="nav-item"><a class="nav-link" id="top-about" data-bs-toggle="tab" href="#about" role="tab" aria-controls="about" aria-selected="false"></a></li>
+                        <li class="nav-item">
+                          <div class="user-designation"></div>
+                          <div class="title"><a target="_blank" href="">{{ request.user.username }}</a></div>
+                          <div class="desc mt-2">{{ request.user.role.name }}</div>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" id="top-friends" data-bs-toggle="tab" href="#friends" role="tab" aria-controls="friends" aria-selected="false"></a></li>
+                        <li class="nav-item"><a class="nav-link" id="top-photos" data-bs-toggle="tab" href="#photos" role="tab" aria-controls="photos" aria-selected="false"></a></li>
+                      </ul>
+                    </div>
+                  </div>
+              </div>
+                </div>
+
+            </div>
+            <div class="container-fluid">
+                <div id="home-stats" hx-get="/suivi/stats/" hx-trigger="load"></div>
+            </div>
+            {% if false %}
+          <!-- Container-fluid starts-->
+          <div class="container-fluid">
+            <div class="row size-column">
+              <div class="col-xxl-9 box-col-12">
+                <div class="row">
+                  <div class="col-xl-3 col-sm-6">
+                    <div class="card o-hidden small-widget">
+                      <div class="card-body total-project border-b-primary border-2"><span class="f-light f-w-500 f-14">Nombre de projet</span>
+                        <div class="project-details">
+                          <div class="project-counter">
+                            <h2 class="f-w-600">{{ nb_projects }}</h2><span class="f-12 f-w-400">(This month)</span>
+                          </div>
+                          <div class="product-sub bg-primary-light">
+                            <svg class="invoice-icon">
+                              <use href="{% static '/assets/svg/icon-sprite.svg#color-swatch' %}"></use>
+                            </svg>
+                          </div>
+                        </div>
+                        <ul class="bubbles">
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-sm-6">
+                    <div class="card o-hidden small-widget">
+                      <div class="card-body total-Progress border-b-warning border-2"> <span class="f-light f-w-500 f-14">Projet en cours</span>
+                        <div class="project-details">
+                          <div class="project-counter">
+                            <h2 class="f-w-600">{{ nb_projects_pending }}</h2><span class="f-12 f-w-400">(This month) </span>
+                          </div>
+                          <div class="product-sub bg-warning-light">
+                            <svg class="invoice-icon">
+                              <use href="../assets/svg/icon-sprite.svg#tick-circle"></use>
+                            </svg>
+                          </div>
+                        </div>
+                        <ul class="bubbles">
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-sm-6">
+                    <div class="card o-hidden small-widget">
+                      <div class="card-body total-Complete border-b-secondary border-2"><span class="f-light f-w-500 f-14">Projets Terminés</span>
+                        <div class="project-details">
+                          <div class="project-counter">
+                            <h2 class="f-w-600">{{ nb_projects_completed }}</h2><span class="f-12 f-w-400">(This month) </span>
+                          </div>
+                          <div class="product-sub bg-secondary-light">
+                            <svg class="invoice-icon">
+                              <use href="../assets/svg/icon-sprite.svg#add-square"></use>
+                            </svg>
+                          </div>
+                        </div>
+                        <ul class="bubbles">
+                          <li class="bubble"> </li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"> </li>
+                          <li class="bubble"></li>
+                          <li class="bubble"> </li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"> </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-sm-6">
+                    <div class="card o-hidden small-widget">
+                      <div class="card-body total-upcoming"><span class="f-light f-w-500 f-14">Projets à venir</span>
+                        <div class="project-details">
+                          <div class="project-counter">
+                            <h2 class="f-w-600">{{ nb_projects_upcoming }}</h2><span class="f-12 f-w-400">(This month) </span>
+                          </div>
+                          <div class="product-sub bg-light-light">
+                            <svg class="invoice-icon">
+                              <use href="{% static '/assets/svg/icon-sprite.svg#edit-2' %} "></use>
+                            </svg>
+                          </div>
+                        </div>
+                        <ul class="bubbles">
+                          <li class="bubble"> </li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                    {% if false %}
+                  <div class="col-md-6">
+                    <div class="card">
+                      <div class="card-header card-no-border total-revenue">
+                        <h4>Project Statistics</h4>
+                        <div class="sales-chart-dropdown-select">
+                          <div class="card-header-right-icon">
+                            <div class="dropdown">
+                              <button class="btn dropdown-toggle dropdown-toggle-store" id="dropdownMenuButtonStore" data-bs-toggle="dropdown" aria-expanded="false">This Week</button>
+                              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButtonStore"><a class="dropdown-item" href="#">This Day</a><a class="dropdown-item" href="#">This Month</a><a class="dropdown-item" href="#">This year</a></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-body pt-0">
+                        <div class="statistics">
+                          <div id="statisticschart" style="min-height: 427px;"><div id="apexcharts4mt0o08eg" class="apexcharts-canvas apexcharts4mt0o08eg apexcharts-theme-light" style="width: 363px; height: 412px;"><svg id="SvgjsSvg1227" width="363" height="412" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(0, 0)" style="background: transparent;"><foreignObject x="0" y="0" width="363" height="412"><div class="apexcharts-legend apexcharts-align-center apx-legend-position-bottom" xmlns="http://www.w3.org/1999/xhtml" style="inset: auto 0px 0px; position: absolute; max-height: 206px;"><div class="apexcharts-legend-series" style="margin: 2px 5px;" rel="1" seriesname="WebxAppxDesign" data:collapsed="false"><span class="apexcharts-legend-marker" style="background: var(--theme-deafult) !important; color: var(--theme-deafult); height: 12px; width: 12px; left: 0px; top: 0px; border-width: 0px; border-color: rgb(255, 255, 255); border-radius: 2px;" rel="1" data:collapsed="false"></span><span class="apexcharts-legend-text" style="color: rgb(55, 61, 63); font-size: 12px; font-weight: 400; font-family: Helvetica, Arial, sans-serif;" rel="1" i="0" data:default-text="Web%20App%20Design" data:collapsed="false">Web App Design</span></div><div class="apexcharts-legend-series" style="margin: 2px 5px;" rel="2" seriesname="WebsitexDesign" data:collapsed="false"><span class="apexcharts-legend-marker" style="background: rgb(128, 179, 179) !important; color: rgb(128, 179, 179); height: 12px; width: 12px; left: 0px; top: 0px; border-width: 0px; border-color: rgb(255, 255, 255); border-radius: 2px;" rel="2" data:collapsed="false"></span><span class="apexcharts-legend-text" style="color: rgb(55, 61, 63); font-size: 12px; font-weight: 400; font-family: Helvetica, Arial, sans-serif;" rel="2" i="1" data:default-text="Website%20Design" data:collapsed="false">Website Design</span></div><div class="apexcharts-legend-series" style="margin: 2px 5px;" rel="3" seriesname="AppxDesign" data:collapsed="false"><span class="apexcharts-legend-marker" style="background: rgb(204, 224, 224) !important; color: rgb(204, 224, 224); height: 12px; width: 12px; left: 0px; top: 0px; border-width: 0px; border-color: rgb(255, 255, 255); border-radius: 2px;" rel="3" data:collapsed="false"></span><span class="apexcharts-legend-text" style="color: rgb(55, 61, 63); font-size: 12px; font-weight: 400; font-family: Helvetica, Arial, sans-serif;" rel="3" i="2" data:default-text="App%20Design" data:collapsed="false">App Design</span></div></div><style type="text/css">
+
+      .apexcharts-legend {
+        display: flex;
+        overflow: auto;
+        padding: 0 10px;
+      }
+      .apexcharts-legend.apx-legend-position-bottom, .apexcharts-legend.apx-legend-position-top {
+        flex-wrap: wrap
+      }
+      .apexcharts-legend.apx-legend-position-right, .apexcharts-legend.apx-legend-position-left {
+        flex-direction: column;
+        bottom: 0;
+      }
+      .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-left, .apexcharts-legend.apx-legend-position-top.apexcharts-align-left, .apexcharts-legend.apx-legend-position-right, .apexcharts-legend.apx-legend-position-left {
+        justify-content: flex-start;
+      }
+      .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-center, .apexcharts-legend.apx-legend-position-top.apexcharts-align-center {
+        justify-content: center;
+      }
+      .apexcharts-legend.apx-legend-position-bottom.apexcharts-align-right, .apexcharts-legend.apx-legend-position-top.apexcharts-align-right {
+        justify-content: flex-end;
+      }
+      .apexcharts-legend-series {
+        cursor: pointer;
+        line-height: normal;
+      }
+      .apexcharts-legend.apx-legend-position-bottom .apexcharts-legend-series, .apexcharts-legend.apx-legend-position-top .apexcharts-legend-series{
+        display: flex;
+        align-items: center;
+      }
+      .apexcharts-legend-text {
+        position: relative;
+        font-size: 14px;
+      }
+      .apexcharts-legend-text *, .apexcharts-legend-marker * {
+        pointer-events: none;
+      }
+      .apexcharts-legend-marker {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        margin-right: 3px;
+        border-style: solid;
+      }
+
+      .apexcharts-legend.apexcharts-align-right .apexcharts-legend-series, .apexcharts-legend.apexcharts-align-left .apexcharts-legend-series{
+        display: inline-block;
+      }
+      .apexcharts-legend-series.apexcharts-no-click {
+        cursor: auto;
+      }
+      .apexcharts-legend .apexcharts-hidden-zero-series, .apexcharts-legend .apexcharts-hidden-null-series {
+        display: none !important;
+      }
+      .apexcharts-inactive-legend {
+        opacity: 0.45;
+      }</style></foreignObject><g id="SvgjsG1229" class="apexcharts-inner apexcharts-graphical" transform="translate(47.883331298828125, 30)"><defs id="SvgjsDefs1228"><linearGradient id="SvgjsLinearGradient1233" x1="0" y1="0" x2="0" y2="1"><stop id="SvgjsStop1234" stop-opacity="0.4" stop-color="rgba(216,227,240,0.4)" offset="0"></stop><stop id="SvgjsStop1235" stop-opacity="0.5" stop-color="rgba(190,209,230,0.5)" offset="1"></stop><stop id="SvgjsStop1236" stop-opacity="0.5" stop-color="rgba(190,209,230,0.5)" offset="1"></stop></linearGradient><clipPath id="gridRectMask4mt0o08eg"><rect id="SvgjsRect1238" width="309.1166687011719" height="327.157" x="-2" y="0" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath><clipPath id="forecastMask4mt0o08eg"></clipPath><clipPath id="nonForecastMask4mt0o08eg"></clipPath><clipPath id="gridRectMarkerMask4mt0o08eg"><rect id="SvgjsRect1239" width="309.1166687011719" height="331.157" x="-2" y="-2" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath></defs><rect id="SvgjsRect1237" width="8.717619105747769" height="327.157" x="0" y="0" rx="0" ry="0" opacity="1" stroke-width="0" stroke-dasharray="3" fill="url(#SvgjsLinearGradient1233)" class="apexcharts-xcrosshairs" y2="327.157" filter="none" fill-opacity="0.9"></rect><g id="SvgjsG1303" class="apexcharts-xaxis" transform="translate(0, 0)"><g id="SvgjsG1304" class="apexcharts-xaxis-texts-g" transform="translate(0, -4)"><text id="SvgjsText1306" font-family="Helvetica, Arial, sans-serif" x="21.79404776436942" y="356.157" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-xaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1307">Mon</tspan><title>Mon</title></text><text id="SvgjsText1309" font-family="Helvetica, Arial, sans-serif" x="65.38214329310826" y="356.157" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-xaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1310">Tue</tspan><title>Tue</title></text><text id="SvgjsText1312" font-family="Helvetica, Arial, sans-serif" x="108.97023882184709" y="356.157" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-xaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1313">Wed</tspan><title>Wed</title></text><text id="SvgjsText1315" font-family="Helvetica, Arial, sans-serif" x="152.55833435058594" y="356.157" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-xaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1316">Thu</tspan><title>Thu</title></text><text id="SvgjsText1318" font-family="Helvetica, Arial, sans-serif" x="196.14642987932478" y="356.157" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-xaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1319">Fri</tspan><title>Fri</title></text><text id="SvgjsText1321" font-family="Helvetica, Arial, sans-serif" x="239.7345254080636" y="356.157" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-xaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1322">Sat</tspan><title>Sat</title></text><text id="SvgjsText1324" font-family="Helvetica, Arial, sans-serif" x="283.3226209368025" y="356.157" text-anchor="middle" dominant-baseline="auto" font-size="12px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-xaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1325">Sun</tspan><title>Sun</title></text></g></g><g id="SvgjsG1292" class="apexcharts-grid"><g id="SvgjsG1293" class="apexcharts-gridlines-horizontal"><line id="SvgjsLine1297" x1="0" y1="81.78925" x2="305.1166687011719" y2="81.78925" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1298" x1="0" y1="163.5785" x2="305.1166687011719" y2="163.5785" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1299" x1="0" y1="245.36775" x2="305.1166687011719" y2="245.36775" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line></g><g id="SvgjsG1294" class="apexcharts-gridlines-vertical"></g><line id="SvgjsLine1302" x1="0" y1="327.157" x2="305.1166687011719" y2="327.157" stroke="transparent" stroke-dasharray="0" stroke-linecap="butt"></line><line id="SvgjsLine1301" x1="0" y1="1" x2="0" y2="327.157" stroke="transparent" stroke-dasharray="0" stroke-linecap="butt"></line></g><g id="SvgjsG1240" class="apexcharts-bar-series apexcharts-plot-series"><g id="SvgjsG1241" class="apexcharts-series" seriesName="WebxAppxDesign" rel="1" data:realIndex="0"><path id="SvgjsPath1245" d="M 17.435238211495538 327.15799999999996 L 17.435238211495538 292.39756874999995 L 26.152857317243306 292.39756874999995 L 26.152857317243306 327.15799999999996 Z" fill="var(--theme-deafult)" fill-opacity="1" stroke-opacity="1" stroke-linecap="round" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMask4mt0o08eg)" pathTo="M 17.435238211495538 327.15799999999996 L 17.435238211495538 292.39756874999995 L 26.152857317243306 292.39756874999995 L 26.152857317243306 327.15799999999996 Z" pathFrom="M 17.435238211495538 327.15799999999996 L 17.435238211495538 327.15799999999996 L 26.152857317243306 327.15799999999996 L 26.152857317243306 327.15799999999996 L 26.152857317243306 327.15799999999996 L 26.152857317243306 327.15799999999996 L 26.152857317243306 327.15799999999996 L 17.435238211495538 327.15799999999996 Z" cy="292.39656875" cx="61.02333374023438" j="0" val="85" barHeight="34.76043125" barWidth="8.717619105747769"></path><path id="SvgjsPath1247" d="M 61.02333374023438 327.15799999999996 L 61.02333374023438 292.39756874999995 L 69.74095284598215 292.39756874999995 L 69.74095284598215 327.15799999999996 Z" fill="var(--theme-deafult)" fill-opacity="1" stroke-opacity="1" stroke-linecap="round" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMask4mt0o08eg)" pathTo="M 61.02333374023438 327.15799999999996 L 61.02333374023438 292.39756874999995 L 69.74095284598215 292.39756874999995 L 69.74095284598215 327.15799999999996 Z" pathFrom="M 61.02333374023438 327.15799999999996 L 61.02333374023438 327.15799999999996 L 69.74095284598215 327.15799999999996 L 69.74095284598215 327.15799999999996 L 69.74095284598215 327.15799999999996 L 69.74095284598215 327.15799999999996 L 69.74095284598215 327.15799999999996 L 61.02333374023438 327.15799999999996 Z" cy="292.39656875" cx="104.61142926897321" j="1" val="85" barHeight="34.76043125" barWidth="8.717619105747769"></path><path id="SvgjsPath1249" d="M 104.61142926897321 327.15799999999996 L 104.61142926897321 264.99816999999996 L 113.32904837472098 264.99816999999996 L 113.32904837472098 327.15799999999996 Z" fill="var(--theme-deafult)" fill-opacity="1" stroke-opacity="1" stroke-linecap="round" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMask4mt0o08eg)" pathTo="M 104.61142926897321 327.15799999999996 L 104.61142926897321 264.99816999999996 L 113.32904837472098 264.99816999999996 L 113.32904837472098 327.15799999999996 Z" pathFrom="M 104.61142926897321 327.15799999999996 L 104.61142926897321 327.15799999999996 L 113.32904837472098 327.15799999999996 L 113.32904837472098 327.15799999999996 L 113.32904837472098 327.15799999999996 L 113.32904837472098 327.15799999999996 L 113.32904837472098 327.15799999999996 L 104.61142926897321 327.15799999999996 Z" cy="264.99717" cx="148.19952479771206" j="2" val="152" barHeight="62.15983" barWidth="8.717619105747769"></path><path id="SvgjsPath1251" d="M 148.19952479771206 327.15799999999996 L 148.19952479771206 288.30810625 L 156.91714390345982 288.30810625 L 156.91714390345982 327.15799999999996 Z" fill="var(--theme-deafult)" fill-opacity="1" stroke-opacity="1" stroke-linecap="round" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMask4mt0o08eg)" pathTo="M 148.19952479771206 327.15799999999996 L 148.19952479771206 288.30810625 L 156.91714390345982 288.30810625 L 156.91714390345982 327.15799999999996 Z" pathFrom="M 148.19952479771206 327.15799999999996 L 148.19952479771206 327.15799999999996 L 156.91714390345982 327.15799999999996 L 156.91714390345982 327.15799999999996 L 156.91714390345982 327.15799999999996 L 156.91714390345982 327.15799999999996 L 156.91714390345982 327.15799999999996 L 148.19952479771206 327.15799999999996 Z" cy="288.30710625" cx="191.7876203264509" j="3" val="95" barHeight="38.84989375" barWidth="8.717619105747769"></path><path id="SvgjsPath1253" d="M 191.7876203264509 327.15799999999996 L 191.7876203264509 306.71068749999995 L 200.50523943219866 306.71068749999995 L 200.50523943219866 327.15799999999996 Z" fill="var(--theme-deafult)" fill-opacity="1" stroke-opacity="1" stroke-linecap="round" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMask4mt0o08eg)" pathTo="M 191.7876203264509 327.15799999999996 L 191.7876203264509 306.71068749999995 L 200.50523943219866 306.71068749999995 L 200.50523943219866 327.15799999999996 Z" pathFrom="M 191.7876203264509 327.15799999999996 L 191.7876203264509 327.15799999999996 L 200.50523943219866 327.15799999999996 L 200.50523943219866 327.15799999999996 L 200.50523943219866 327.15799999999996 L 200.50523943219866 327.15799999999996 L 200.50523943219866 327.15799999999996 L 191.7876203264509 327.15799999999996 Z" cy="306.7096875" cx="235.37571585518975" j="4" val="50" barHeight="20.4473125" barWidth="8.717619105747769"></path><path id="SvgjsPath1255" d="M 235.37571585518975 327.15799999999996 L 235.37571585518975 288.30810625 L 244.0933349609375 288.30810625 L 244.0933349609375 327.15799999999996 Z" fill="var(--theme-deafult)" fill-opacity="1" stroke-opacity="1" stroke-linecap="round" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMask4mt0o08eg)" pathTo="M 235.37571585518975 327.15799999999996 L 235.37571585518975 288.30810625 L 244.0933349609375 288.30810625 L 244.0933349609375 327.15799999999996 Z" pathFrom="M 235.37571585518975 327.15799999999996 L 235.37571585518975 327.15799999999996 L 244.0933349609375 327.15799999999996 L 244.0933349609375 327.15799999999996 L 244.0933349609375 327.15799999999996 L 244.0933349609375 327.15799999999996 L 244.0933349609375 327.15799999999996 L 235.37571585518975 327.15799999999996 Z" cy="288.30710625" cx="278.9638113839286" j="5" val="95" barHeight="38.84989375" barWidth="8.717619105747769"></path><path id="SvgjsPath1257" d="M 278.9638113839286 327.15799999999996 L 278.9638113839286 273.9949875 L 287.68143048967636 273.9949875 L 287.68143048967636 327.15799999999996 Z" fill="var(--theme-deafult)" fill-opacity="1" stroke-opacity="1" stroke-linecap="round" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="0" clip-path="url(#gridRectMask4mt0o08eg)" pathTo="M 278.9638113839286 327.15799999999996 L 278.9638113839286 273.9949875 L 287.68143048967636 273.9949875 L 287.68143048967636 327.15799999999996 Z" pathFrom="M 278.9638113839286 327.15799999999996 L 278.9638113839286 327.15799999999996 L 287.68143048967636 327.15799999999996 L 287.68143048967636 327.15799999999996 L 287.68143048967636 327.15799999999996 L 287.68143048967636 327.15799999999996 L 287.68143048967636 327.15799999999996 L 278.9638113839286 327.15799999999996 Z" cy="273.9939875" cx="322.55190691266745" j="6" val="130" barHeight="53.1630125" barWidth="8.717619105747769"></path><g id="SvgjsG1243" class="apexcharts-bar-goals-markers" style="pointer-events: none"><g id="SvgjsG1244" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1246" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1248" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1250" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1252" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1254" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1256" className="apexcharts-bar-goals-groups"></g></g></g><g id="SvgjsG1258" class="apexcharts-series" seriesName="WebsitexDesign" rel="2" data:realIndex="1"><path id="SvgjsPath1262" d="M 17.435238211495538 292.3985687499999 L 17.435238211495538 214.69878124999994 L 26.152857317243306 214.69878124999994 L 26.152857317243306 292.3985687499999 Z" fill="rgba(128,179,179,1)" fill-opacity="1" stroke-opacity="1" stroke-linecap="round" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="1" clip-path="url(#gridRectMask4mt0o08eg)" pathTo="M 17.435238211495538 292.3985687499999 L 17.435238211495538 214.69878124999994 L 26.152857317243306 214.69878124999994 L 26.152857317243306 292.3985687499999 Z" pathFrom="M 17.435238211495538 292.3985687499999 L 17.435238211495538 292.3985687499999 L 26.152857317243306 292.3985687499999 L 26.152857317243306 292.3985687499999 L 26.152857317243306 292.3985687499999 L 26.152857317243306 292.3985687499999 L 26.152857317243306 292.3985687499999 L 17.435238211495538 292.3985687499999 Z" cy="214.69778124999993" cx="61.02333374023438" j="0" val="190" barHeight="77.6997875" barWidth="8.717619105747769"></path><path id="SvgjsPath1264" d="M 61.02333374023438 292.3985687499999 L 61.02333374023438 237.19082499999996 L 69.74095284598215 237.19082499999996 L 69.74095284598215 292.3985687499999 Z" fill="rgba(128,179,179,1)" fill-opacity="1" stroke-opacity="1" stroke-linecap="round" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="1" clip-path="url(#gridRectMask4mt0o08eg)" pathTo="M 61.02333374023438 292.3985687499999 L 61.02333374023438 237.19082499999996 L 69.74095284598215 237.19082499999996 L 69.74095284598215 292.3985687499999 Z" pathFrom="M 61.02333374023438 292.3985687499999 L 61.02333374023438 292.3985687499999 L 69.74095284598215 292.3985687499999 L 69.74095284598215 292.3985687499999 L 69.74095284598215 292.3985687499999 L 69.74095284598215 292.3985687499999 L 69.74095284598215 292.3985687499999 L 61.02333374023438 292.3985687499999 Z" cy="237.18982499999996" cx="104.61142926897321" j="1" val="135" barHeight="55.20774375" barWidth="8.717619105747769"></path><path id="SvgjsPath1266" d="M 104.61142926897321 264.99916999999994 L 104.61142926897321 175.03099499999996 L 113.32904837472098 175.03099499999996 L 113.32904837472098 264.99916999999994 Z" fill="rgba(128,179,179,1)" fill-opacity="1" stroke-opacity="1" stroke-linecap="round" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="1" clip-path="url(#gridRectMask4mt0o08eg)" pathTo="M 104.61142926897321 264.99916999999994 L 104.61142926897321 175.03099499999996 L 113.32904837472098 175.03099499999996 L 113.32904837472098 264.99916999999994 Z" pathFrom="M 104.61142926897321 264.99916999999994 L 104.61142926897321 264.99916999999994 L 113.32904837472098 264.99916999999994 L 113.32904837472098 264.99916999999994 L 113.32904837472098 264.99916999999994 L 113.32904837472098 264.99916999999994 L 113.32904837472098 264.99916999999994 L 104.61142926897321 264.99916999999994 Z" cy="175.02999499999996" cx="148.19952479771206" j="2" val="220" barHeight="89.968175" barWidth="8.717619105747769"></path><path id="SvgjsPath1268" d="M 148.19952479771206 288.30910624999996 L 148.19952479771206 222.87770625 L 156.91714390345982 222.87770625 L 156.91714390345982 288.30910624999996 Z" fill="rgba(128,179,179,1)" fill-opacity="1" stroke-opacity="1" stroke-linecap="round" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="1" clip-path="url(#gridRectMask4mt0o08eg)" pathTo="M 148.19952479771206 288.30910624999996 L 148.19952479771206 222.87770625 L 156.91714390345982 222.87770625 L 156.91714390345982 288.30910624999996 Z" pathFrom="M 148.19952479771206 288.30910624999996 L 148.19952479771206 288.30910624999996 L 156.91714390345982 288.30910624999996 L 156.91714390345982 288.30910624999996 L 156.91714390345982 288.30910624999996 L 156.91714390345982 288.30910624999996 L 156.91714390345982 288.30910624999996 L 148.19952479771206 288.30910624999996 Z" cy="222.87670624999998" cx="191.7876203264509" j="3" val="160" barHeight="65.4314" barWidth="8.717619105747769"></path><path id="SvgjsPath1270" d="M 191.7876203264509 306.7116874999999 L 191.7876203264509 280.1301812499999 L 200.50523943219866 280.1301812499999 L 200.50523943219866 306.7116874999999 Z" fill="rgba(128,179,179,1)" fill-opacity="1" stroke-opacity="1" stroke-linecap="round" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="1" clip-path="url(#gridRectMask4mt0o08eg)" pathTo="M 191.7876203264509 306.7116874999999 L 191.7876203264509 280.1301812499999 L 200.50523943219866 280.1301812499999 L 200.50523943219866 306.7116874999999 Z" pathFrom="M 191.7876203264509 306.7116874999999 L 191.7876203264509 306.7116874999999 L 200.50523943219866 306.7116874999999 L 200.50523943219866 306.7116874999999 L 200.50523943219866 306.7116874999999 L 200.50523943219866 306.7116874999999 L 200.50523943219866 306.7116874999999 L 191.7876203264509 306.7116874999999 Z" cy="280.12918124999993" cx="235.37571585518975" j="4" val="65" barHeight="26.58150625" barWidth="8.717619105747769"></path><path id="SvgjsPath1272" d="M 235.37571585518975 288.30910624999996 L 235.37571585518975 222.87770625 L 244.0933349609375 222.87770625 L 244.0933349609375 288.30910624999996 Z" fill="rgba(128,179,179,1)" fill-opacity="1" stroke-opacity="1" stroke-linecap="round" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="1" clip-path="url(#gridRectMask4mt0o08eg)" pathTo="M 235.37571585518975 288.30910624999996 L 235.37571585518975 222.87770625 L 244.0933349609375 222.87770625 L 244.0933349609375 288.30910624999996 Z" pathFrom="M 235.37571585518975 288.30910624999996 L 235.37571585518975 288.30910624999996 L 244.0933349609375 288.30910624999996 L 244.0933349609375 288.30910624999996 L 244.0933349609375 288.30910624999996 L 244.0933349609375 288.30910624999996 L 244.0933349609375 288.30910624999996 L 235.37571585518975 288.30910624999996 Z" cy="222.87670624999998" cx="278.9638113839286" j="5" val="160" barHeight="65.4314" barWidth="8.717619105747769"></path><path id="SvgjsPath1274" d="M 278.9638113839286 273.99598749999996 L 278.9638113839286 198.34093124999998 L 287.68143048967636 198.34093124999998 L 287.68143048967636 273.99598749999996 Z" fill="rgba(128,179,179,1)" fill-opacity="1" stroke-opacity="1" stroke-linecap="round" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="1" clip-path="url(#gridRectMask4mt0o08eg)" pathTo="M 278.9638113839286 273.99598749999996 L 278.9638113839286 198.34093124999998 L 287.68143048967636 198.34093124999998 L 287.68143048967636 273.99598749999996 Z" pathFrom="M 278.9638113839286 273.99598749999996 L 278.9638113839286 273.99598749999996 L 287.68143048967636 273.99598749999996 L 287.68143048967636 273.99598749999996 L 287.68143048967636 273.99598749999996 L 287.68143048967636 273.99598749999996 L 287.68143048967636 273.99598749999996 L 278.9638113839286 273.99598749999996 Z" cy="198.33993124999998" cx="322.55190691266745" j="6" val="185" barHeight="75.65505625" barWidth="8.717619105747769"></path><g id="SvgjsG1260" class="apexcharts-bar-goals-markers" style="pointer-events: none"><g id="SvgjsG1261" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1263" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1265" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1267" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1269" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1271" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1273" className="apexcharts-bar-goals-groups"></g></g></g><g id="SvgjsG1275" class="apexcharts-series" seriesName="AppxDesign" rel="3" data:realIndex="2"><path id="SvgjsPath1279" d="M 17.435238211495538 208.69978124999994 L 17.435238211495538 120.50794999999994 C 17.435238211495538 117.50794999999994 20.435238211495538 114.50794999999994 23.435238211495538 114.50794999999994 L 23.435238211495538 114.50794999999994 C 24.794047764369424 114.50794999999994 26.152857317243306 117.50794999999994 26.152857317243306 120.50794999999994 L 26.152857317243306 208.69978124999994 C 26.152857317243306 211.69978124999994 23.152857317243306 214.69978124999994 20.152857317243306 214.69978124999994 L 20.152857317243306 214.69978124999994 C 18.794047764369424 214.69978124999994 17.435238211495538 211.69978124999994 17.435238211495538 208.69978124999994 Z " fill="rgba(204,224,224,1)" fill-opacity="1" stroke-opacity="1" stroke-linecap="round" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="2" clip-path="url(#gridRectMask4mt0o08eg)" pathTo="M 17.435238211495538 208.69978124999994 L 17.435238211495538 120.50794999999994 C 17.435238211495538 117.50794999999994 20.435238211495538 114.50794999999994 23.435238211495538 114.50794999999994 L 23.435238211495538 114.50794999999994 C 24.794047764369424 114.50794999999994 26.152857317243306 117.50794999999994 26.152857317243306 120.50794999999994 L 26.152857317243306 208.69978124999994 C 26.152857317243306 211.69978124999994 23.152857317243306 214.69978124999994 20.152857317243306 214.69978124999994 L 20.152857317243306 214.69978124999994 C 18.794047764369424 214.69978124999994 17.435238211495538 211.69978124999994 17.435238211495538 208.69978124999994 Z " pathFrom="M 17.435238211495538 214.69978124999994 L 17.435238211495538 214.69978124999994 L 26.152857317243306 214.69978124999994 L 26.152857317243306 214.69978124999994 L 26.152857317243306 214.69978124999994 L 26.152857317243306 214.69978124999994 L 26.152857317243306 214.69978124999994 L 17.435238211495538 214.69978124999994 Z" cy="114.50694999999993" cx="61.02333374023438" j="0" val="245" barHeight="100.19183125" barWidth="8.717619105747769"></path><path id="SvgjsPath1281" d="M 61.02333374023438 231.19182499999997 L 61.02333374023438 175.71569374999999 C 61.02333374023438 172.71569374999999 64.02333374023438 169.71569374999999 67.02333374023438 169.71569374999999 L 67.02333374023438 169.71569374999999 C 68.38214329310827 169.71569374999999 69.74095284598215 172.71569374999999 69.74095284598215 175.71569374999999 L 69.74095284598215 231.19182499999997 C 69.74095284598215 234.19182499999997 66.74095284598215 237.19182499999997 63.74095284598215 237.19182499999997 L 63.74095284598215 237.19182499999997 C 62.382143293108264 237.19182499999997 61.02333374023438 234.19182499999997 61.02333374023438 231.19182499999997 Z " fill="rgba(204,224,224,1)" fill-opacity="1" stroke-opacity="1" stroke-linecap="round" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="2" clip-path="url(#gridRectMask4mt0o08eg)" pathTo="M 61.02333374023438 231.19182499999997 L 61.02333374023438 175.71569374999999 C 61.02333374023438 172.71569374999999 64.02333374023438 169.71569374999999 67.02333374023438 169.71569374999999 L 67.02333374023438 169.71569374999999 C 68.38214329310827 169.71569374999999 69.74095284598215 172.71569374999999 69.74095284598215 175.71569374999999 L 69.74095284598215 231.19182499999997 C 69.74095284598215 234.19182499999997 66.74095284598215 237.19182499999997 63.74095284598215 237.19182499999997 L 63.74095284598215 237.19182499999997 C 62.382143293108264 237.19182499999997 61.02333374023438 234.19182499999997 61.02333374023438 231.19182499999997 Z " pathFrom="M 61.02333374023438 237.19182499999997 L 61.02333374023438 237.19182499999997 L 69.74095284598215 237.19182499999997 L 69.74095284598215 237.19182499999997 L 69.74095284598215 237.19182499999997 L 69.74095284598215 237.19182499999997 L 69.74095284598215 237.19182499999997 L 61.02333374023438 237.19182499999997 Z" cy="169.71469374999998" cx="104.61142926897321" j="1" val="165" barHeight="67.47613125" barWidth="8.717619105747769"></path><path id="SvgjsPath1283" d="M 104.61142926897321 169.03199499999997 L 104.61142926897321 74.70596999999997 C 104.61142926897321 71.70596999999997 107.61142926897321 68.70596999999997 110.61142926897321 68.70596999999997 L 110.61142926897321 68.70596999999997 C 111.97023882184709 68.70596999999997 113.32904837472098 71.70596999999997 113.32904837472098 74.70596999999997 L 113.32904837472098 169.03199499999997 C 113.32904837472098 172.03199499999997 110.32904837472098 175.03199499999997 107.32904837472098 175.03199499999997 L 107.32904837472098 175.03199499999997 C 105.97023882184709 175.03199499999997 104.61142926897321 172.03199499999997 104.61142926897321 169.03199499999997 Z " fill="rgba(204,224,224,1)" fill-opacity="1" stroke-opacity="1" stroke-linecap="round" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="2" clip-path="url(#gridRectMask4mt0o08eg)" pathTo="M 104.61142926897321 169.03199499999997 L 104.61142926897321 74.70596999999997 C 104.61142926897321 71.70596999999997 107.61142926897321 68.70596999999997 110.61142926897321 68.70596999999997 L 110.61142926897321 68.70596999999997 C 111.97023882184709 68.70596999999997 113.32904837472098 71.70596999999997 113.32904837472098 74.70596999999997 L 113.32904837472098 169.03199499999997 C 113.32904837472098 172.03199499999997 110.32904837472098 175.03199499999997 107.32904837472098 175.03199499999997 L 107.32904837472098 175.03199499999997 C 105.97023882184709 175.03199499999997 104.61142926897321 172.03199499999997 104.61142926897321 169.03199499999997 Z " pathFrom="M 104.61142926897321 175.03199499999997 L 104.61142926897321 175.03199499999997 L 113.32904837472098 175.03199499999997 L 113.32904837472098 175.03199499999997 L 113.32904837472098 175.03199499999997 L 113.32904837472098 175.03199499999997 L 113.32904837472098 175.03199499999997 L 104.61142926897321 175.03199499999997 Z" cy="68.70496999999996" cx="148.19952479771206" j="2" val="260" barHeight="106.326025" barWidth="8.717619105747769"></path><path id="SvgjsPath1285" d="M 148.19952479771206 216.87870625 L 148.19952479771206 134.82106875 C 148.19952479771206 131.82106875 151.19952479771206 128.82106875 154.19952479771206 128.82106875 L 154.19952479771206 128.82106875 C 155.55833435058594 128.82106875 156.91714390345982 131.82106875 156.91714390345982 134.82106875 L 156.91714390345982 216.87870625 C 156.91714390345982 219.87870625 153.91714390345982 222.87870625 150.91714390345982 222.87870625 L 150.91714390345982 222.87870625 C 149.55833435058594 222.87870625 148.19952479771206 219.87870625 148.19952479771206 216.87870625 Z " fill="rgba(204,224,224,1)" fill-opacity="1" stroke-opacity="1" stroke-linecap="round" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="2" clip-path="url(#gridRectMask4mt0o08eg)" pathTo="M 148.19952479771206 216.87870625 L 148.19952479771206 134.82106875 C 148.19952479771206 131.82106875 151.19952479771206 128.82106875 154.19952479771206 128.82106875 L 154.19952479771206 128.82106875 C 155.55833435058594 128.82106875 156.91714390345982 131.82106875 156.91714390345982 134.82106875 L 156.91714390345982 216.87870625 C 156.91714390345982 219.87870625 153.91714390345982 222.87870625 150.91714390345982 222.87870625 L 150.91714390345982 222.87870625 C 149.55833435058594 222.87870625 148.19952479771206 219.87870625 148.19952479771206 216.87870625 Z " pathFrom="M 148.19952479771206 222.87870625 L 148.19952479771206 222.87870625 L 156.91714390345982 222.87870625 L 156.91714390345982 222.87870625 L 156.91714390345982 222.87870625 L 156.91714390345982 222.87870625 L 156.91714390345982 222.87870625 L 148.19952479771206 222.87870625 Z" cy="128.82006875" cx="191.7876203264509" j="3" val="230" barHeight="94.0576375" barWidth="8.717619105747769"></path><path id="SvgjsPath1287" d="M 191.7876203264509 274.1311812499999 L 191.7876203264509 241.14709374999993 C 191.7876203264509 238.14709374999993 194.7876203264509 235.14709374999993 197.7876203264509 235.14709374999993 L 197.7876203264509 235.14709374999993 C 199.14642987932478 235.14709374999993 200.50523943219866 238.14709374999993 200.50523943219866 241.14709374999993 L 200.50523943219866 274.1311812499999 C 200.50523943219866 277.1311812499999 197.50523943219866 280.1311812499999 194.50523943219866 280.1311812499999 L 194.50523943219866 280.1311812499999 C 193.14642987932478 280.1311812499999 191.7876203264509 277.1311812499999 191.7876203264509 274.1311812499999 Z " fill="rgba(204,224,224,1)" fill-opacity="1" stroke-opacity="1" stroke-linecap="round" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="2" clip-path="url(#gridRectMask4mt0o08eg)" pathTo="M 191.7876203264509 274.1311812499999 L 191.7876203264509 241.14709374999993 C 191.7876203264509 238.14709374999993 194.7876203264509 235.14709374999993 197.7876203264509 235.14709374999993 L 197.7876203264509 235.14709374999993 C 199.14642987932478 235.14709374999993 200.50523943219866 238.14709374999993 200.50523943219866 241.14709374999993 L 200.50523943219866 274.1311812499999 C 200.50523943219866 277.1311812499999 197.50523943219866 280.1311812499999 194.50523943219866 280.1311812499999 L 194.50523943219866 280.1311812499999 C 193.14642987932478 280.1311812499999 191.7876203264509 277.1311812499999 191.7876203264509 274.1311812499999 Z " pathFrom="M 191.7876203264509 280.1311812499999 L 191.7876203264509 280.1311812499999 L 200.50523943219866 280.1311812499999 L 200.50523943219866 280.1311812499999 L 200.50523943219866 280.1311812499999 L 200.50523943219866 280.1311812499999 L 200.50523943219866 280.1311812499999 L 191.7876203264509 280.1311812499999 Z" cy="235.14609374999992" cx="235.37571585518975" j="4" val="110" barHeight="44.9840875" barWidth="8.717619105747769"></path><path id="SvgjsPath1289" d="M 235.37571585518975 216.87870625 L 235.37571585518975 159.35784375 C 235.37571585518975 156.35784375 238.37571585518975 153.35784375 241.37571585518975 153.35784375 L 241.37571585518975 153.35784375 C 242.73452540806363 153.35784375 244.0933349609375 156.35784375 244.0933349609375 159.35784375 L 244.0933349609375 216.87870625 C 244.0933349609375 219.87870625 241.0933349609375 222.87870625 238.0933349609375 222.87870625 L 238.0933349609375 222.87870625 C 236.73452540806363 222.87870625 235.37571585518975 219.87870625 235.37571585518975 216.87870625 Z " fill="rgba(204,224,224,1)" fill-opacity="1" stroke-opacity="1" stroke-linecap="round" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="2" clip-path="url(#gridRectMask4mt0o08eg)" pathTo="M 235.37571585518975 216.87870625 L 235.37571585518975 159.35784375 C 235.37571585518975 156.35784375 238.37571585518975 153.35784375 241.37571585518975 153.35784375 L 241.37571585518975 153.35784375 C 242.73452540806363 153.35784375 244.0933349609375 156.35784375 244.0933349609375 159.35784375 L 244.0933349609375 216.87870625 C 244.0933349609375 219.87870625 241.0933349609375 222.87870625 238.0933349609375 222.87870625 L 238.0933349609375 222.87870625 C 236.73452540806363 222.87870625 235.37571585518975 219.87870625 235.37571585518975 216.87870625 Z " pathFrom="M 235.37571585518975 222.87870625 L 235.37571585518975 222.87870625 L 244.0933349609375 222.87870625 L 244.0933349609375 222.87870625 L 244.0933349609375 222.87870625 L 244.0933349609375 222.87870625 L 244.0933349609375 222.87870625 L 235.37571585518975 222.87870625 Z" cy="153.35684375" cx="278.9638113839286" j="5" val="170" barHeight="69.5208625" barWidth="8.717619105747769"></path><path id="SvgjsPath1291" d="M 278.9638113839286 192.34193125 L 278.9638113839286 104.15009999999998 C 278.9638113839286 101.15009999999998 281.9638113839286 98.15009999999998 284.9638113839286 98.15009999999998 L 284.9638113839286 98.15009999999998 C 286.3226209368025 98.15009999999998 287.68143048967636 101.15009999999998 287.68143048967636 104.15009999999998 L 287.68143048967636 192.34193125 C 287.68143048967636 195.34193125 284.68143048967636 198.34193125 281.68143048967636 198.34193125 L 281.68143048967636 198.34193125 C 280.3226209368025 198.34193125 278.9638113839286 195.34193125 278.9638113839286 192.34193125 Z " fill="rgba(204,224,224,1)" fill-opacity="1" stroke-opacity="1" stroke-linecap="round" stroke-width="0" stroke-dasharray="0" class="apexcharts-bar-area" index="2" clip-path="url(#gridRectMask4mt0o08eg)" pathTo="M 278.9638113839286 192.34193125 L 278.9638113839286 104.15009999999998 C 278.9638113839286 101.15009999999998 281.9638113839286 98.15009999999998 284.9638113839286 98.15009999999998 L 284.9638113839286 98.15009999999998 C 286.3226209368025 98.15009999999998 287.68143048967636 101.15009999999998 287.68143048967636 104.15009999999998 L 287.68143048967636 192.34193125 C 287.68143048967636 195.34193125 284.68143048967636 198.34193125 281.68143048967636 198.34193125 L 281.68143048967636 198.34193125 C 280.3226209368025 198.34193125 278.9638113839286 195.34193125 278.9638113839286 192.34193125 Z " pathFrom="M 278.9638113839286 198.34193125 L 278.9638113839286 198.34193125 L 287.68143048967636 198.34193125 L 287.68143048967636 198.34193125 L 287.68143048967636 198.34193125 L 287.68143048967636 198.34193125 L 287.68143048967636 198.34193125 L 278.9638113839286 198.34193125 Z" cy="98.14909999999998" cx="322.55190691266745" j="6" val="245" barHeight="100.19183125" barWidth="8.717619105747769"></path><g id="SvgjsG1277" class="apexcharts-bar-goals-markers" style="pointer-events: none"><g id="SvgjsG1278" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1280" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1282" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1284" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1286" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1288" className="apexcharts-bar-goals-groups"></g><g id="SvgjsG1290" className="apexcharts-bar-goals-groups"></g></g></g><g id="SvgjsG1242" class="apexcharts-datalabels" data:realIndex="0"></g><g id="SvgjsG1259" class="apexcharts-datalabels" data:realIndex="1"></g><g id="SvgjsG1276" class="apexcharts-datalabels" data:realIndex="2"></g></g><g id="SvgjsG1295" class="apexcharts-grid-borders"><line id="SvgjsLine1296" x1="0" y1="0" x2="305.1166687011719" y2="0" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line><line id="SvgjsLine1300" x1="0" y1="327.157" x2="305.1166687011719" y2="327.157" stroke="#e0e0e0" stroke-dasharray="0" stroke-linecap="butt" class="apexcharts-gridline"></line></g><line id="SvgjsLine1343" x1="0" y1="0" x2="305.1166687011719" y2="0" stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1" stroke-linecap="butt" class="apexcharts-ycrosshairs"></line><line id="SvgjsLine1344" x1="0" y1="0" x2="305.1166687011719" y2="0" stroke-dasharray="0" stroke-width="0" stroke-linecap="butt" class="apexcharts-ycrosshairs-hidden"></line><g id="SvgjsG1345" class="apexcharts-yaxis-annotations"></g><g id="SvgjsG1346" class="apexcharts-xaxis-annotations"></g><g id="SvgjsG1347" class="apexcharts-point-annotations"></g></g><g id="SvgjsG1326" class="apexcharts-yaxis" rel="0" transform="translate(17.883331298828125, 0)"><g id="SvgjsG1327" class="apexcharts-yaxis-texts-g"><text id="SvgjsText1329" font-family="Helvetica, Arial, sans-serif" x="20" y="31.4" text-anchor="end" dominant-baseline="auto" font-size="11px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-yaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1330">800</tspan><title>800</title></text><text id="SvgjsText1332" font-family="Helvetica, Arial, sans-serif" x="20" y="113.18925" text-anchor="end" dominant-baseline="auto" font-size="11px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-yaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1333">600</tspan><title>600</title></text><text id="SvgjsText1335" font-family="Helvetica, Arial, sans-serif" x="20" y="194.9785" text-anchor="end" dominant-baseline="auto" font-size="11px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-yaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1336">400</tspan><title>400</title></text><text id="SvgjsText1338" font-family="Helvetica, Arial, sans-serif" x="20" y="276.76775" text-anchor="end" dominant-baseline="auto" font-size="11px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-yaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1339">200</tspan><title>200</title></text><text id="SvgjsText1341" font-family="Helvetica, Arial, sans-serif" x="20" y="358.55699999999996" text-anchor="end" dominant-baseline="auto" font-size="11px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-yaxis-label " style="font-family: Helvetica, Arial, sans-serif;"><tspan id="SvgjsTspan1342">0</tspan><title>0</title></text></g></g><g id="SvgjsG1230" class="apexcharts-annotations"></g></svg><div class="apexcharts-tooltip apexcharts-theme-light"><div class="apexcharts-tooltip-title" style="font-family: Helvetica, Arial, sans-serif; font-size: 12px;"></div><div class="apexcharts-tooltip-series-group" style="order: 1;"><span class="apexcharts-tooltip-marker" style="background-color: var(--theme-deafult);"></span><div class="apexcharts-tooltip-text" style="font-family: Helvetica, Arial, sans-serif; font-size: 12px;"><div class="apexcharts-tooltip-y-group"><span class="apexcharts-tooltip-text-y-label"></span><span class="apexcharts-tooltip-text-y-value"></span></div><div class="apexcharts-tooltip-goals-group"><span class="apexcharts-tooltip-text-goals-label"></span><span class="apexcharts-tooltip-text-goals-value"></span></div><div class="apexcharts-tooltip-z-group"><span class="apexcharts-tooltip-text-z-label"></span><span class="apexcharts-tooltip-text-z-value"></span></div></div></div><div class="apexcharts-tooltip-series-group" style="order: 2;"><span class="apexcharts-tooltip-marker" style="background-color: rgb(128, 179, 179);"></span><div class="apexcharts-tooltip-text" style="font-family: Helvetica, Arial, sans-serif; font-size: 12px;"><div class="apexcharts-tooltip-y-group"><span class="apexcharts-tooltip-text-y-label"></span><span class="apexcharts-tooltip-text-y-value"></span></div><div class="apexcharts-tooltip-goals-group"><span class="apexcharts-tooltip-text-goals-label"></span><span class="apexcharts-tooltip-text-goals-value"></span></div><div class="apexcharts-tooltip-z-group"><span class="apexcharts-tooltip-text-z-label"></span><span class="apexcharts-tooltip-text-z-value"></span></div></div></div><div class="apexcharts-tooltip-series-group" style="order: 3;"><span class="apexcharts-tooltip-marker" style="background-color: rgb(204, 224, 224);"></span><div class="apexcharts-tooltip-text" style="font-family: Helvetica, Arial, sans-serif; font-size: 12px;"><div class="apexcharts-tooltip-y-group"><span class="apexcharts-tooltip-text-y-label"></span><span class="apexcharts-tooltip-text-y-value"></span></div><div class="apexcharts-tooltip-goals-group"><span class="apexcharts-tooltip-text-goals-label"></span><span class="apexcharts-tooltip-text-goals-value"></span></div><div class="apexcharts-tooltip-z-group"><span class="apexcharts-tooltip-text-z-label"></span><span class="apexcharts-tooltip-text-z-value"></span></div></div></div></div><div class="apexcharts-yaxistooltip apexcharts-yaxistooltip-0 apexcharts-yaxistooltip-left apexcharts-theme-light"><div class="apexcharts-yaxistooltip-text"></div></div></div></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card">
+                      <div class="card-header card-no-border total-revenue">
+                        <h4>Today Work</h4><a href="product.html">View All </a>
+                      </div>
+                      <div class="card-body pt-0">
+                        <div class="today-work-table table-responsive custom-scrollbar">
+                          <table class="today-working-table w-100">
+                            <tbody>
+                              <tr>
+                                <td><span class="f-w-500 f-light d-block f-12 mb-1">App Design</span><a class="f-w-500 f-14" href="product.html">NFT Illustration...</a></td>
+                                <td> <span class="f-w-500 f-light d-block f-12 mb-1">Assigned to</span><a class="f-w-500 f-14" href="product.html">Cody Fisher</a></td>
+                                <td><span class="f-w-500 f-light d-block f-12 mb-1">Days Left</span><a class="f-w-500 f-14" href="product.html">02</a></td>
+                                <td class="text-end">
+                                  <div class="badge-light-primary product-sub badge rounded-pill "><span>High</span></div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><span class="f-w-500 f-light d-block f-12 mb-1">App Design</span><a class="f-w-500 f-14" href="product.html">NFT Illustration...</a></td>
+                                <td> <span class="f-w-500 f-light d-block f-12 mb-1">Arlene McCoy</span><a class="f-w-500 f-14" href="product.html">Assigned to</a></td>
+                                <td><span class="f-w-500 f-light d-block f-12 mb-1">Days Left</span><a class="f-w-500 f-14" href="product.html">12</a></td>
+                                <td class="text-end">
+                                  <div class="badge-light-primary product-sub badge rounded-pill "><span>High</span></div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><span class="f-w-500 f-light d-block f-12 mb-1">Web Design</span><a class="f-w-500 f-14" href="product.html">Appron’s 3D Co...</a></td>
+                                <td> <span class="f-w-500 f-light d-block f-12 mb-1">Assigned to</span><a class="f-w-500 f-14" href="product.html">Kristin Watson</a></td>
+                                <td><span class="f-w-500 f-light d-block f-12 mb-1">Days Left</span><a class="f-w-500 f-14" href="product.html">12</a></td>
+                                <td class="text-end">
+                                  <div class="badge-light-warning product-sub badge rounded-pill "><span>Medium</span></div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><span class="f-w-500 f-light d-block f-12 mb-1">Desktop App</span><a class="f-w-500 f-14" href="product.html">Rental Car</a></td>
+                                <td> <span class="f-w-500 f-light d-block f-12 mb-1">Assigned to</span><a class="f-w-500 f-14" href="product.html">Darlene Robertson</a></td>
+                                <td><span class="f-w-500 f-light d-block f-12 mb-1">Days Left</span><a class="f-w-500 f-14" href="product.html">05</a></td>
+                                <td class="text-end">
+                                  <div class="badge-light-secondary product-sub badge rounded-pill "><span>low</span></div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><span class="f-w-500 f-light d-block f-12 mb-1">Template Design</span><a class="f-w-500 f-14" href="product.html">E-commerce</a></td>
+                                <td> <span class="f-w-500 f-light d-block f-12 mb-1">Assigned to</span><a class="f-w-500 f-14" href="product.html">Wade Warren</a></td>
+                                <td><span class="f-w-500 f-light d-block f-12 mb-1">Days Left</span><a class="f-w-500 f-14" href="product.html">31</a></td>
+                                <td class="text-end">
+                                  <div class="badge-light-primary product-sub badge rounded-pill "><span>High</span></div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td><span class="f-w-500 f-light d-block f-12 mb-1">App Design</span><a class="f-w-500 f-14" href="product.html">Food Delivery</a></td>
+                                <td> <span class="f-w-500 f-light d-block f-12 mb-1">Assigned to</span><a class="f-w-500 f-14" href="product.html">Smith John</a></td>
+                                <td><span class="f-w-500 f-light d-block f-12 mb-1">Days Left</span><a class="f-w-500 f-14" href="product.html">20</a></td>
+                                <td class="text-end">
+                                  <div class="badge-light-warning product-sub badge rounded-pill "><span>Medium</span></div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-12">
+                    <div class="card">
+                      <div class="card-header card-no-border total-revenue">
+                        <h4>Important Project List</h4><a class="d-none d-sm-block" href="product.html">View All</a>
+                      </div>
+                      <div class="card-body pt-0 row important-project">
+                        <div class="col-xl-4 col-md-6 box-col-6">
+                          <div class="projectlist-card">
+                            <div class="projectlist">
+                              <div class="project-data"><img class="nft-img img-fluid" src="../assets/images/dashboard-2/category/1.png" alt="nft">
+                                <div> <a class="f-14 f-w-500 d-block" href="product.html">Net Banking App</a><span class="f-light f-12 f-w-500">Client: Jordan</span></div>
+                              </div><span class="badge rounded-pill badge-primary bg-light-primary">7 Days Left</span>
+                            </div>
+                            <div class="project-date"><span class="f-light f-12 f-w-500">10 Oct, 2024 </span><span class="f-light f-12 f-w-500">15 Nov, 2024 </span></div>
+                            <div class="range_4">
+                              <div class="slider-container">
+                                <div class="slider_thumb range-slider_thumb" style="left: 80px;">50%</div>
+                                <div class="range-slider_line">
+                                  <div class="slider_line range-slider_line-fill" style="width: 50%;"></div>
+                                </div>
+                                <input class="slider_input range-slider_input" type="range" value="50;" min="0" max="100">
+                              </div>
+                            </div>
+                            <div class="project-comment">
+                              <div class="avatar-showcase">
+                                <div class="avatars">
+                                  <div class="customers d-inline-block avatar-group">
+                                    <ul>
+                                      <li class="d-inline-block"><img class="img-25 rounded-circle" src="../assets/images/user/18.png" alt=""></li>
+                                      <li class="d-inline-block"><img class="img-25 rounded-circle" src="../assets/images/user/15.png" alt=""></li>
+                                      <li class="d-inline-block"><img class="img-25 rounded-circle" src="../assets/images/user/19.png" alt=""></li>
+                                      <li class="d-inline-block"><img class="img-25 rounded-circle" src="../assets/images/user/17.png" alt=""></li>
+                                      <li class="d-inline-block">
+                                        <p class="rounded-circle bg-light">+2 </p>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="project-comment-icon">
+                                <div class="project-link">
+                                  <svg>
+                                    <use href="../assets/svg/icon-sprite.svg#messages-2"></use>
+                                  </svg><span>18 </span>
+                                </div>
+                                <div class="project-link">
+                                  <svg>
+                                    <use href="../assets/svg/icon-sprite.svg#paperclip"></use>
+                                  </svg><span>2  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="project-meeting-details">
+                              <div class="project-meeting"><span class="f-light f-12 f-w-500">Last Meeting</span><span class="f-light f-12 f-w-500">Next Meeting </span></div>
+                              <div class="project-meeting-time"><a class="f-14 f-w-500 " href="calendar-basic.html">2 Nov 23,10:00 AM</a><a class="f-14 f-w-500 " href="calendar-basic.html">8 Nov 23,09:45 AM</a></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6 box-col-6">
+                          <div class="projectlist-card">
+                            <div class="projectlist">
+                              <div class="project-data"><img class="nft-img img-fluid" src="../assets/images/dashboard-2/category/2.png" alt="nft">
+                                <div><a class="f-14 f-w-500 d-block" href="product.html">NFT Website</a><span class="f-light f-12 f-w-500">Client : Albert Flores</span></div>
+                              </div><span class="badge rounded-pill badge-primary bg-light-primary">24 Days Left</span>
+                            </div>
+                            <div class="project-date"> <span class="f-light f-12 f-w-500">15 Oct, 2024</span><span class="f-light f-12 f-w-500">01 Dec, 2024</span></div>
+                            <div class="range_4">
+                              <div class="slider-container">
+                                <div class="slider_thumb range-slider_thumb" style="left: 124.8px;">78%</div>
+                                <div class="range-slider_line">
+                                  <div class="slider_line range-slider_line-fill" style="width: 78%;"></div>
+                                </div>
+                                <input class="slider_input range-slider_input" type="range" value="78" min="0" max="100">
+                              </div>
+                            </div>
+                            <div class="project-comment">
+                              <div class="avatar-showcase">
+                                <div class="avatars">
+                                  <div class="customers d-inline-block avatar-group">
+                                    <ul>
+                                      <li class="d-inline-block"><img class="img-25 rounded-circle" src="../assets/images/user/24.png" alt=""></li>
+                                      <li class="d-inline-block"><img class="img-25 rounded-circle" src="../assets/images/user/21.png" alt=""></li>
+                                      <li class="d-inline-block"><img class="img-25 rounded-circle" src="../assets/images/user/23.png" alt=""></li>
+                                      <li class="d-inline-block"><img class="img-25 rounded-circle" src="../assets/images/user/22.png" alt=""></li>
+                                      <li class="d-inline-block">
+                                        <p class="rounded-circle bg-light">+5                            </p>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="project-comment-icon">
+                                <div class="project-link">
+                                  <svg>
+                                    <use href="../assets/svg/icon-sprite.svg#messages-2"></use>
+                                  </svg><span>18</span>
+                                </div>
+                                <div class="project-link">
+                                  <svg>
+                                    <use href="../assets/svg/icon-sprite.svg#paperclip"></use>
+                                  </svg><span>2 </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="project-meeting-details">
+                              <div class="project-meeting"> <span class="f-light f-12 f-w-500">Last Meeting</span><span class="f-light f-12 f-w-500">Next Meeting </span></div>
+                              <div class="project-meeting-time"><a class="f-14 f-w-500 " href="calendar-basic.html"> 2 Nov 23,10:00 AM</a><a class="f-14 f-w-500 " href="calendar-basic.html">8 Nov 23,09:45 AM</a></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xl-4 box-col-none marketing-app-card">
+                          <div class="projectlist-card">
+                            <div class="projectlist">
+                              <div class="project-data"> <img class="nft-img img-fluid" src="../assets/images/dashboard-2/category/3.png" alt="nft">
+                                <div><a class="f-14 f-w-500 d-block" href="product.html">Marketing App </a><span class="f-light f-12 f-w-500">Client : Jane Cooper </span></div>
+                              </div><span class="badge rounded-pill badge-primary bg-light-primary">31 Days Left</span>
+                            </div>
+                            <div class="project-date"><span class="f-light f-12 f-w-500">01 Nov, 2024 </span><span class="f-light f-12 f-w-500">18 Dec, 2024 </span></div>
+                            <div class="range_4">
+                              <div class="slider-container">
+                                <div class="slider_thumb range-slider_thumb" style="left: 56px;">35%</div>
+                                <div class="range-slider_line">
+                                  <div class="slider_line range-slider_line-fill" style="width: 35%;"></div>
+                                </div>
+                                <input class="slider_input range-slider_input" type="range" value="35" min="0" max="100">
+                              </div>
+                            </div>
+                            <div class="project-comment">
+                              <div class="avatar-showcase">
+                                <div class="avatars">
+                                  <div class="customers d-inline-block avatar-group">
+                                    <ul>
+                                      <li class="d-inline-block"><img class="img-25 rounded-circle" src="../assets/images/user/25.png" alt=""></li>
+                                      <li class="d-inline-block"><img class="img-25 rounded-circle" src="../assets/images/user/26.png" alt=""></li>
+                                      <li class="d-inline-block"><img class="img-25 rounded-circle" src="../assets/images/user/27.png" alt=""></li>
+                                      <li class="d-inline-block"> <img class="img-25 rounded-circle" src="../assets/images/user/28.png" alt=""></li>
+                                      <li class="d-inline-block">
+                                        <p class="rounded-circle bg-light">+8 </p>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="project-comment-icon">
+                                <div class="project-link">
+                                  <svg>
+                                    <use href="../assets/svg/icon-sprite.svg#messages-2"></use>
+                                  </svg><span class="f-light f-12 f-w-500">20</span>
+                                </div>
+                                <div class="project-link">
+                                  <svg>
+                                    <use href="../assets/svg/icon-sprite.svg#paperclip"></use>
+                                  </svg><span class="f-light f-12 f-w-500">7</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="project-meeting-details">
+                              <div class="project-meeting"> <span class="f-light f-12 f-w-500">Last Meeting</span><span class="f-light f-12 f-w-500">Next Meeting </span></div>
+                              <div class="project-meeting-time"> <a class="f-14 f-w-500 " href="calendar-basic.html">6 Nov 23,2:56 PM</a><a class="f-14 f-w-500 " href="calendar-basic.html">10 Nov 23, 7:12 AM</a></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xxl-12">
+                    <div class="card recent-order">
+                      <div class="card-header card-no-border total-revenue">
+                        <h4 class="m-0">All Project Table</h4>
+                        <div class="header-top"></div><a href="product.html">View All </a>
+                      </div>
+                      <div class="card-body pt-0">
+                        <div class="project-table table-responsive custom-scrollbar">
+                          <table class="order-table project-table w-100">
+                            <thead>
+                              <tr>
+                                <th>Project Name</th>
+                                <th>Client Name</th>
+                                <th>End Date</th>
+                                <th>Assigned to</th>
+                                <th>Status</th>
+                                <th>Progress</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <div class="project-comment  d-flex gap-2">
+                                    <div class="radial-chart-wrap">
+                                      <div class="widgetsChart" id="widgetsChart1" style="min-height: 68.7px;"><div id="apexchartspetcm3rh" class="apexcharts-canvas apexchartspetcm3rh apexcharts-theme-light" style="width: 100px; height: 68.7px;"><svg id="SvgjsSvg1348" width="100" height="68.69999999999999" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(-5, -15)" style="background: transparent;"><g id="SvgjsG1350" class="apexcharts-inner apexcharts-graphical" transform="translate(18, 0)"><defs id="SvgjsDefs1349"><clipPath id="gridRectMaskpetcm3rh"><rect id="SvgjsRect1352" width="72" height="90" x="-3" y="-1" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath><clipPath id="forecastMaskpetcm3rh"></clipPath><clipPath id="nonForecastMaskpetcm3rh"></clipPath><clipPath id="gridRectMarkerMaskpetcm3rh"><rect id="SvgjsRect1353" width="70" height="92" x="-2" y="-2" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath></defs><g id="SvgjsG1354" class="apexcharts-radialbar"><g id="SvgjsG1355"><g id="SvgjsG1356" class="apexcharts-tracks"><g id="SvgjsG1357" class="apexcharts-radialbar-track apexcharts-track" rel="1"><path id="apexcharts-radialbarTrack-0" d="M 33 17.075000000000003 A 15.924999999999997 15.924999999999997 0 1 1 32.997220563180306 17.075000242551624" fill="none" fill-opacity="1" stroke="var(--theme-deafult)" stroke-opacity="0.2" stroke-linecap="round" stroke-width="3.4080121951219513" stroke-dasharray="0" class="apexcharts-radialbar-area" data:pathOrig="M 33 17.075000000000003 A 15.924999999999997 15.924999999999997 0 1 1 32.997220563180306 17.075000242551624"></path></g></g><g id="SvgjsG1359"><g id="SvgjsG1364" class="apexcharts-series apexcharts-radial-series" seriesName="series-1" rel="1" data:realIndex="0"><path id="SvgjsPath1365" d="M 33 17.075000000000003 A 15.924999999999997 15.924999999999997 0 1 1 17.075000000000003 33" fill="none" fill-opacity="0.85" stroke="var(--theme-deafult)" stroke-opacity="1" stroke-linecap="round" stroke-width="3.5134146341463417" stroke-dasharray="0" class="apexcharts-radialbar-area apexcharts-radialbar-slice-0" data:angle="270" data:value="75" index="0" j="0" data:pathOrig="M 33 17.075000000000003 A 15.924999999999997 15.924999999999997 0 1 1 17.075000000000003 33"></path></g><circle id="SvgjsCircle1360" r="9.220993902439021" cx="33" cy="33" class="apexcharts-radialbar-hollow" fill="transparent"></circle><g id="SvgjsG1361" class="apexcharts-datalabels-group" transform="translate(0, 0) scale(1)" style="opacity: 1;"><text id="SvgjsText1362" font-family="Helvetica, Arial, sans-serif" x="33" y="33" text-anchor="middle" dominant-baseline="auto" font-size="16px" font-weight="600" fill="var(--theme-deafult)" class="apexcharts-text apexcharts-datalabel-label" style="font-family: Helvetica, Arial, sans-serif;">series-1</text><text id="SvgjsText1363" font-family="Helvetica, Arial, sans-serif" x="33" y="37" text-anchor="middle" dominant-baseline="auto" font-size="10px" font-weight="400" fill="var(--tag-text-color--edit)" class="apexcharts-text apexcharts-datalabel-value" style="font-family: Helvetica, Arial, sans-serif;">75%</text></g></g></g></g><line id="SvgjsLine1366" x1="0" y1="0" x2="66" y2="0" stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1" stroke-linecap="butt" class="apexcharts-ycrosshairs"></line><line id="SvgjsLine1367" x1="0" y1="0" x2="66" y2="0" stroke-dasharray="0" stroke-width="0" stroke-linecap="butt" class="apexcharts-ycrosshairs-hidden"></line></g><g id="SvgjsG1351" class="apexcharts-annotations"></g></svg><div class="apexcharts-legend"></div></div></div>
+                                    </div>
+                                    <div> <a class="f-w-500 f-14 " href="product.html">Pet App Design</a>
+                                      <div class="project-comment-icon">
+                                        <div class="project-link">
+                                          <svg>
+                                            <use href="../assets/svg/icon-sprite.svg#messages-2"></use>
+                                          </svg><span class="f-w-500 f-light f-12">20</span>
+                                        </div>
+                                        <div class="project-link">
+                                          <svg>
+                                            <use href="../assets/svg/icon-sprite.svg#paperclip"></use>
+                                          </svg><span class="f-w-500 f-light f-12">7</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td>
+                                  <div class="product-sub"><a class="f-w-500 f-14 " href="product.html">Darrell Steward</a><span class="f-w-500 f-light f-12 d-block">darrells@example.com</span></div>
+                                </td>
+                                <td>
+                                  <div class="product-sub"><a class="f-w-500 f-14 " href="product.html">15 Nov, 2024</a><span class="f-w-500 f-light f-12 d-block">8 Days Left</span></div>
+                                </td>
+                                <td>
+                                  <div class="product-sub"><a class="f-w-500 f-14 " href="product.html">Team Roha</a><span class="f-w-500 f-light f-12 d-block">12 Member</span></div>
+                                </td>
+                                <td>
+                                  <div class="txt-primary d-flex gap-2 align-items-center justify-content-center"><span class="pending bg-primary"></span><span class="f-w-500 f-13 txt-primary">Active</span></div>
+                                </td>
+                                <td>
+                                  <div class="product-sub">
+                                    <div class="dropdown">
+                                      <div id="dropdownMenuButtonicon11" data-bs-toggle="dropdown" aria-expanded="false" role="menu">
+                                        <svg class="invoice-icon">
+                                          <use href="../assets/svg/icon-sprite.svg#more-horizontal"></use>
+                                        </svg>
+                                      </div>
+                                      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButtonicon11"><span class="dropdown-item">Last Month</span><span class="dropdown-item">Last Week</span><span class="dropdown-item">Last Day </span></div>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <div class="project-comment  d-flex gap-2">
+                                    <div class="radial-chart-wrap">
+                                      <div class="widgetsChart" id="widgetsChart2" style="min-height: 68.7px;"><div id="apexcharts7zsab173l" class="apexcharts-canvas apexcharts7zsab173l apexcharts-theme-light" style="width: 100px; height: 68.7px;"><svg id="SvgjsSvg1368" width="100" height="68.69999999999999" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(-5, -15)" style="background: transparent;"><g id="SvgjsG1370" class="apexcharts-inner apexcharts-graphical" transform="translate(18, 0)"><defs id="SvgjsDefs1369"><clipPath id="gridRectMask7zsab173l"><rect id="SvgjsRect1372" width="72" height="90" x="-3" y="-1" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath><clipPath id="forecastMask7zsab173l"></clipPath><clipPath id="nonForecastMask7zsab173l"></clipPath><clipPath id="gridRectMarkerMask7zsab173l"><rect id="SvgjsRect1373" width="70" height="92" x="-2" y="-2" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath></defs><g id="SvgjsG1374" class="apexcharts-radialbar"><g id="SvgjsG1375"><g id="SvgjsG1376" class="apexcharts-tracks"><g id="SvgjsG1377" class="apexcharts-radialbar-track apexcharts-track" rel="1"><path id="apexcharts-radialbarTrack-0" d="M 33 17.075000000000003 A 15.924999999999997 15.924999999999997 0 1 1 32.997220563180306 17.075000242551624" fill="none" fill-opacity="1" stroke="var(--theme-deafult)" stroke-opacity="0.2" stroke-linecap="round" stroke-width="3.4080121951219513" stroke-dasharray="0" class="apexcharts-radialbar-area" data:pathOrig="M 33 17.075000000000003 A 15.924999999999997 15.924999999999997 0 1 1 32.997220563180306 17.075000242551624"></path></g></g><g id="SvgjsG1379"><g id="SvgjsG1384" class="apexcharts-series apexcharts-radial-series" seriesName="series-1" rel="1" data:realIndex="0"><path id="SvgjsPath1385" d="M 33 17.075000000000003 A 15.924999999999997 15.924999999999997 0 0 1 33 48.925" fill="none" fill-opacity="0.85" stroke="var(--theme-deafult)" stroke-opacity="1" stroke-linecap="round" stroke-width="3.5134146341463417" stroke-dasharray="0" class="apexcharts-radialbar-area apexcharts-radialbar-slice-0" data:angle="180" data:value="50" index="0" j="0" data:pathOrig="M 33 17.075000000000003 A 15.924999999999997 15.924999999999997 0 0 1 33 48.925"></path></g><circle id="SvgjsCircle1380" r="9.220993902439021" cx="33" cy="33" class="apexcharts-radialbar-hollow" fill="transparent"></circle><g id="SvgjsG1381" class="apexcharts-datalabels-group" transform="translate(0, 0) scale(1)" style="opacity: 1;"><text id="SvgjsText1382" font-family="Helvetica, Arial, sans-serif" x="33" y="33" text-anchor="middle" dominant-baseline="auto" font-size="16px" font-weight="600" fill="var(--theme-deafult)" class="apexcharts-text apexcharts-datalabel-label" style="font-family: Helvetica, Arial, sans-serif;">series-1</text><text id="SvgjsText1383" font-family="Helvetica, Arial, sans-serif" x="33" y="37" text-anchor="middle" dominant-baseline="auto" font-size="10px" font-weight="400" fill="var(--tag-text-color--edit)" class="apexcharts-text apexcharts-datalabel-value" style="font-family: Helvetica, Arial, sans-serif;">50%</text></g></g></g></g><line id="SvgjsLine1386" x1="0" y1="0" x2="66" y2="0" stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1" stroke-linecap="butt" class="apexcharts-ycrosshairs"></line><line id="SvgjsLine1387" x1="0" y1="0" x2="66" y2="0" stroke-dasharray="0" stroke-width="0" stroke-linecap="butt" class="apexcharts-ycrosshairs-hidden"></line></g><g id="SvgjsG1371" class="apexcharts-annotations"></g></svg><div class="apexcharts-legend"></div></div></div>
+                                    </div>
+                                    <div> <a class="f-w-500 f-14 " href="product.html">Chain Desktop App</a>
+                                      <div class="project-comment-icon">
+                                        <div class="project-link">
+                                          <svg>
+                                            <use href="../assets/svg/icon-sprite.svg#messages-2"></use>
+                                          </svg><span class="f-w-500 f-light f-12">20</span>
+                                        </div>
+                                        <div class="project-link">
+                                          <svg>
+                                            <use href="../assets/svg/icon-sprite.svg#paperclip"></use>
+                                          </svg><span class="f-w-500 f-light f-12">7</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td>
+                                  <div class="product-sub"><a class="f-w-500 f-14 " href="product.html">Eleanor Pena</a><span class="f-w-500 f-light f-12 d-block">pena12@example.com</span></div>
+                                </td>
+                                <td>
+                                  <div class="product-sub"><a class="f-w-500 f-14 " href="product.html">20 Nov, 2024</a><span class="f-w-500 f-light f-12 d-block">13 Days Left</span></div>
+                                </td>
+                                <td>
+                                  <div class="product-sub"><a class="f-w-500 f-14 " href="product.html">Team Suresh</a><span class="f-w-500 f-light f-12 d-block">10 Member</span></div>
+                                </td>
+                                <td>
+                                  <div class="txt-warning d-flex gap-2 align-items-center justify-content-center"><span class="pending bg-warning"></span><span class="f-w-500 f-13 txt-warning">On Hold</span></div>
+                                </td>
+                                <td>
+                                  <div class="product-sub">
+                                    <div class="dropdown">
+                                      <div id="dropdownMenuButtonicon12" data-bs-toggle="dropdown" aria-expanded="false" role="menu">
+                                        <svg class="invoice-icon">
+                                          <use href="../assets/svg/icon-sprite.svg#more-horizontal"></use>
+                                        </svg>
+                                      </div>
+                                      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButtonicon12"><span class="dropdown-item">Last Month</span><span class="dropdown-item">Last Week</span><span class="dropdown-item">Last Day </span></div>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <div class="project-comment  d-flex gap-2">
+                                    <div class="radial-chart-wrap">
+                                      <div class="widgetsChart" id="widgetsChart3" style="min-height: 68.7px;"><div id="apexcharts43nd25jl" class="apexcharts-canvas apexcharts43nd25jl apexcharts-theme-light" style="width: 100px; height: 68.7px;"><svg id="SvgjsSvg1388" width="100" height="68.69999999999999" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(-5, -15)" style="background: transparent;"><g id="SvgjsG1390" class="apexcharts-inner apexcharts-graphical" transform="translate(18, 0)"><defs id="SvgjsDefs1389"><clipPath id="gridRectMask43nd25jl"><rect id="SvgjsRect1392" width="72" height="90" x="-3" y="-1" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath><clipPath id="forecastMask43nd25jl"></clipPath><clipPath id="nonForecastMask43nd25jl"></clipPath><clipPath id="gridRectMarkerMask43nd25jl"><rect id="SvgjsRect1393" width="70" height="92" x="-2" y="-2" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath></defs><g id="SvgjsG1394" class="apexcharts-radialbar"><g id="SvgjsG1395"><g id="SvgjsG1396" class="apexcharts-tracks"><g id="SvgjsG1397" class="apexcharts-radialbar-track apexcharts-track" rel="1"><path id="apexcharts-radialbarTrack-0" d="M 33 17.075000000000003 A 15.924999999999997 15.924999999999997 0 1 1 32.997220563180306 17.075000242551624" fill="none" fill-opacity="1" stroke="var(--theme-deafult)" stroke-opacity="0.2" stroke-linecap="round" stroke-width="3.4080121951219513" stroke-dasharray="0" class="apexcharts-radialbar-area" data:pathOrig="M 33 17.075000000000003 A 15.924999999999997 15.924999999999997 0 1 1 32.997220563180306 17.075000242551624"></path></g></g><g id="SvgjsG1399"><g id="SvgjsG1404" class="apexcharts-series apexcharts-radial-series" seriesName="series-1" rel="1" data:realIndex="0"><path id="SvgjsPath1405" d="M 33 17.075000000000003 A 15.924999999999997 15.924999999999997 0 0 1 48.925 33" fill="none" fill-opacity="0.85" stroke="var(--theme-deafult)" stroke-opacity="1" stroke-linecap="round" stroke-width="3.5134146341463417" stroke-dasharray="0" class="apexcharts-radialbar-area apexcharts-radialbar-slice-0" data:angle="90" data:value="25" index="0" j="0" data:pathOrig="M 33 17.075000000000003 A 15.924999999999997 15.924999999999997 0 0 1 48.925 33"></path></g><circle id="SvgjsCircle1400" r="9.220993902439021" cx="33" cy="33" class="apexcharts-radialbar-hollow" fill="transparent"></circle><g id="SvgjsG1401" class="apexcharts-datalabels-group" transform="translate(0, 0) scale(1)" style="opacity: 1;"><text id="SvgjsText1402" font-family="Helvetica, Arial, sans-serif" x="33" y="33" text-anchor="middle" dominant-baseline="auto" font-size="16px" font-weight="600" fill="var(--theme-deafult)" class="apexcharts-text apexcharts-datalabel-label" style="font-family: Helvetica, Arial, sans-serif;">series-1</text><text id="SvgjsText1403" font-family="Helvetica, Arial, sans-serif" x="33" y="37" text-anchor="middle" dominant-baseline="auto" font-size="10px" font-weight="400" fill="var(--tag-text-color--edit)" class="apexcharts-text apexcharts-datalabel-value" style="font-family: Helvetica, Arial, sans-serif;">25%</text></g></g></g></g><line id="SvgjsLine1406" x1="0" y1="0" x2="66" y2="0" stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1" stroke-linecap="butt" class="apexcharts-ycrosshairs"></line><line id="SvgjsLine1407" x1="0" y1="0" x2="66" y2="0" stroke-dasharray="0" stroke-width="0" stroke-linecap="butt" class="apexcharts-ycrosshairs-hidden"></line></g><g id="SvgjsG1391" class="apexcharts-annotations"></g></svg><div class="apexcharts-legend"></div></div></div>
+                                    </div>
+                                    <div> <a class="f-w-500 f-14 " href="product.html">Business Web Design</a>
+                                      <div class="project-comment-icon">
+                                        <div class="project-link">
+                                          <svg>
+                                            <use href="../assets/svg/icon-sprite.svg#messages-2"></use>
+                                          </svg><span class="f-w-500 f-light f-12">20</span>
+                                        </div>
+                                        <div class="project-link">
+                                          <svg>
+                                            <use href="../assets/svg/icon-sprite.svg#paperclip"></use>
+                                          </svg><span class="f-w-500 f-light f-12">7</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td>
+                                  <div class="product-sub"><a class="f-w-500 f-14 " href="product.html">Robert Fox</a><span class="f-w-500 f-light f-12 d-block">foxxxx8s@example.com</span></div>
+                                </td>
+                                <td>
+                                  <div class="product-sub"><a class="f-w-500 f-14 " href="product.html">22 Nov, 2024</a><span class="f-w-500 f-light f-12 d-block">15 Days Left</span></div>
+                                </td>
+                                <td>
+                                  <div class="product-sub"><a class="f-w-500 f-14 " href="product.html">Team Liza</a><span class="f-w-500 f-light f-12 d-block">7 Member</span></div>
+                                </td>
+                                <td>
+                                  <div class="txt-secondary d-flex gap-2 align-items-center justify-content-center"><span class="pending bg-secondary"></span><span class="f-w-500 f-13 txt-secondary">Pending</span></div>
+                                </td>
+                                <td>
+                                  <div class="product-sub">
+                                    <div class="dropdown">
+                                      <div id="dropdownMenuButtonicon13" data-bs-toggle="dropdown" aria-expanded="false" role="menu">
+                                        <svg class="invoice-icon">
+                                          <use href="../assets/svg/icon-sprite.svg#more-horizontal"></use>
+                                        </svg>
+                                      </div>
+                                      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButtonicon13"><span class="dropdown-item">Last Month</span><span class="dropdown-item">Last Week</span><span class="dropdown-item">Last Day </span></div>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <div class="project-comment  d-flex gap-2">
+                                    <div class="radial-chart-wrap">
+                                      <div class="widgetsChart" id="widgetsChart4" style="min-height: 68.7px;"><div id="apexchartss2ug52dg" class="apexcharts-canvas apexchartss2ug52dg apexcharts-theme-light" style="width: 100px; height: 68.7px;"><svg id="SvgjsSvg1408" width="100" height="68.69999999999999" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(-5, -15)" style="background: transparent;"><g id="SvgjsG1410" class="apexcharts-inner apexcharts-graphical" transform="translate(18, 0)"><defs id="SvgjsDefs1409"><clipPath id="gridRectMasks2ug52dg"><rect id="SvgjsRect1412" width="72" height="90" x="-3" y="-1" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath><clipPath id="forecastMasks2ug52dg"></clipPath><clipPath id="nonForecastMasks2ug52dg"></clipPath><clipPath id="gridRectMarkerMasks2ug52dg"><rect id="SvgjsRect1413" width="70" height="92" x="-2" y="-2" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath></defs><g id="SvgjsG1414" class="apexcharts-radialbar"><g id="SvgjsG1415"><g id="SvgjsG1416" class="apexcharts-tracks"><g id="SvgjsG1417" class="apexcharts-radialbar-track apexcharts-track" rel="1"><path id="apexcharts-radialbarTrack-0" d="M 33 17.075000000000003 A 15.924999999999997 15.924999999999997 0 1 1 32.997220563180306 17.075000242551624" fill="none" fill-opacity="1" stroke="var(--theme-deafult)" stroke-opacity="0.2" stroke-linecap="round" stroke-width="3.4080121951219513" stroke-dasharray="0" class="apexcharts-radialbar-area" data:pathOrig="M 33 17.075000000000003 A 15.924999999999997 15.924999999999997 0 1 1 32.997220563180306 17.075000242551624"></path></g></g><g id="SvgjsG1419"><g id="SvgjsG1424" class="apexcharts-series apexcharts-radial-series" seriesName="series-1" rel="1" data:realIndex="0"><path id="SvgjsPath1425" d="M 33 17.075000000000003 A 15.924999999999997 15.924999999999997 0 1 1 20.800742243330276 22.763607315741865" fill="none" fill-opacity="0.85" stroke="var(--theme-deafult)" stroke-opacity="1" stroke-linecap="round" stroke-width="3.5134146341463417" stroke-dasharray="0" class="apexcharts-radialbar-area apexcharts-radialbar-slice-0" data:angle="310" data:value="86" index="0" j="0" data:pathOrig="M 33 17.075000000000003 A 15.924999999999997 15.924999999999997 0 1 1 20.800742243330276 22.763607315741865"></path></g><circle id="SvgjsCircle1420" r="9.220993902439021" cx="33" cy="33" class="apexcharts-radialbar-hollow" fill="transparent"></circle><g id="SvgjsG1421" class="apexcharts-datalabels-group" transform="translate(0, 0) scale(1)" style="opacity: 1;"><text id="SvgjsText1422" font-family="Helvetica, Arial, sans-serif" x="33" y="33" text-anchor="middle" dominant-baseline="auto" font-size="16px" font-weight="600" fill="var(--theme-deafult)" class="apexcharts-text apexcharts-datalabel-label" style="font-family: Helvetica, Arial, sans-serif;">series-1</text><text id="SvgjsText1423" font-family="Helvetica, Arial, sans-serif" x="33" y="37" text-anchor="middle" dominant-baseline="auto" font-size="10px" font-weight="400" fill="var(--tag-text-color--edit)" class="apexcharts-text apexcharts-datalabel-value" style="font-family: Helvetica, Arial, sans-serif;">86%</text></g></g></g></g><line id="SvgjsLine1426" x1="0" y1="0" x2="66" y2="0" stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1" stroke-linecap="butt" class="apexcharts-ycrosshairs"></line><line id="SvgjsLine1427" x1="0" y1="0" x2="66" y2="0" stroke-dasharray="0" stroke-width="0" stroke-linecap="butt" class="apexcharts-ycrosshairs-hidden"></line></g><g id="SvgjsG1411" class="apexcharts-annotations"></g></svg><div class="apexcharts-legend"></div></div></div>
+                                    </div>
+                                    <div> <a class="f-w-500 f-14 " href="product.html">NFT App Design</a>
+                                      <div class="project-comment-icon">
+                                        <div class="project-link">
+                                          <svg>
+                                            <use href="../assets/svg/icon-sprite.svg#messages-2"></use>
+                                          </svg><span class="f-w-500 f-light f-12">20</span>
+                                        </div>
+                                        <div class="project-link">
+                                          <svg>
+                                            <use href="../assets/svg/icon-sprite.svg#paperclip"></use>
+                                          </svg><span class="f-w-500 f-light f-12">7</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td>
+                                  <div class="product-sub"><a class="f-w-500 f-14 " href="product.html">Arlene McCoy</a><span class="f-w-500 f-light f-12 d-block">arlene78@example.com</span></div>
+                                </td>
+                                <td>
+                                  <div class="product-sub"><a class="f-w-500 f-14 " href="product.html">28 Nov, 2024</a><span class="f-w-500 f-light f-12 d-block">21 Days Left</span></div>
+                                </td>
+                                <td>
+                                  <div class="product-sub"><a class="f-w-500 f-14 " href="product.html">Team Sulekha</a><span class="f-w-500 f-light f-12 d-block">9 Member</span></div>
+                                </td>
+                                <td>
+                                  <div class="txt-primary d-flex gap-2 align-items-center justify-content-center"><span class="pending bg-primary"></span><span class="f-w-500 f-13 txt-primary">Active</span></div>
+                                </td>
+                                <td>
+                                  <div class="product-sub">
+                                    <div class="dropdown">
+                                      <div id="dropdownMenuButtonicon14" data-bs-toggle="dropdown" aria-expanded="false" role="menu">
+                                        <svg class="invoice-icon">
+                                          <use href="../assets/svg/icon-sprite.svg#more-horizontal"></use>
+                                        </svg>
+                                      </div>
+                                      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButtonicon14"><span class="dropdown-item">Last Month</span><span class="dropdown-item">Last Week</span><span class="dropdown-item">Last Day </span></div>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <div class="project-comment  d-flex gap-2">
+                                    <div class="radial-chart-wrap">
+                                      <div class="widgetsChart" id="widgetsChart5" style="min-height: 68.7px;"><div id="apexchartsvey5g02j" class="apexcharts-canvas apexchartsvey5g02j apexcharts-theme-light" style="width: 100px; height: 68.7px;"><svg id="SvgjsSvg1428" width="100" height="68.69999999999999" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(-5, -15)" style="background: transparent;"><g id="SvgjsG1430" class="apexcharts-inner apexcharts-graphical" transform="translate(18, 0)"><defs id="SvgjsDefs1429"><clipPath id="gridRectMaskvey5g02j"><rect id="SvgjsRect1432" width="72" height="90" x="-3" y="-1" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath><clipPath id="forecastMaskvey5g02j"></clipPath><clipPath id="nonForecastMaskvey5g02j"></clipPath><clipPath id="gridRectMarkerMaskvey5g02j"><rect id="SvgjsRect1433" width="70" height="92" x="-2" y="-2" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath></defs><g id="SvgjsG1434" class="apexcharts-radialbar"><g id="SvgjsG1435"><g id="SvgjsG1436" class="apexcharts-tracks"><g id="SvgjsG1437" class="apexcharts-radialbar-track apexcharts-track" rel="1"><path id="apexcharts-radialbarTrack-0" d="M 33 17.075000000000003 A 15.924999999999997 15.924999999999997 0 1 1 32.997220563180306 17.075000242551624" fill="none" fill-opacity="1" stroke="var(--theme-deafult)" stroke-opacity="0.2" stroke-linecap="round" stroke-width="3.4080121951219513" stroke-dasharray="0" class="apexcharts-radialbar-area" data:pathOrig="M 33 17.075000000000003 A 15.924999999999997 15.924999999999997 0 1 1 32.997220563180306 17.075000242551624"></path></g></g><g id="SvgjsG1439"><g id="SvgjsG1444" class="apexcharts-series apexcharts-radial-series" seriesName="series-1" rel="1" data:realIndex="0"><path id="SvgjsPath1445" d="M 33 17.075000000000003 A 15.924999999999997 15.924999999999997 0 1 1 17.113792499612302 34.1108718443752" fill="none" fill-opacity="0.85" stroke="var(--theme-deafult)" stroke-opacity="1" stroke-linecap="round" stroke-width="3.5134146341463417" stroke-dasharray="0" class="apexcharts-radialbar-area apexcharts-radialbar-slice-0" data:angle="266" data:value="74" index="0" j="0" data:pathOrig="M 33 17.075000000000003 A 15.924999999999997 15.924999999999997 0 1 1 17.113792499612302 34.1108718443752"></path></g><circle id="SvgjsCircle1440" r="9.220993902439021" cx="33" cy="33" class="apexcharts-radialbar-hollow" fill="transparent"></circle><g id="SvgjsG1441" class="apexcharts-datalabels-group" transform="translate(0, 0) scale(1)" style="opacity: 1;"><text id="SvgjsText1442" font-family="Helvetica, Arial, sans-serif" x="33" y="33" text-anchor="middle" dominant-baseline="auto" font-size="16px" font-weight="600" fill="var(--theme-deafult)" class="apexcharts-text apexcharts-datalabel-label" style="font-family: Helvetica, Arial, sans-serif;">series-1</text><text id="SvgjsText1443" font-family="Helvetica, Arial, sans-serif" x="33" y="37" text-anchor="middle" dominant-baseline="auto" font-size="10px" font-weight="400" fill="var(--tag-text-color--edit)" class="apexcharts-text apexcharts-datalabel-value" style="font-family: Helvetica, Arial, sans-serif;">74%</text></g></g></g></g><line id="SvgjsLine1446" x1="0" y1="0" x2="66" y2="0" stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1" stroke-linecap="butt" class="apexcharts-ycrosshairs"></line><line id="SvgjsLine1447" x1="0" y1="0" x2="66" y2="0" stroke-dasharray="0" stroke-width="0" stroke-linecap="butt" class="apexcharts-ycrosshairs-hidden"></line></g><g id="SvgjsG1431" class="apexcharts-annotations"></g></svg><div class="apexcharts-legend"></div></div></div>
+                                    </div>
+                                    <div> <a class="f-w-500 f-14 " href="product.html">Digital Avtar Web Design</a>
+                                      <div class="project-comment-icon">
+                                        <div class="project-link">
+                                          <svg>
+                                            <use href="../assets/svg/icon-sprite.svg#messages-2"></use>
+                                          </svg><span class="f-w-500 f-light f-12">20</span>
+                                        </div>
+                                        <div class="project-link">
+                                          <svg>
+                                            <use href="../assets/svg/icon-sprite.svg#paperclip"></use>
+                                          </svg><span class="f-w-500 f-light f-12">7</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td>
+                                  <div class="product-sub"><a class="f-w-500 f-14 " href="product.html">Courtney Henry</a><span class="f-w-500 f-light f-12 d-block">henry45@example.com</span></div>
+                                </td>
+                                <td>
+                                  <div class="product-sub"><a class="f-w-500 f-14 " href="product.html">2 Dec, 2024</a><span class="f-w-500 f-light f-12 d-block">25 Days Left</span></div>
+                                </td>
+                                <td>
+                                  <div class="product-sub"><a class="f-w-500 f-14 " href="product.html">Team Shreena</a><span class="f-w-500 f-light f-12 d-block">12 Member</span></div>
+                                </td>
+                                <td>
+                                  <div class="txt-primary d-flex gap-2 align-items-center justify-content-center"><span class="pending bg-primary"></span><span class="f-w-500 f-13 txt-primary">Active</span></div>
+                                </td>
+                                <td>
+                                  <div class="product-sub">
+                                    <div class="dropdown">
+                                      <div id="dropdownMenuButtonicon15" data-bs-toggle="dropdown" aria-expanded="false" role="menu">
+                                        <svg class="invoice-icon">
+                                          <use href="../assets/svg/icon-sprite.svg#more-horizontal"></use>
+                                        </svg>
+                                      </div>
+                                      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButtonicon15"><span class="dropdown-item">Last Month</span><span class="dropdown-item">Last Week</span><span class="dropdown-item">Last Day </span></div>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-5 box-col-6">
+                    <div class="card recent-order">
+                      <div class="card-header card-no-border total-revenue">
+                        <h4 class="m-0">Top Client List</h4>
+                        <div class="header-top"></div><a href="product.html">View All </a>
+                      </div>
+                      <div class="card-body pt-0">
+                        <div class="client-list-table table-responsive custom-scrollbar">
+                          <table class="order-table w-100">
+                            <tbody>
+                              <tr>
+                                <td class="client-list">
+                                  <div class="user-id">
+                                    <div class="avatars me-2">
+                                      <div class="avatar"><img class="img-50 rounded-circle" src="../assets/images/user/29.png" alt="#">
+                                        <div class="status status-dnd bg-warning"> </div>
+                                      </div>
+                                    </div>
+                                    <div class="product-sub"><a class="f-14 f-w-500 " href="user-profile.pug">Jenny Bell</a><span class="d-block f-light f-w-500">India</span></div>
+                                  </div>
+                                  <div class="user-comment w-100">
+                                    <div class="product-sub"> <a class="f-14 f-w-500 " href="user-profile.pug">jennybell@gmail.com</a><span class="d-block f-light f-w-500">+84 342 556 555 </span></div>
+                                    <div class="product-sub">
+                                      <svg class="invoice-icon">
+                                        <use href="../assets/svg/icon-sprite.svg#messages-3"></use>
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="client-list">
+                                  <div class="user-id">
+                                    <div class="avatars me-2">
+                                      <div class="avatar"><img class="img-50 rounded-circle" src="../assets/images/user/30.png" alt="#">
+                                        <div class="status status-dnd bg-warning"></div>
+                                      </div>
+                                    </div>
+                                    <div class="product-sub"><a class="f-14 f-w-500 " href="user-profile.pug">Albert Flores</a><span class="d-block f-light f-w-500">UK</span></div>
+                                  </div>
+                                  <div class="user-comment w-100">
+                                    <div class="product-sub"><a class="f-14 f-w-500 " href="user-profile.pug">albert78@gmail.com</a><span class="d-block f-light f-w-500">+77 445 551 629</span></div>
+                                    <div class="product-sub">
+                                      <svg class="invoice-icon">
+                                        <use href="../assets/svg/icon-sprite.svg#messages-3"></use>
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="client-list">
+                                  <div class="user-id">
+                                    <div class="avatars me-2">
+                                      <div class="avatar"> <img class="img-50 rounded-circle" src="../assets/images/user/33.png" alt="#">
+                                        <div class="status status-dnd bg-warning"> </div>
+                                      </div>
+                                    </div>
+                                    <div class="product-sub"><a class="f-14 f-w-500 " href="user-profile.pug">Jane Cooper</a><span class="d-block f-light f-w-500">London</span></div>
+                                  </div>
+                                  <div class="user-comment w-100">
+                                    <div class="product-sub"> <a class="f-14 f-w-500 " href="user-profile.pug">jane145@gmail.com</a><span class="d-block f-light f-w-500">+56 955 510 831</span></div>
+                                    <div class="product-sub">
+                                      <svg class="invoice-icon">
+                                        <use href="../assets/svg/icon-sprite.svg#messages-3"></use>
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="client-list">
+                                  <div class="user-id">
+                                    <div class="avatars me-2">
+                                      <div class="avatar"> <img class="img-50 rounded-circle" src="../assets/images/user/31.png" alt="#"></div>
+                                    </div>
+                                    <div class="product-sub"> <a class="f-14 f-w-500 " href="user-profile.pug">Devon Lane</a><span class="d-block f-light f-w-500">America</span></div>
+                                  </div>
+                                  <div class="user-comment w-100">
+                                    <div class="product-sub"><a class="f-14 f-w-500 " href="user-profile.pug">devom796@gmail.com</a><span class="d-block f-light f-w-500">+56 955 570 095</span></div>
+                                    <div class="product-sub">
+                                      <svg class="invoice-icon">
+                                        <use href="../assets/svg/icon-sprite.svg#messages-3"> </use>
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="client-list">
+                                  <div class="user-id">
+                                    <div class="avatars me-2">
+                                      <div class="avatar"><img class="img-50 rounded-circle" src="../assets/images/user/32.png" alt="#"></div>
+                                    </div>
+                                    <div class="product-sub"><a class="f-14 f-w-500 " href="user-profile.pug">Cody Fisher</a><span class="d-block f-light f-w-500">Canada</span></div>
+                                  </div>
+                                  <div class="user-comment w-100">
+                                    <div class="product-sub"><a class="f-14 f-w-500 " href="user-profile.pug">cody7895@gmail.com</a><span class="d-block f-light f-w-500">+226 795 552 31</span></div>
+                                    <div class="product-sub">
+                                      <svg class="invoice-icon">
+                                        <use href="../assets/svg/icon-sprite.svg#messages-3"></use>
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-7 box-col-6">
+                    <div class="card">
+                      <div class="card-header card-no-border total-revenue">
+                        <h4>Time Line</h4>
+                      </div>
+                      <div class="card-body pt-0">
+                        <div class="overflow-auto theme-scrollbar custom-scrollbar">
+                          <div class="timeline-calendar custom-scrollbar">
+                            <div class="custom-calendar" id="calendar-container">
+                              <div class="time-line fc fc-media-screen fc-direction-ltr fc-theme-standard fc-liquid-hack" id="calendar"><div class="fc-header-toolbar fc-toolbar fc-toolbar-ltr"><div class="fc-toolbar-chunk"><div class="fc-button-group"><button type="button" title="Previous week" aria-pressed="false" class="fc-prev-button fc-button fc-button-primary"><span class="fc-icon fc-icon-chevron-left"></span></button><button type="button" title="Next week" aria-pressed="false" class="fc-next-button fc-button fc-button-primary"><span class="fc-icon fc-icon-chevron-right"></span></button></div><button type="button" title="This week" aria-pressed="false" class="fc-today-button fc-button fc-button-primary">today</button></div><div class="fc-toolbar-chunk"><h2 class="fc-toolbar-title" id="fc-dom-1">Sep 6 – 12, 2020</h2></div><div class="fc-toolbar-chunk"><div class="fc-button-group"><button type="button" title="month view" aria-pressed="false" class="fc-dayGridMonth-button fc-button fc-button-primary">month</button><button type="button" title="week view" aria-pressed="true" class="fc-timeGridWeek-button fc-button fc-button-primary fc-button-active">week</button><button type="button" title="day view" aria-pressed="false" class="fc-timeGridDay-button fc-button fc-button-primary">day</button><button type="button" title="list view" aria-pressed="false" class="fc-listWeek-button fc-button fc-button-primary">list</button></div></div></div><div aria-labelledby="fc-dom-1" class="fc-view-harness fc-view-harness-passive"><div class="fc-timegrid fc-timeGridWeek-view fc-view"><table role="grid" class="fc-scrollgrid "><tbody role="rowgroup"><tr role="presentation" class="fc-scrollgrid-section fc-scrollgrid-section-header  fc-scrollgrid-section-sticky"><th role="presentation"><div class="fc-scroller-harness"><div class="fc-scroller" style="overflow: visible;"><table role="presentation" class="fc-col-header " style="width: 433px;"><colgroup><col style="width: 69px;"></colgroup><thead role="presentation"><tr role="row"><th aria-hidden="true" class="fc-timegrid-axis"><div class="fc-timegrid-axis-frame"></div></th><th role="columnheader" class="fc-col-header-cell fc-day fc-day-sun fc-day-past" data-date="2020-09-06"><div class="fc-scrollgrid-sync-inner"><a class="fc-col-header-cell-cushion " aria-label="September 6, 2020"><span class="dayName">Sun</span>9/6</a></div></th><th role="columnheader" class="fc-col-header-cell fc-day fc-day-mon fc-day-past" data-date="2020-09-07"><div class="fc-scrollgrid-sync-inner"><a class="fc-col-header-cell-cushion " aria-label="September 7, 2020"><span class="dayName">Mon</span>9/7</a></div></th><th role="columnheader" class="fc-col-header-cell fc-day fc-day-tue fc-day-past" data-date="2020-09-08"><div class="fc-scrollgrid-sync-inner"><a class="fc-col-header-cell-cushion " aria-label="September 8, 2020"><span class="dayName">Tue</span>9/8</a></div></th><th role="columnheader" class="fc-col-header-cell fc-day fc-day-wed fc-day-past" data-date="2020-09-09"><div class="fc-scrollgrid-sync-inner"><a class="fc-col-header-cell-cushion " aria-label="September 9, 2020"><span class="dayName">Wed</span>9/9</a></div></th><th role="columnheader" class="fc-col-header-cell fc-day fc-day-thu fc-day-past" data-date="2020-09-10"><div class="fc-scrollgrid-sync-inner"><a class="fc-col-header-cell-cushion " aria-label="September 10, 2020"><span class="dayName">Thu</span>9/10</a></div></th><th role="columnheader" class="fc-col-header-cell fc-day fc-day-fri fc-day-past" data-date="2020-09-11"><div class="fc-scrollgrid-sync-inner"><a class="fc-col-header-cell-cushion " aria-label="September 11, 2020"><span class="dayName">Fri</span>9/11</a></div></th><th role="columnheader" class="fc-col-header-cell fc-day fc-day-sat fc-day-past" data-date="2020-09-12"><div class="fc-scrollgrid-sync-inner"><a class="fc-col-header-cell-cushion " aria-label="September 12, 2020"><span class="dayName">Sat</span>9/12</a></div></th></tr></thead></table></div></div></th></tr><tr role="presentation" class="fc-scrollgrid-section fc-scrollgrid-section-body "><td role="presentation"><div class="fc-scroller-harness"><div class="fc-scroller" style="overflow: visible;"><div class="fc-daygrid-body fc-daygrid-body-unbalanced fc-daygrid-body-natural" style="width: 433px;"><table role="presentation" class="fc-scrollgrid-sync-table" style="width: 433px;"><colgroup><col style="width: 69px;"></colgroup><tbody role="presentation"><tr role="row"><td aria-hidden="true" class="fc-timegrid-axis fc-scrollgrid-shrink"><div class="fc-timegrid-axis-frame fc-scrollgrid-shrink-frame fc-timegrid-axis-frame-liquid"><span class="fc-timegrid-axis-cushion fc-scrollgrid-shrink-cushion fc-scrollgrid-sync-inner">all-day</span></div></td><td role="gridcell" class="fc-daygrid-day fc-day fc-day-sun fc-day-past" data-date="2020-09-06"><div class="fc-daygrid-day-frame fc-scrollgrid-sync-inner"><div class="fc-daygrid-day-events"><div class="fc-daygrid-day-bottom" style="margin-top: 0px;"></div></div><div class="fc-daygrid-day-bg"></div></div></td><td role="gridcell" class="fc-daygrid-day fc-day fc-day-mon fc-day-past" data-date="2020-09-07"><div class="fc-daygrid-day-frame fc-scrollgrid-sync-inner"><div class="fc-daygrid-day-events"><div class="fc-daygrid-day-bottom" style="margin-top: 0px;"></div></div><div class="fc-daygrid-day-bg"></div></div></td><td role="gridcell" class="fc-daygrid-day fc-day fc-day-tue fc-day-past" data-date="2020-09-08"><div class="fc-daygrid-day-frame fc-scrollgrid-sync-inner"><div class="fc-daygrid-day-events"><div class="fc-daygrid-day-bottom" style="margin-top: 0px;"></div></div><div class="fc-daygrid-day-bg"></div></div></td><td role="gridcell" class="fc-daygrid-day fc-day fc-day-wed fc-day-past" data-date="2020-09-09"><div class="fc-daygrid-day-frame fc-scrollgrid-sync-inner"><div class="fc-daygrid-day-events"><div class="fc-daygrid-day-bottom" style="margin-top: 0px;"></div></div><div class="fc-daygrid-day-bg"></div></div></td><td role="gridcell" class="fc-daygrid-day fc-day fc-day-thu fc-day-past" data-date="2020-09-10"><div class="fc-daygrid-day-frame fc-scrollgrid-sync-inner"><div class="fc-daygrid-day-events"><div class="fc-daygrid-day-bottom" style="margin-top: 0px;"></div></div><div class="fc-daygrid-day-bg"></div></div></td><td role="gridcell" class="fc-daygrid-day fc-day fc-day-fri fc-day-past" data-date="2020-09-11"><div class="fc-daygrid-day-frame fc-scrollgrid-sync-inner"><div class="fc-daygrid-day-events"><div class="fc-daygrid-day-bottom" style="margin-top: 0px;"></div></div><div class="fc-daygrid-day-bg"></div></div></td><td role="gridcell" class="fc-daygrid-day fc-day fc-day-sat fc-day-past" data-date="2020-09-12"><div class="fc-daygrid-day-frame fc-scrollgrid-sync-inner"><div class="fc-daygrid-day-events"><div class="fc-daygrid-day-bottom" style="margin-top: 0px;"></div></div><div class="fc-daygrid-day-bg"></div></div></td></tr></tbody></table></div></div></div></td></tr><tr role="presentation" class="fc-scrollgrid-section"><td class="fc-timegrid-divider fc-cell-shaded"></td></tr><tr role="presentation" class="fc-scrollgrid-section fc-scrollgrid-section-body "><td role="presentation"><div class="fc-scroller-harness"><div class="fc-scroller" style="overflow: visible;"><div class="fc-timegrid-body" style="width: 433px;"><div class="fc-timegrid-slots"><table aria-hidden="true" class="" style="width: 433px;"><colgroup><col style="width: 69px;"></colgroup><tbody><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="00:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">12am</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="00:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="00:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="00:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="01:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">1am</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="01:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="01:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="01:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="02:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">2am</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="02:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="02:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="02:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="03:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">3am</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="03:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="03:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="03:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="04:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">4am</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="04:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="04:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="04:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="05:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">5am</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="05:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="05:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="05:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="06:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">6am</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="06:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="06:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="06:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="07:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">7am</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="07:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="07:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="07:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="08:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">8am</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="08:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="08:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="08:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="09:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">9am</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="09:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="09:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="09:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="10:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">10am</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="10:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="10:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="10:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="11:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">11am</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="11:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="11:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="11:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="12:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">12pm</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="12:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="12:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="12:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="13:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">1pm</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="13:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="13:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="13:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="14:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">2pm</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="14:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="14:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="14:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="15:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">3pm</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="15:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="15:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="15:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="16:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">4pm</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="16:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="16:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="16:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="17:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">5pm</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="17:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="17:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="17:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="18:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">6pm</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="18:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="18:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="18:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="19:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">7pm</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="19:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="19:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="19:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="20:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">8pm</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="20:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="20:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="20:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="21:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">9pm</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="21:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="21:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="21:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="22:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">10pm</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="22:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="22:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="22:30:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-scrollgrid-shrink" data-time="23:00:00"><div class="fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame"><div class="fc-timegrid-slot-label-cushion fc-scrollgrid-shrink-cushion">11pm</div></div></td><td class="fc-timegrid-slot fc-timegrid-slot-lane " data-time="23:00:00"></td></tr><tr><td class="fc-timegrid-slot fc-timegrid-slot-label fc-timegrid-slot-minor" data-time="23:30:00"></td><td class="fc-timegrid-slot fc-timegrid-slot-lane fc-timegrid-slot-minor" data-time="23:30:00"></td></tr></tbody></table></div><div class="fc-timegrid-cols"><table role="presentation" style="width: 433px;"><colgroup><col style="width: 69px;"></colgroup><tbody role="presentation"><tr role="row"><td aria-hidden="true" class="fc-timegrid-col fc-timegrid-axis"><div class="fc-timegrid-col-frame"><div class="fc-timegrid-now-indicator-container"></div></div></td><td role="gridcell" class="fc-timegrid-col fc-day fc-day-sun fc-day-past" data-date="2020-09-06"><div class="fc-timegrid-col-frame"><div class="fc-timegrid-col-bg"></div><div class="fc-timegrid-col-events"><div class="fc-timegrid-event-harness fc-timegrid-event-harness-inset" style="inset: 0px 0% -83px; z-index: 1;"><a class="fc-timegrid-event fc-v-event fc-event fc-event-draggable fc-event-resizable fc-event-start fc-event-end fc-event-past common-style bg-white"><div class="fc-event-main"><div class="fc-event-main-frame"><div class="fc-task-box fc-sticky"><div class="fc-task-text-box"><span class="fc-task-text">NFT App Design</span></div><div class="fc-task-text-box"><span class="fc-task-text">11:20am | Mon - 7 Nov, 2024</span></div></div></div></div><div class="fc-event-resizer fc-event-resizer-end"></div></a></div></div><div class="fc-timegrid-col-events"></div><div class="fc-timegrid-now-indicator-container"></div></div></td><td role="gridcell" class="fc-timegrid-col fc-day fc-day-mon fc-day-past" data-date="2020-09-07"><div class="fc-timegrid-col-frame"><div class="fc-timegrid-col-bg"></div><div class="fc-timegrid-col-events"><div class="fc-timegrid-event-harness fc-timegrid-event-harness-inset" style="inset: 83px 0% -166px; z-index: 1;"><a class="fc-timegrid-event fc-v-event fc-event fc-event-draggable fc-event-resizable fc-event-start fc-event-end fc-event-past common-style bg-white"><div class="fc-event-main"><div class="fc-event-main-frame"><div class="fc-task-box fc-sticky"><div class="fc-task-text-box"><span class="fc-task-text">Pet Care Website</span></div><div class="fc-task-text-box"><span class="fc-task-text">3:00pm | Thu - 10 Nov, 2024</span></div></div></div></div><div class="fc-event-resizer fc-event-resizer-end"></div></a></div><div class="fc-timegrid-event-harness fc-timegrid-event-harness-inset" style="inset: 498px 0% -581px; z-index: 1;"><a class="fc-timegrid-event fc-v-event fc-event fc-event-draggable fc-event-resizable fc-event-start fc-event-end fc-event-past common-style bg-white"><div class="fc-event-main"><div class="fc-event-main-frame"><div class="fc-task-box fc-sticky"><div class="fc-task-text-box"><span class="fc-task-text">Computer Science</span></div><div class="fc-task-text-box"><span class="fc-task-text">3:00pm | Thu - 13 Nov, 2024</span></div></div></div></div><div class="fc-event-resizer fc-event-resizer-end"></div></a></div><div class="fc-timegrid-event-harness fc-timegrid-event-harness-inset" style="inset: 996px 0% -1079px; z-index: 1;"><a class="fc-timegrid-event fc-v-event fc-event fc-event-draggable fc-event-resizable fc-event-start fc-event-end fc-event-past common-style bg-white"><div class="fc-event-main"><div class="fc-event-main-frame"><div class="fc-task-box fc-sticky"><div class="fc-task-text-box"><span class="fc-task-text">Computer Science</span></div><div class="fc-task-text-box"><span class="fc-task-text">3:50pm | Thu - 13 Nov, 2024</span></div></div></div></div><div class="fc-event-resizer fc-event-resizer-end"></div></a></div><div class="fc-timegrid-event-harness fc-timegrid-event-harness-inset" style="inset: 1328px 0% -1411px; z-index: 1;"><a class="fc-timegrid-event fc-v-event fc-event fc-event-draggable fc-event-resizable fc-event-start fc-event-end fc-event-past common-style bg-white"><div class="fc-event-main"><div class="fc-event-main-frame"><div class="fc-task-box fc-sticky"><div class="fc-task-text-box"><span class="fc-task-text">Software Engineering:</span></div><div class="fc-task-text-box"><span class="fc-task-text">2:21am | Mon - 14 Nov, 2024</span></div></div></div></div><div class="fc-event-resizer fc-event-resizer-end"></div></a></div><div class="fc-timegrid-event-harness fc-timegrid-event-harness-inset" style="inset: 1660px 0% -1743px; z-index: 1;"><a class="fc-timegrid-event fc-v-event fc-event fc-event-draggable fc-event-resizable fc-event-start fc-event-end fc-event-past common-style bg-white"><div class="fc-event-main"><div class="fc-event-main-frame"><div class="fc-task-box fc-sticky"><div class="fc-task-text-box"><span class="fc-task-text">Project Management</span></div><div class="fc-task-text-box"><span class="fc-task-text">9:00am | Tue - 16 Nov, 2024</span></div></div></div></div><div class="fc-event-resizer fc-event-resizer-end"></div></a></div><div class="fc-timegrid-event-harness fc-timegrid-event-harness-inset" style="inset: 1826px 0% -1909px; z-index: 1;"><a class="fc-timegrid-event fc-v-event fc-event fc-event-draggable fc-event-resizable fc-event-start fc-event-end fc-event-past common-style bg-white"><div class="fc-event-main"><div class="fc-event-main-frame"><div class="fc-task-box fc-sticky"><div class="fc-task-text-box"><span class="fc-task-text">Data Science and Big Data</span></div><div class="fc-task-text-box"><span class="fc-task-text">1:00am | Thu - 16 Nov, 2024</span></div></div></div></div><div class="fc-event-resizer fc-event-resizer-end"></div></a></div><div class="fc-timegrid-event-harness fc-timegrid-event-harness-inset" style="inset: 1909px 0% -1991px; z-index: 1;"><a class="fc-timegrid-event fc-v-event fc-event fc-event-draggable fc-event-resizable fc-event-start fc-event-end fc-event-past common-style bg-white"><div class="fc-event-main"><div class="fc-event-main-frame"><div class="fc-task-box fc-sticky"><div class="fc-task-text-box"><span class="fc-task-text">(AI) and Machine Learning</span></div><div class="fc-task-text-box"><span class="fc-task-text">7:55am | Tue - 19 Nov, 2024</span></div></div></div></div><div class="fc-event-resizer fc-event-resizer-end"></div></a></div></div><div class="fc-timegrid-col-events"></div><div class="fc-timegrid-now-indicator-container"></div></div></td><td role="gridcell" class="fc-timegrid-col fc-day fc-day-tue fc-day-past" data-date="2020-09-08"><div class="fc-timegrid-col-frame"><div class="fc-timegrid-col-bg"></div><div class="fc-timegrid-col-events"><div class="fc-timegrid-event-harness fc-timegrid-event-harness-inset" style="inset: 166px 0% -249px; z-index: 1;"><a class="fc-timegrid-event fc-v-event fc-event fc-event-draggable fc-event-resizable fc-event-start fc-event-end fc-event-past common-style bg-white"><div class="fc-event-main"><div class="fc-event-main-frame"><div class="fc-task-box fc-sticky"><div class="fc-task-text-box"><span class="fc-task-text">Digital Marketing</span></div><div class="fc-task-text-box"><span class="fc-task-text">7:30pm | Tue - 8 Nov, 2024</span></div></div></div></div><div class="fc-event-resizer fc-event-resizer-end"></div></a></div><div class="fc-timegrid-event-harness fc-timegrid-event-harness-inset" style="inset: 332px 0% -415px; z-index: 1;"><a class="fc-timegrid-event fc-v-event fc-event fc-event-draggable fc-event-resizable fc-event-start fc-event-end fc-event-past common-style bg-white"><div class="fc-event-main"><div class="fc-event-main-frame"><div class="fc-task-box fc-sticky"><div class="fc-task-text-box"><span class="fc-task-text">NFT App Design</span></div><div class="fc-task-text-box"><span class="fc-task-text">2:20am | Mon - 9 Nov, 2024</span></div></div></div></div><div class="fc-event-resizer fc-event-resizer-end"></div></a></div><div class="fc-timegrid-event-harness fc-timegrid-event-harness-inset" style="inset: 664px 0% -747px; z-index: 1;"><a class="fc-timegrid-event fc-v-event fc-event fc-event-draggable fc-event-resizable fc-event-start fc-event-end fc-event-past common-style bg-white"><div class="fc-event-main"><div class="fc-event-main-frame"><div class="fc-task-box fc-sticky"><div class="fc-task-text-box"><span class="fc-task-text">Cybersecurity</span></div><div class="fc-task-text-box"><span class="fc-task-text">4:00am | Tue - 13 Nov, 2024</span></div></div></div></div><div class="fc-event-resizer fc-event-resizer-end"></div></a></div><div class="fc-timegrid-event-harness fc-timegrid-event-harness-inset" style="inset: 830px 0% -913px; z-index: 1;"><a class="fc-timegrid-event fc-v-event fc-event fc-event-draggable fc-event-resizable fc-event-start fc-event-end fc-event-past common-style bg-white"><div class="fc-event-main"><div class="fc-event-main-frame"><div class="fc-task-box fc-sticky"><div class="fc-task-text-box"><span class="fc-task-text">NFT App Design</span></div><div class="fc-task-text-box"><span class="fc-task-text">2:21am | Mon - 9 Nov, 2024</span></div></div></div></div><div class="fc-event-resizer fc-event-resizer-end"></div></a></div><div class="fc-timegrid-event-harness fc-timegrid-event-harness-inset" style="inset: 1162px 0% -1245px; z-index: 1;"><a class="fc-timegrid-event fc-v-event fc-event fc-event-draggable fc-event-resizable fc-event-start fc-event-end fc-event-past common-style bg-white"><div class="fc-event-main"><div class="fc-event-main-frame"><div class="fc-task-box fc-sticky"><div class="fc-task-text-box"><span class="fc-task-text">Cybersecurity</span></div><div class="fc-task-text-box"><span class="fc-task-text">9:00am | Tue - 13 Nov, 2024</span></div></div></div></div><div class="fc-event-resizer fc-event-resizer-end"></div></a></div><div class="fc-timegrid-event-harness fc-timegrid-event-harness-inset" style="inset: 1743px 0% -1826px; z-index: 1;"><a class="fc-timegrid-event fc-v-event fc-event fc-event-draggable fc-event-resizable fc-event-start fc-event-end fc-event-past common-style bg-white"><div class="fc-event-main"><div class="fc-event-main-frame"><div class="fc-task-box fc-sticky"><div class="fc-task-text-box"><span class="fc-task-text">Mobile App Development</span></div><div class="fc-task-text-box"><span class="fc-task-text">12:20am | Mon - 15 Nov, 2024</span></div></div></div></div><div class="fc-event-resizer fc-event-resizer-end"></div></a></div></div><div class="fc-timegrid-col-events"></div><div class="fc-timegrid-now-indicator-container"></div></div></td><td role="gridcell" class="fc-timegrid-col fc-day fc-day-wed fc-day-past" data-date="2020-09-09"><div class="fc-timegrid-col-frame"><div class="fc-timegrid-col-bg"></div><div class="fc-timegrid-col-events"></div><div class="fc-timegrid-col-events"></div><div class="fc-timegrid-now-indicator-container"></div></div></td><td role="gridcell" class="fc-timegrid-col fc-day fc-day-thu fc-day-past" data-date="2020-09-10"><div class="fc-timegrid-col-frame"><div class="fc-timegrid-col-bg"></div><div class="fc-timegrid-col-events"><div class="fc-timegrid-event-harness fc-timegrid-event-harness-inset" style="inset: 1494px 0% -1577px; z-index: 1;"><a class="fc-timegrid-event fc-v-event fc-event fc-event-draggable fc-event-resizable fc-event-start fc-event-end fc-event-past common-style bg-white"><div class="fc-event-main"><div class="fc-event-main-frame"><div class="fc-task-box fc-sticky"><div class="fc-task-text-box"><span class="fc-task-text">Cloud Computing</span></div><div class="fc-task-text-box"><span class="fc-task-text">3:50pm | Thu - 15 Nov, 2024</span></div></div></div></div><div class="fc-event-resizer fc-event-resizer-end"></div></a></div></div><div class="fc-timegrid-col-events"></div><div class="fc-timegrid-now-indicator-container"></div></div></td><td role="gridcell" class="fc-timegrid-col fc-day fc-day-fri fc-day-past" data-date="2020-09-11"><div class="fc-timegrid-col-frame"><div class="fc-timegrid-col-bg"></div><div class="fc-timegrid-col-events"></div><div class="fc-timegrid-col-events"></div><div class="fc-timegrid-now-indicator-container"></div></div></td><td role="gridcell" class="fc-timegrid-col fc-day fc-day-sat fc-day-past" data-date="2020-09-12"><div class="fc-timegrid-col-frame"><div class="fc-timegrid-col-bg"></div><div class="fc-timegrid-col-events"></div><div class="fc-timegrid-col-events"></div><div class="fc-timegrid-now-indicator-container"></div></div></td></tr></tbody></table></div></div></div></div></td></tr></tbody></table></div></div></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                    {% endif %}
+                </div>
+                <div class="row">
+                  <div class="col-xl-6 col-sm-12">
+                    {% include 'parts/resume_card.html' with label="Montant Total" value=ptba.montant_total %}
+                  </div>
+                <div class="col-xl-6 col-sm-12">
+                    {% include 'parts/resume_card.html' with label="Reste à planifer 2025" value=ptba.reste_a_planifier %}
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xl-4 col-sm-6">
+                    {% include 'parts/resume_card.html' with label="Montant Engagé" value=ptba.montant_engage %}
+                  </div>
+
+                  <div class="col-xl-4 col-sm-6">
+                    {% include 'parts/resume_card.html' with label="Montant Décaissé" value=ptba.somme_drf %}
+                  </div>
+                  <div class="col-xl-4 col-sm-6">
+                    {% include 'parts/resume_card.html' with label="Reste à payer" value=ptba.reste_a_payer %}
+                  </div>
+
+                </div>
+              </div>
+
+
+              <div class="col-xxl-3 d-xxl-block d-none activity-group box-col-none">
+                <div class="card add-project-link">
+                  <div class="categories"> </div>
+                  <div class="categories-content"> <span class="text-truncate col-8 f-12 d-block mb-2">Let’s add work to your space</span></div>
+                </div>
+                  {% if false %}
+                <div class="row">
+                  <div class="col-xl-12">
+                    <div class="card">
+                      <div class="card-header card-no-border total-revenue">
+                        <h4>Activity Log  </h4>
+                        <div class="sales-chart-dropdown-select">
+                          <div class="card-header-right-icon online-store">
+                            <div class="dropdown">
+                              <button class="btn dropdown-toggle dropdown-toggle-store" id="dropdownMenuButtondown" data-bs-toggle="dropdown" aria-expanded="false">Employee  </button>
+                              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButtondown"><a class="dropdown-item" href="#">All  </a><a class="dropdown-item" href="#">Employee</a><a class="dropdown-item" href="#">Client </a></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-body pt-0">
+                        <div class="activity-log-card">
+                          <ul>
+                            <li class="activity-log">
+                              <div class="d-flex align-items-start gap-2"><img class="activity-log-img rounded-circle img-fluid me-2" src="../assets/images/user/26.png" alt="user">
+                                <div>
+                                  <div class="common-space user-id">
+                                    <h6> <a class="f-w-500 f-12" href="user-profile.html">Jenny Wilson</a></h6><span class="f-light f-w-500 f-12">Today 10:45 AM</span>
+                                  </div>
+                                  <div class="d-flex mb-2"><span class="f-light f-w-500 f-12">Commented on : </span><a class="f-w-500 f-12" href="blog.html"> NFT App</a></div><span class="f-light f-w-500 f-12 d-block">This smithe design looks great!! but this page as i mention belove.</span><a class="f-12 f-w-500 username" href="user-profile.html"></a>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="activity-log">
+                              <div class="d-flex align-items-start gap-2"><img class="activity-log-img rounded-circle img-fluid me-2" src="../assets/images/user/34.png" alt="user">
+                                <div>
+                                  <div class="common-space user-id">
+                                    <h6> <a class="f-w-500 f-12" href="user-profile.html">Darlene Robertson</a></h6><span class="f-light f-w-500 f-12">Today 10:43 AM</span>
+                                  </div>
+                                  <div class="d-flex mb-2"><span class="f-light f-w-500 f-12">Shared File to : </span><a class="f-w-500 f-12" href="blog.html">Barkha</a></div><span class="f-light f-w-500 f-12 d-block">Food Delivery App figma &amp; Ai file shared to a .zip file to make it easier to send.</span><a class="f-12 f-w-500 username" href="user-profile.html"></a>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="activity-log">
+                              <div class="d-flex align-items-start gap-2"><img class="activity-log-img rounded-circle img-fluid me-2" src="../assets/images/user/35.png" alt="user">
+                                <div>
+                                  <div class="common-space user-id">
+                                    <h6> <a class="f-w-500 f-12" href="user-profile.html">Seema Joshi</a></h6><span class="f-light f-w-500 f-12">Today 10:42 AM</span>
+                                  </div>
+                                  <div class="d-flex mb-2"><span class="f-light f-w-500 f-12">Meeting : </span><a class="f-w-500 f-12" href="blog.html">Eva Website</a></div><span class="f-light f-w-500 f-12 d-block">You can send the AI file as attachment service and share a download link.</span><a class="f-12 f-w-500 username" href="user-profile.html">@barkha_singh</a>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="activity-log">
+                              <div class="d-flex align-items-start gap-2"><img class="activity-log-img rounded-circle img-fluid me-2" src="../assets/images/user/44.png" alt="user">
+                                <div>
+                                  <div class="common-space user-id">
+                                    <h6> <a class="f-w-500 f-12" href="user-profile.html">Elara Winter</a></h6><span class="f-light f-w-500 f-12">Today 06:45 AM</span>
+                                  </div>
+                                  <div class="d-flex mb-2"><span class="f-light f-w-500 f-12">Meeting : </span><a class="f-w-500 f-12" href="blog.html">Eva Website</a></div><span class="f-light f-w-500 f-12 d-block">Metting about next page design of eva website.</span><a class="f-12 f-w-500 username" href="user-profile.html"></a>
+                                </div>
+                              </div>
+                            </li>
+                            <li class="activity-log">
+                              <div class="d-flex align-items-start gap-2"><img class="activity-log-img rounded-circle img-fluid me-2" src="../assets/images/user/38.png" alt="user">
+                                <div>
+                                  <div class="common-space user-id">
+                                    <h6> <a class="f-w-500 f-12" href="user-profile.html">Arya Shwanno</a></h6><span class="f-light f-w-500 f-12">Today 05:51 AM</span>
+                                  </div>
+                                  <div class="d-flex mb-2"><span class="f-light f-w-500 f-12">Add new screen :</span><a class="f-w-500 f-12" href="blog.html">Pet App</a></div><span class="f-light f-w-500 f-12 d-block">Make sure your AI file is  cloud storage like Google Drive or Dropbox.</span><a class="f-12 f-w-500 username" href="user-profile.html"></a>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-12 col-md-6">
+                    <div class="card">
+                      <div class="card-header card-no-border total-revenue card-title-underline">
+                        <h4>Message</h4><a href="product.html">+ New Message </a>
+                      </div>
+                      <div class="card-body pt-0">
+                        <div class="user-message">
+                          <ul>
+                            <li>
+                              <div class="activity-log"><img class="activity-log-img rounded-circle img-fluid me-2" src="../assets/images/user/39.png" alt="user">
+                                <div class="status bg-warning"></div>
+                                <div class="activity-name">
+                                  <div>
+                                    <h6> <a class="f-w-500 f-14" href="user-profile.html">Maren Ross</a></h6><span class="f-light f-w-500 f-12 ">Hey, What’s today update ?</span>
+                                  </div>
+                                  <div class="product-sub">
+                                    <div class="dropdown">
+                                      <div id="dropdownMenuButtonicon21" data-bs-toggle="dropdown" aria-expanded="false" role="menu">
+                                        <svg class="invoice-icon">
+                                          <use href="../assets/svg/icon-sprite.svg#more-vertical"></use>
+                                        </svg>
+                                      </div>
+                                      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButtonicon21"><span class="dropdown-item">Last Month</span><span class="dropdown-item">Last Week</span><span class="dropdown-item">Last Day  </span></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="activity-log"><img class="activity-log-img rounded-circle img-fluid me-2" src="../assets/images/user/40.png" alt="user">
+                                <div class="status bg-undefined"></div>
+                                <div class="activity-name">
+                                  <div>
+                                    <h6> <a class="f-w-500 f-14" href="user-profile.html">Brooklyn Simmons</a></h6><span class="f-light f-w-500 f-12 ">I know it will work.</span>
+                                  </div>
+                                  <div class="product-sub">
+                                    <div class="dropdown">
+                                      <div id="dropdownMenuButtonicon22" data-bs-toggle="dropdown" aria-expanded="false" role="menu">
+                                        <svg class="invoice-icon">
+                                          <use href="../assets/svg/icon-sprite.svg#more-vertical"></use>
+                                        </svg>
+                                      </div>
+                                      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButtonicon22"><span class="dropdown-item">Last Month</span><span class="dropdown-item">Last Week</span><span class="dropdown-item">Last Day  </span></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="activity-log"><img class="activity-log-img rounded-circle img-fluid me-2" src="../assets/images/user/41.png" alt="user">
+                                <div class="status bg-warning"></div>
+                                <div class="activity-name">
+                                  <div>
+                                    <h6> <a class="f-w-500 f-14" href="user-profile.html">Floyd Miles</a></h6><span class="f-light f-w-500 f-12 ">Sir, Can remove part in des...</span>
+                                  </div>
+                                  <div class="product-sub">
+                                    <div class="dropdown">
+                                      <div id="dropdownMenuButtonicon23" data-bs-toggle="dropdown" aria-expanded="false" role="menu">
+                                        <svg class="invoice-icon">
+                                          <use href="../assets/svg/icon-sprite.svg#more-vertical"></use>
+                                        </svg>
+                                      </div>
+                                      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButtonicon23"><span class="dropdown-item">Last Month</span><span class="dropdown-item">Last Week</span><span class="dropdown-item">Last Day  </span></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="activity-log"><img class="activity-log-img rounded-circle img-fluid me-2" src="../assets/images/user/42.png" alt="user">
+                                <div class="status bg-undefined"></div>
+                                <div class="activity-name">
+                                  <div>
+                                    <h6> <a class="f-w-500 f-14" href="user-profile.html">Dianne Russell</a></h6><span class="f-light f-w-500 f-12 ">So, what is my next work ?</span>
+                                  </div>
+                                  <div class="product-sub">
+                                    <div class="dropdown">
+                                      <div id="dropdownMenuButtonicon24" data-bs-toggle="dropdown" aria-expanded="false" role="menu">
+                                        <svg class="invoice-icon">
+                                          <use href="../assets/svg/icon-sprite.svg#more-vertical"></use>
+                                        </svg>
+                                      </div>
+                                      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButtonicon24"><span class="dropdown-item">Last Month</span><span class="dropdown-item">Last Week</span><span class="dropdown-item">Last Day  </span></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="activity-log"><img class="activity-log-img rounded-circle img-fluid me-2" src="../assets/images/user/43.png" alt="user">
+                                <div class="status bg-warning"></div>
+                                <div class="activity-name">
+                                  <div>
+                                    <h6> <a class="f-w-500 f-14" href="user-profile.html">Darlene Robertson</a></h6><span class="f-light f-w-500 f-12 ">Can we add that here ?</span>
+                                  </div>
+                                  <div class="product-sub">
+                                    <div class="dropdown">
+                                      <div id="dropdownMenuButtonicon25" data-bs-toggle="dropdown" aria-expanded="false" role="menu">
+                                        <svg class="invoice-icon">
+                                          <use href="../assets/svg/icon-sprite.svg#more-vertical"></use>
+                                        </svg>
+                                      </div>
+                                      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButtonicon25"><span class="dropdown-item">Last Month</span><span class="dropdown-item">Last Week</span><span class="dropdown-item">Last Day  </span></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="activity-log"><img class="activity-log-img rounded-circle img-fluid me-2" src="../assets/images/user/44.png" alt="user">
+                                <div class="status bg-undefined"></div>
+                                <div class="activity-name">
+                                  <div>
+                                    <h6> <a class="f-w-500 f-14" href="user-profile.html">Jenny Wilson</a></h6><span class="f-light f-w-500 f-12 ">Hey, What’s today update ?</span>
+                                  </div>
+                                  <div class="product-sub">
+                                    <div class="dropdown">
+                                      <div id="dropdownMenuButtonicon26" data-bs-toggle="dropdown" aria-expanded="false" role="menu">
+                                        <svg class="invoice-icon">
+                                          <use href="../assets/svg/icon-sprite.svg#more-vertical"></use>
+                                        </svg>
+                                      </div>
+                                      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButtonicon26"><span class="dropdown-item">Last Month</span><span class="dropdown-item">Last Week</span><span class="dropdown-item">Last Day  </span></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="activity-log"><img class="activity-log-img rounded-circle img-fluid me-2" src="../assets/images/user/45.png" alt="user">
+                                <div class="status bg-warning"></div>
+                                <div class="activity-name">
+                                  <div>
+                                    <h6> <a class="f-w-500 f-14" href="user-profile.html">Ralph Edwards</a></h6><span class="f-light f-w-500 f-12 ">ok, send it.</span>
+                                  </div>
+                                  <div class="product-sub">
+                                    <div class="dropdown">
+                                      <div id="dropdownMenuButtonicon28" data-bs-toggle="dropdown" aria-expanded="false" role="menu">
+                                        <svg class="invoice-icon">
+                                          <use href="../assets/svg/icon-sprite.svg#more-vertical"></use>
+                                        </svg>
+                                      </div>
+                                      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButtonicon28"><span class="dropdown-item">Last Month</span><span class="dropdown-item">Last Week</span><span class="dropdown-item">Last Day  </span></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="activity-log"><img class="activity-log-img rounded-circle img-fluid me-2" src="../assets/images/user/15.png" alt="user">
+                                <div class="status bg-warning"></div>
+                                <div class="activity-name">
+                                  <div>
+                                    <h6> <a class="f-w-500 f-14" href="user-profile.html">Ronald Richards</a></h6><span class="f-light f-w-500 f-12 ">Thank you !!!</span>
+                                  </div>
+                                  <div class="product-sub">
+                                    <div class="dropdown">
+                                      <div id="dropdownMenuButtonicon29" data-bs-toggle="dropdown" aria-expanded="false" role="menu">
+                                        <svg class="invoice-icon">
+                                          <use href="../assets/svg/icon-sprite.svg#more-vertical"></use>
+                                        </svg>
+                                      </div>
+                                      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButtonicon29"><span class="dropdown-item">Last Month</span><span class="dropdown-item">Last Week</span><span class="dropdown-item">Last Day  </span></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="activity-log"><img class="activity-log-img rounded-circle img-fluid me-2" src="../assets/images/user/47.png" alt="user">
+                                <div class="status bg-undefined"></div>
+                                <div class="activity-name">
+                                  <div>
+                                    <h6> <a class="f-w-500 f-14" href="user-profile.html">Courtney Henry</a></h6><span class="f-light f-w-500 f-12 ">No, you’ve to do one more variant.</span>
+                                  </div>
+                                  <div class="product-sub">
+                                    <div class="dropdown">
+                                      <div id="dropdownMenuButtonicon30" data-bs-toggle="dropdown" aria-expanded="false" role="menu">
+                                        <svg class="invoice-icon">
+                                          <use href="../assets/svg/icon-sprite.svg#more-vertical"></use>
+                                        </svg>
+                                      </div>
+                                      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButtonicon30"><span class="dropdown-item">Last Month</span><span class="dropdown-item">Last Week</span><span class="dropdown-item">Last Day  </span></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-12 col-md-6">
+                    <div class="card overflow-hidden">
+                      <div class="card-body pt-0 project-ideas-card">
+                        <div class="project-card">
+                          <div><span class="f-22 f-w-500 text-center">Get more ideas for your important project</span>
+                            <div class="btn-showcase text-center"> <a href="pricing.html">
+                                <button class="btn btn-pill btn-outline-primary-2x b-r-8 active">Upgrade Now</button></a></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                  {% endif %}
+              </div>
+
+            </div>
+          </div>
+          <!-- Container-fluid Ends-->
+            {% endif %}
+        </div>
+{% endblock %}

@@ -1,0 +1,57 @@
+<td style="width: 25px">
+    <button class="btn btn-primary btn-xs dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></button>
+    <div class="dropdown-menu bg-primary" style="">
+
+        <a class="dropdown-item " href="{% url 'suivi:update_tache' pk=tache.pk %}" ><b>Modifier</b></a>
+
+
+        <a class="dropdown-item " href="{% url 'suivi:add-decaissement-projet' pk=tache.pk %}" ><b>Decaissements</b></a>
+        <div class="modal fade" id="update-decaissement-modal-{{ tache.pk }}">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <form action="">
+                            <div class="form-group mb-3">
+                                <label for="">Montant engagé</label>
+                                <input type="text" value="{{ tache.montant_engage }}" name="montant_engage" class="form-control">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dropdown-divider"></div><a class="dropdown-item" href="{% url 'plan:tache_detail' id=tache.pk %}">Details</a>
+        <button class="dropdown-item " data-bs-toggle="modal" data-bs-target="add-tdr-{{ tache.pk }}%}" ><b>Ajouter TDR</b></button>
+        <div class="modal  fade" id="add-tdr-{{ tache.pk }}">
+        <div class="modal-dialog bg-white ">
+            <div class=" bg-white modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Ajouter un TDR à cette activité</h5>
+                </div>
+                <div class="modal-body text-black">
+                    <form action="{% url 'suivi:create_tdr' %}" method="post"
+                          enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="hidden" name="activity_id" value="{{ object.id }}">
+                        <div class="form-group mb-3">
+                            <label for="">Titre</label>
+                            <input type="text" name="label"
+                                   class="form-control">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="">Fichier</label>
+                            <input type="file" name="file" id=""
+                                   class="form-control">
+                        </div>
+                        <div class="text-right mt-3">
+                            <button class="btn btn-sm btn-primary">Enregistrer
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</td>

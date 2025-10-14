@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div class="page-body">
+        <div class="container-fluid">
+            <div class="page-title">
+                <div class="row">
+                    <div class="col-6">
+                        <h4>Liste des activités</h4>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Container-fluid starts-->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive table">
+                            <table class="table">
+                                <tr>
+                                    <th>Indicateur</th>
+                                    <th>Activité</th>
+                                    <th>Suivi UGP</th>
+                                    <th></th>
+                                </tr>
+                                {% for object in object_list %}
+                                    <tr>
+                                        <td>{{ object.indicateur.label }}</td>
+                                        <td style="width: 500px">{{ object.label }}</td>
+                                        <td>{{ object.ugp }}</td>
+                                        <td>
+
+
+                                                <div class="d-flex">
+                                                    <a href="{% url 'suivi:update-tdr-state' pk=object.tdr.id %}?state=40&next={% url 'suivi:tdr_coordination' %}" class="btn btn-xs btn-success"><span class="fa fa-check"></span>Soumettre</a>
+                                                    <a href="{% url 'suivi:delete_tdr' pk=object.tdr.id %}" class="btn btn-xs btn-outline btn-danger"> <span class="fa fa-times"></span>Annuler</a>
+                                                    <button class="btn btn-xs btn-primary" data-bs-toggle="modal"
+                                                    data-bs-target="#add-tdr-{{ object.pk }}"> <span class="fa fa-file-upload"></span> joindre
+                                                    </button>
+
+                                                    <div class="modal  fade" id="add-tdr-{{ object.pk }}">
+                                                        <div class="modal-dialog bg-white ">
+                                                            <div class=" bg-white modal-content">
+                                                                <div class="modal-header">
+                                                                </div>
+                                                                <div class="modal-body text-black">
+                                                                    <form action="{% url 'suivi:create_tdr' %}" method="post"
+                                                                          enctype="multipart/form-data">
+                                                                        {% csrf_token %}
+                                                                        <input type="hidden" name="activity_id" value="{{ object.id }}">
+                                                                        <div class="form-group mb-3">
+                                                                            <label for="">Titre</label>
+                                                                            <textarea type="text" name="comment"
+                                                                                      class="form-control"></textarea>
+                                                                        </div>
+                                                                        <div class="form-group mb-3">
+                                                                            <label for="">Fichier</label>
+                                                                            <input type="file" name="file" id=""
+                                                                                   class="form-control">
+                                                                        </div>
+                                                                        <div class="text-right mt-3">
+                                                                            <button class="btn btn-sm btn-primary">Enregistrer
+                                                                            </button>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <a href="{% url 'suivi:tdr_download' pk=object.tdr.id %}" class="btn btn-xs btn-outline btn-primary"> <span class="fa fa-file-download"></span>Télécharger</a>
+                                                    <a href="" class="btn btn-xs btn-outline btn-primary"> <span class="fa fa-envelope"></span>Envoyer par mail</a>
+                                                </div>
+
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Container-fluid Ends-->
+    </div>
+{% endblock %}

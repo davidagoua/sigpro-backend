@@ -1,0 +1,43 @@
+<div x-data="{
+                tdr_stats: [],
+                tdr_stats_programme: [],
+              }" x-init="tdr_stats = await (await fetch('{%  url 'suivi:get_tdr_stats' %}')).json(); tdr_stats_programme = await (await fetch('{%  url 'programme:stats-programme' %}')).json();" class="sidebar-links" id="simple-bar">
+    <div class="card">
+        <div class="card-header bg-info text-center text-white white-text white">
+            <h5 class="text-white">TDR du PTBA Projet</h5>
+        </div>
+        <div class="card-body row">
+            <div class="col-md-4 text-center">
+                <h3 x-text="tdr_stats['pointFocal'] ?? 0"></h3>
+                <span>A valider</span>
+            </div>
+            <div class="col-md-4 text-center">
+                <h3 x-text="tdr_stats[10] ?? 0">0</h3>
+                <span>En cours</span>
+            </div>
+            <div class="col-md-4 text-center">
+                <h3 x-text="tdr_stats[20] ?? 0">0</h3>
+                <span>Terminé</span>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header bg-warning text-center text-white white-text white">
+            <h5 class="text-white">TDR du PTBA Programme</h5>
+        </div>
+        <div class="card-body row">
+            <div class="col-md-4 text-center">
+                <h3 x-text="">0</h3>
+                <span>A valider</span>
+            </div>
+            <div class="col-md-4 text-center">
+                <h3 x-text="">0</h3>
+                <span>En cours</span>
+            </div>
+            <div class="col-md-4 text-center">
+                <h3 >0</h3>
+                <span>Terminé</span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="page-body">
+
+  <!-- Container-fluid starts-->
+  <div class="container-fluid" x-data="{is_panne: false}">
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <h2>{{ title }}</h2>
+                <form method="post" action="{% url 'setting:emprunt_add' %}">
+                    {% csrf_token %}
+
+                    {% for error in form.non_field_errors%}
+                    <span>{{error}}</span>
+                    {% endfor%}
+                    
+
+                   <fieldset class="mt-5">
+                      <h4 class="text-muted mb-4">Formulaire Sortie</h4>
+                       <div class="row">
+                          <div class="mb-3 col">
+                              {{ form.vehicule.label_tag }}
+                              {{ form.vehicule }}
+                              <span>{{form.vehicule.error}}</span>
+                          </div>
+                           {% if is_update == True %}
+                           <div class="mb-3 col">
+                               {{ form.date_sortie.label_tag }}
+                           <input type="text" class="form-control" disabled value="{{  form.instance.date_sortie}}">
+                               </div>
+                           {% else %}
+                          <div class="mb-3 col">
+                              {{ form.date_sortie.label_tag }}
+                              {{ form.date_sortie }}
+                              <span>{{form.date_sortie.error}}</span>
+                          </div>
+                           {% endif %}
+                          <div class="mb-3 col">
+                              {{ form.km_out.label_tag }}
+                              {{ form.km_out}}
+                              <span>{{form.km_out.error}}</span>
+                          </div>
+                      </div>
+                        <div class="row">
+                          <div class="mb-3 col">
+                          <label for="">Nom & Prénoms Reponsable</label>
+                              {{ form.nom_prenom }}
+                              <span>{{form.prenom.error}}</span>
+                          </div>
+                          <div class="mb-3 col">
+                              {{ form.nom_chauffeur.label_tag }}
+                              {{ form.nom_chauffeur }}
+                              <span>{{form.nom_chauffeur.error}}</span>
+                          </div>
+                            <div class="mb-3 col">
+                                <label for="id_type_sortie">Type sortie&nbsp;:</label>
+                              <select x-model="type_sortie" name="type_sortie" required="" id="id_type_sortie" class="form-control">
+                                  <option value="" selected="">---------</option>
+                                  <option value="mission">Mission</option>
+                                  <option value="course">Course</option>
+                                  <option value="deplacement">Deplacement</option>
+
+                                </select>
+                              <span></span>
+                            </div>
+                      </div>
+                        <div class="row">
+                            <div class="mb-3">
+                              {{ form.destination.label_tag }}
+                              {{ form.destination }}
+                               <span>{{form.destination.error}}</span>
+                          </div>
+                        </div>
+                       <div class="mb-3">
+                          {{ form.mission.label_tag }}
+                          {{ form.mission }}
+                           <span>{{form.mission.error}}</span>
+                      </div>
+                    </fieldset>
+
+                    <fieldset class="mt-5">
+                        <h4 class="text-muted mb-4">Formulaire Retour</h4>
+                        <div class="">
+
+                          <div class="row ">
+                                <div class="mb-3 col">
+                                    {{ form.date_retour.label_tag }}
+                                    {{ form.date_retour }}
+                                    <span>{{form.date_retour.error}}</span>
+                                </div>
+
+                              <div class="mb-3 col">
+                                  {{ form.km_in.label_tag }}
+                                  {{ form.km_in}}
+                                  <span>{{form.km_in.error}}</span>
+                              </div>
+                            </div>
+
+
+                        <div class="">
+                            <div class="mb-3 col">
+                                <span>En panne</span>
+                                    <input x-model="is_panne" type="checkbox" name="is_panne" id="id_is_panne">
+                                </div>
+                            <br>
+                                <div x-show="is_panne" class="mb-3 col">
+                                    {{ form.type_panne.label_tag }}
+                                    {{ form.type_panne }}
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                   
+                    
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                    <a href="{% url 'setting:emprunt_list' %}" class="btn btn-secondary">Annuler</a>
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- Container-fluid Ends-->
+</div>
+<script>
+    document.getElementById("id_date_sortie").value = form.date_sortie;
+</script>
+
+
+
+{% endblock %}

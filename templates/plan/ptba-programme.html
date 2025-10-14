@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="page-body">
+          <div class="container-fluid">
+            <div class="page-title">
+              <div class="row">
+                <div class="col-6">
+                  <h4>Planification PTBA Programme</h4>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <!-- Container-fluid starts-->
+          <div class="container-fluid">
+            <div class="row">
+                <div class="">
+                    <div class="">
+                        <div class="row">
+                            
+                            <div class="col-xxl-3 col-xl-4 box-col-12">
+                              <div class="md-sidebar"> <a class="btn btn-primary md-sidebar-toggle" href="javascript:void(0)">email filter</a>
+                                <div class="md-sidebar-aside job-left-aside custom-scrollbar">
+                                  <div class="email-left-aside">
+                                    <div class="card">
+                                      <div class="card-body">
+                                        <div class="email-app-sidebar">
+                                          <ul class="nav nav-pills main-menu email-category" id="email-pills-tab" role="tablist">
+                                            {% for sousdomaine in sousdomaines %}
+                                            <li class="nav-item" role="presentation" id="home-tab-{{ sousdomaine.pk }}"><a class="nav-link" id="support-pill-tab" data-bs-toggle="pill" href="#support-pill" role="tab" aria-controls="support-pill" aria-selected="false" tabindex="-1">
+                                                <svg class="stroke-icon stroke-success">
+                                                  <use href="../assets/svg/icon-sprite.svg#pintag"></use>
+                                                </svg>{{ sousdomaine.label }}</a>
+                                              </li>
+                                                {% endfor %}
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div >
+                                    {% for sousdomaine in sousdomaines %}
+                                  <div class="col tab-content">
+                                    <div  id="tab-{{ sousdomaine.pk }}" role="tabpanel" aria-labelledby="home-tab-{{ sousdomaine.pk }}">
+                                      <table class="table  table-bordered table-hover table-sm">
+                                      <tr>
+                                          <th>Domaine</th>
+                                          <th>Libellé</th>
+                                          <th>Structure</th>
+                                          <th>Ville</th>
+                                          <th>ILD en lien</th>
+                                      </tr>
+  
+                                      {% for composant in composants %}
+                                        <tr style="background-color: #414242; color: white;" class="text-white">
+                                              <td class="text-white">{{ composant.label }}</td>
+                                              <td colspan="5" class="text-white">{{ composant.description }}</td>
+                                          </tr>
+                                          {% for scp in composant.action_set.all %}
+                                            <tr style="background-color: #afd097;">
+                                                  <td>{{ scp.label }}</td>
+                                                  <td colspan="5">{{ scp.description }}</td>
+                                              </tr>
+                                              {% for activite in scp.activite_set.all %}
+                                                <tr style="background-color: {% if activite.is_sous %} #c7842d {% else %}rebeccapurple {% endif %}; color: white;">
+                                                      <td class="text-white"
+                                                      >{{ activite.label }} </td>
+                                                      <td class="text-white"
+                                                      >{{ activite.description }}</td>
+                                                      <td class="text-white"
+                                                      >{{ activite.responsable|default_if_none:'' }}</td>
+                                                      <td class="text-white"
+                                                      >{{ activite.localisation|default_if_none:'' }}</td>
+                                                      <td class="text-white">{{ activite.indicateur.label }}</td>
+                                                  </tr>
+                                                  
+  
+                                              {% endfor %}
+  
+                                          {% endfor %}
+  
+                                      {% endfor %}
+  
+                                  </table>
+                                    </div>
+                                  </div>
+                                {% endfor %}
+                                </div>
+                            <div class="table-responsive">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <!-- Container-fluid Ends-->
+        </div>
+{% endblock %}

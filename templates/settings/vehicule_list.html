@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="page-body">
+
+  <!-- Container-fluid starts-->
+  <div class="container-fluid">
+    <div class="row">
+        <div class="card">
+    <div class="card-body">
+        <div class="d-flex justify-content-between">
+            <h2>Liste des véhicules</h2>
+            <a href="{% url 'setting:vehicule_add' %}" class="btn btn-primary">Ajouter un véhicule</a>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Marque</th>
+                    <th>Modèle</th>
+                    <th>Année</th>
+                    <th>Immatriculation</th>
+                    <th>Disponible</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for vehicule in vehicules %}
+                <tr>
+                    <td>{{ vehicule.marque }}</td>
+                    <td>{{ vehicule.model }}</td>
+                    <td>{{ vehicule.annee }}</td>
+                    <td>{{ vehicule.immatriculation }}</td>
+                    <td>
+                        {% if vehicule.status == 'disponible' %}
+                        <span class="badge badge-success">Oui</span>
+                        {% else%}
+                        <span class="badge badge-grey">Nom</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a href="{% url 'setting:vehicule_edit' vehicule.pk %}" class="btn btn-sm btn-primary">Modifier</a>
+                        <a href="{% url 'setting:vehicule_details' vehicule.pk %}" class="btn btn-sm btn-info">Details</a>
+                        <a href="{% url 'setting:delete_vehicule' vehicule.pk %}?next={{request.path}}" onclick="return confirm('Etes-vous certains de vouloir executer cette action ?')" class="btn btn-sm btn-link">
+                            <span class="fa text-danger fa-trash"></span>
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+    </div>
+  </div>
+  <!-- Container-fluid Ends-->
+</div>
+
+{% endblock %}

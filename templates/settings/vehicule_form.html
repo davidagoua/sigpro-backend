@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="page-body">
+  <!-- Container-fluid starts-->
+  <div class="container-fluid">
+    <div class="row">
+        <div class="card">
+    <div class="card-body">
+        <h2>{{ title }}</h2>
+
+        <form method="post" action="{% url 'setting:vehicule_add' %}" class="mt-4">
+            {% csrf_token %}
+            <div class="row">
+                <div class="mb-3 col">
+                    {{ form.marque.label_tag }}
+                    {{ form.marque }}
+                    <span class="text-sm text-danger">{{form.marque.errors}}</span>
+                </div>
+               <div class="mb-3 col">
+                    {{ form.model.label_tag }}
+                    {{ form.model }}
+                    <span class="text-sm text-danger">{{form.model.errors}}</span>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="mb-3 col">
+                    {{ form.annee.label_tag }}
+                    {{ form.annee }}
+                    <span class="text-sm text-danger">{{form.annee.errors}}</span>
+                </div>
+                 <div class="mb-3 col">
+                    {{ form.immatriculation.label_tag }}
+                    {{ form.immatriculation }}
+                    <span class="text-sm text-danger">{{form.immatriculation.errors}}</span>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                {{ form.numero_chassis.label_tag }}
+                {{ form.numero_chassis }}
+                <span class="text-sm text-danger">{{form.numero_chassis.errors}}</span>
+            </div>
+            <div class="mb-3">
+                {{ form.entretients.label_tag }}
+                <select name="entretients" class="form-control" multiple id="entretients">
+                    <option value="Vidange d’huile">Vidange d’huile</option>
+                    <option value="Lubrification du châssis">Lubrification du châssis</option>
+                    <option value="Changement du filtre à huile">Changement du filtre à huile</option>
+                    <option value="Changement du filtre à air">Changement du filtre à air</option>
+                    <option value="Vidange du liquide de transmission">Vidange du liquide de transmission</option>
+                    <option value="Rinçage du système de refroidissement">Rinçage du système de refroidissement</option>
+                    <option value="Alignement des roues">Alignement des roues</option>
+                    <option value="Remplacement des pneumatiques">Remplacement des pneumatiques</option>
+                    <option value="Réglage des freins">Réglage des freins</option>
+                    <option value="Réglage moteur">Réglage moteur</option>
+                    <option value="Autre service">Autre service</option>
+                </select>
+                <span class="text-sm text-danger">{{form.entretients.errors}}</span>
+            </div>
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+            <a href="{% url 'setting:vehicule_list' %}" class="btn btn-secondary">Annuler</a>
+        </form>
+    </div>
+</div>
+    </div>
+  </div>
+  <!-- Container-fluid Ends-->
+</div>
+
+{% endblock %}
+
+
+Vidange d’huile
+Lubrification du châssis
+Changement du filtre à huile
+Changement du filtre à air
+Vidange du liquide de transmission
+Rinçage du système de refroidissement
+Alignement des roues
+Remplacement des pneumatiques
+Réglage des freins
+Réglage moteur 
+Autre service

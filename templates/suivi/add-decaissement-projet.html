@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="page-body">
+  <div class="container-fluid">
+    <div class="page-title">
+      <div class="row">
+        <div class="col-6">
+          <h4>Ajouter un décaissement</h4>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- Container-fluid starts-->
+  <div class="container-fluid">
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+
+                    <div class="col-xxl-3  ">
+                            <div class="revenuegrowth-details">
+                              <div class="growth-details"><span class="f-light f-12  text-uppercase">Montant Engagé</span>
+                                <h4 class="f-w-500 mb-2">{{ object.montant_engage }} CFA</h4>
+                                <div class="d-flex justify-content-center align-items-center gap-2 mb-4">
+                                </div>
+                              </div>
+                              <div class="growth-details"><span class="f-light f-12  text-uppercase">Total DRF </span>
+                                <h4 class="f-w-500 mb-2">{{ object.total_decaissement }}  CFA</h4>
+                                <div class="d-flex justify-content-center align-items-center gap-2 mb-4">
+                                </div>
+                              </div>
+                              <div class="growth-details"> <span class="f-light f-12  text-uppercase">Reste à payer</span>
+                                <h4 class="f-w-500 mb-2">{{ object.reste_paye }} CFA</h4>
+                                <div class="d-flex justify-content-center align-items-center gap-2">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    <div class="col-lg-6">
+                        <div>
+                            <h4>Liste des décaissements ({{ object.decaissement_set.count }})</h4>
+                        </div>
+                        <table class="table">
+                            <tr>
+                                <th>Date</th>
+                                <th>Date</th>
+                                <th>Montant</th>
+                                <th>Utilisateur</th>
+                                <th></th>
+                            </tr>
+                            {% for decaissement in object.decaissement_set.all %}
+                            	<tr>
+                                    <td>{{ decaissement.drf.label  }}</td>
+                                    <td>{{ decaissement.created_at }}</td>
+                                    <td>{{ decaissement.montant }}</td>
+                                    <td>{{ decaissement.user.username }}</td>
+                                    <td>
+                                        <a href="{% url 'suivi:delete-decaissement' pk=decaissement.pk %}" onclick="return confirm('Etes-vous sûr de vouloir executer cette action ?')" class="btn btn-xs btn-danger">
+                                            <span class="fa fa-trash"></span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+
+                        </table>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="mb-5">
+
+                        </div>
+                        <form action="{% url 'suivi:add-decaissement-projet' pk=object.pk %}" method="post">
+                            {% csrf_token %}
+
+                            {% if messages %}
+                            <ul class="messages mb-3">
+                                {% for message in messages %}
+                                <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                            <div class="mb-3">
+                                <label for="">DRF</label>
+                                <select name="drf" id="drf">
+                                    {% for drf in drfs%}
+                                    <option value="drf.id">{{ drf.label }}</option>
+                                    {% drf %}
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="">Montant Engagé</label>
+                                <input type="text" class="form-control" name="montant_engage" value="{{ object.montant_engage }}">
+                            </div>
+                            <hr>
+                            <div class="mb-3">
+                                <label for="">Paiement</label>
+                                <input type="text" name="paiement" value="0" class="form-control" >
+                            </div>
+
+                            <p class="text-right">
+                                <button class="btn btn-primary">Enregistrer</button>
+                            </p>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- Container-fluid Ends-->
+</div>
+{% endblock %}

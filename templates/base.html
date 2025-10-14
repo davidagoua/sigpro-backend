@@ -1,0 +1,202 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Logiciel de suivi & Evaluation du PRSEP">
+    <meta name="keywords" content="">
+    <meta name="author" content="pixelstrap">
+    <link rel="icon" href="{% static '/assets/images/favicon.png' %}" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static '/assets/images/favicon.png' %}" type="image/x-icon">
+    <title>PRSEP - SIGPRO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static '/assets/css/font-awesome.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/assets/css/vendors/icofont.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/assets/css/vendors/themify.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/assets/css/vendors/flag-icon.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/assets/css/vendors/feather-icon.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/assets/css/vendors/slick.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/assets/css/vendors/slick-theme.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/assets/css/vendors/scrollbar.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/assets/css/vendors/animate.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/assets/css/vendors/select2.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/assets/css/vendors/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/assets/css/style.css' %}">
+    <link id="color" rel="stylesheet" href="{% static '/assets/css/color-1.css' %}" media="screen">
+    <link rel="stylesheet" type="text/css" href="{% static '/assets/css/responsive.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="//unpkg.com/alpinejs" defer></script>
+      {% block styles %}
+      	
+      {% endblock %}
+  </head>
+  <body>
+    <!-- loader starts-->
+    <div class="loader-wrapper">
+      <div class="loader">
+        <div class="loader4"></div>
+      </div>
+    </div>
+    <!-- loader ends-->
+    <!-- tap on top starts-->
+    <div class="tap-top"><i data-feather="chevrons-up"></i></div>
+    <!-- tap on tap ends-->
+    <!-- page-wrapper Start-->
+    <div class="page-wrapper compact-wrapper" id="pageWrapper">
+      <!-- Page Header Start-->
+      {% include 'parts/header.html' %}
+      <!-- Page Header Ends                              -->
+      <!-- Page Body Start -->
+      <div class="page-body-wrapper"/>
+        <!-- Page Sidebar Start-->
+        {% include 'parts/sidebar.html' %}
+        <!-- Page Sidebar Ends-->
+        {% block content %}
+
+        {% endblock %}
+    </div>
+    <!-- latest jquery-->
+    <script src="{% static '/assets/js/jquery.min.js' %}"></script>
+    <script src="{% static '/assets/js/bootstrap/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static '/assets/js/icons/feather-icon/feather.min.js' %}"></script>
+    <script src="{% static '/assets/js/icons/feather-icon/feather-icon.js' %}"></script>
+    <script src="{% static '/assets/js/scrollbar/simplebar.js' %}"></script>
+    <script src="{% static '/assets/js/scrollbar/custom.js' %}"></script>
+    <script src="{% static '/assets/js/config.js' %}"></script>
+    <script src="{% static '/assets/js/sidebar-menu.js' %}"></script>
+    <script src="{% static '/assets/js/sidebar-pin.js' %}"></script>
+    <script src="{% static '/assets/js/slick/slick.min.js' %}"></script>
+    <script src="{% static '/assets/js/slick/slick.js' %}"></script>
+    <script src="{% static '/assets/js/header-slick.js' %}"></script>
+    <script src="{% static '/assets/js/select2/select2.full.min.js' %}"></script>
+    <script src="{% static '/assets/js/select2/select2-custom.js' %}"></script>
+    <script src="{% static '/assets/js/form-validation-custom.js' %}"></script>
+    <script src="{% static '/assets/js/script.js' %}"></script>
+    <script src="{% static '/assets/js/theme-customizer/customizer.js' %}"></script>
+    <script>
+        $('input:not([type="checkbox"]), select, textarea ').addClass('form-control')
+        $('.c-pills-tab').style.display = 'none'
+    </script>
+  {% block scripts %}
+  	
+  {% endblock %}
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css"/>
+
+    <script>
+        // Use Django messages to display toastr notifications
+
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": true,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "3000",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        };
+        {% if messages %}
+            {% for message in messages %}
+
+                toastr["{{ message.tags|default:'info' }}"]("{{ message }}");
+            {% endfor %}
+        {% endif %}
+    </script>
+    <script src="https://js.pusher.com/8.0.1/pusher.min.js"></script>
+    {% if request.user.is_authenticated %}
+    <div class="modal"  id="change-password-modal">
+      <div class="modal-dialog">
+          <div class="modal-content text-black bg-white">
+              <div class="modal-header">Modifier mon mot de passe</div>
+              <div class="modal-body">
+                  <form action="{% url 'change_password' %}?next={{ request.path }}" method="post">
+                      {% csrf_token %}
+                      <div class="mb-3">
+                          <label for="">Mot de passe actuel</label>
+                          <input type="password" name="password" class="form-control">
+                      </div>
+                      <div class="mb-3">
+                          <label for="">Nouveau Mot de passe</label>
+                          <input type="password"  name="new_password" class="form-control">
+                      </div>
+                      <p>
+                          <button type="submit" class="btn btn-primary">Enregistrer</button>
+                      </p>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+    {% endif %}
+    <div class="modal"  id="change-exercice">
+      <div class="modal-dialog">
+          <div class="modal-content text-black bg-white">
+              <div class="modal-header">Changer d'exercice</div>
+              <div class="modal-body">
+                  <form action="{% url 'update_current_exercice' %}?next={{ request.path }}" method="post">
+                      {% csrf_token %}
+                      <div class="mb-3">
+                          <select class="form-control" name="exercice" id="">
+                              {% for exercice in exercice_list %}
+                                  <option value="{{ exercice.pk }}">{{ exercice.date_debut|date:"Y" }} - {{ exercice.date_fin|date:"Y" }}</option>
+                              {% endfor %}
+
+                          </select>
+                      </div>
+                      <p>
+                          <button type="submit" class="btn btn-primary">Enregistrer</button>
+                      </p>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+    <script>
+      Pusher.logToConsole = true;
+
+      var pusher = new Pusher('app-key', {
+          cluster: 'mt1',
+          wsHost: 'sigpro-mena.com',
+          wsPort: 6001,
+          forceTLS: false,
+          enableStats: false,
+          enabledTransports: ['ws', 'wss']
+      });
+  
+      var channel = pusher.subscribe('tdr-changes');
+      channel.bind('tdr-create', function(data) {
+          console.log('TDR updated:', data);
+          console.table(data)
+          toastr.success('New TDR added');
+      });
+
+      channel.bind('tdr-change', function(data) {
+          console.log('TDR updated:', data);
+          console.table(data)
+          toastr.success('New TDR added');
+      });
+
+
+      document.querySelector('#c-pills-tab').style.display = "none" 
+    </script>
+
+  </body>
+</html>

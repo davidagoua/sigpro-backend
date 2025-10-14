@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+{% block content %}
+<div class="page-body">
+  <div class="container-fluid">
+    <div class="page-title">
+      <div class="row">
+        <div class="col-6">
+          <h4>Analyse</h4>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- Container-fluid starts-->
+  <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h3>Détails de l'activité</h3>
+                    </div>
+                    <div class="card-body">
+                        <h4>{{ tache.label }}</h4>
+                        <p class="text-muted">
+
+                        </p>
+                        <dl class="row mt-4">
+                            <dt class="col-sm-4">Catégorie</dt>
+                            <dd class="col-sm-8">{{ tache.categorie }}</dd>
+
+                            <dt class="col-sm-4">Indicateur</dt>
+                            <dd class="col-sm-8">{{ tache.indicateur }}</dd>
+
+                            <dt class="col-sm-4">Unité</dt>
+                            <dd class="col-sm-8">{{ tache.unite }}</dd>
+
+                            <dt class="col-sm-4">Montant engagé</dt>
+                            <dd class="col-sm-8">{{ tache.montant_engage|intcomma }} fcfa</dd>
+
+                            <dt class="col-sm-4">Montant planifié</dt>
+                            <dd class="col-sm-8">{{ tache.montant_planifier|intcomma }} fcfa</dd>
+
+                            <dt class="col-sm-4">Date de début</dt>
+                            <dd class="col-sm-8">{{ tache.date_debut }}</dd>
+
+                            <dt class="col-sm-4">Date de fin</dt>
+                            <dd class="col-sm-8">{{ tache.date_fin }}</dd>
+
+                            <dt class="col-sm-4">Responsable</dt>
+                            <dd class="col-sm-8">{{ tache.responsable }}</dd>
+
+                            <dt class="col-sm-4">Reste à payer</dt>
+                            <dd class="col-sm-8">{{ tache.reste_paye|intcomma }} fcfa</dd>
+
+
+                        </dl>
+                    </div>
+                    <div class="card-footer text-end">
+                        {% if tache.status_execution == 0 %}
+                            <a href="{% url 'suivi:update_state' pk=tache.pk %}?status=10" class="btn btn-info">Debuter</a>
+                            {% elif tache.status_execution == 10 %}
+                            <a href="{% url 'suivi:update_state' pk=tache.pk %}?status=20" class="btn btn-outline-info">Terminer</a>
+                            {% else %}
+                            <a href="" disabled="" class="btn btn-outline-success">Terminée</a>
+                        {% endif %}
+
+                        <a href="{% url 'suivi:ptba-projet' %}" onclick="return confirm('Etes-vous sûr de vouloir executer cette action ?')" class="btn btn-danger">
+                            <span class="fa fa-trash"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

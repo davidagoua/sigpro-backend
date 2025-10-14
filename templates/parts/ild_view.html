@@ -1,0 +1,70 @@
+<div class="project-table table-responsive custom-scrollbar">
+  <table class="order-table project-table w-100">
+    <thead>
+      <tr>
+        <th>Intitulé</th>
+        <th>Date debut</th>
+        <th>Date de fin</th>
+        <th>Status</th>
+        <th>Progression</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for object in ild.rld_set.all  %}
+            <tr>
+        <td>
+          <div class="project-comment  d-flex gap-2">
+            <div class="radial-chart-wrap">
+              <div class="widgetsChart" id="widgetsChart1" style="min-height: 68.7px;"><div id="apexchartswtrgrjsyg" class="apexcharts-canvas apexchartswtrgrjsyg apexcharts-theme-light" style="width: 100px; height: 68.7px;"><svg id="SvgjsSvg1348" width="100" height="68.69999999999999" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" class="apexcharts-svg" xmlns:data="ApexChartsNS" transform="translate(-5, -15)" style="background: transparent;"><g id="SvgjsG1350" class="apexcharts-inner apexcharts-graphical" transform="translate(18, 0)"><defs id="SvgjsDefs1349"><clipPath id="gridRectMaskwtrgrjsyg"><rect id="SvgjsRect1352" width="72" height="90" x="-3" y="-1" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath><clipPath id="forecastMaskwtrgrjsyg"></clipPath><clipPath id="nonForecastMaskwtrgrjsyg"></clipPath><clipPath id="gridRectMarkerMaskwtrgrjsyg"><rect id="SvgjsRect1353" width="70" height="92" x="-2" y="-2" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff"></rect></clipPath></defs><g id="SvgjsG1354" class="apexcharts-radialbar"><g id="SvgjsG1355"><g id="SvgjsG1356" class="apexcharts-tracks"><g id="SvgjsG1357" class="apexcharts-radialbar-track apexcharts-track" rel="1"><path id="apexcharts-radialbarTrack-0" d="M 33 17.075000000000003 A 15.924999999999997 15.924999999999997 0 1 1 32.997220563180306 17.075000242551624" fill="none" fill-opacity="1" stroke="var(--theme-deafult)" stroke-opacity="0.2" stroke-linecap="round" stroke-width="3.4080121951219513" stroke-dasharray="0" class="apexcharts-radialbar-area" data:pathOrig="M 33 17.075000000000003 A 15.924999999999997 15.924999999999997 0 1 1 32.997220563180306 17.075000242551624"></path></g></g><g id="SvgjsG1359"><g id="SvgjsG1364" class="apexcharts-series apexcharts-radial-series" seriesName="series-1" rel="1" data:realIndex="0"><path id="SvgjsPath1365" d="M 33 17.075000000000003 A 15.924999999999997 15.924999999999997 0 1 1 17.075000000000003 33" fill="none" fill-opacity="0.85" stroke="var(--theme-deafult)" stroke-opacity="1" stroke-linecap="round" stroke-width="3.5134146341463417" stroke-dasharray="0" class="apexcharts-radialbar-area apexcharts-radialbar-slice-0" data:angle="270" data:value="75" index="0" j="0" data:pathOrig="M 33 17.075000000000003 A 15.924999999999997 15.924999999999997 0 1 1 17.075000000000003 33"></path></g><circle id="SvgjsCircle1360" r="9.220993902439021" cx="33" cy="33" class="apexcharts-radialbar-hollow" fill="transparent"></circle><g id="SvgjsG1361" class="apexcharts-datalabels-group" transform="translate(0, 0) scale(1)" style="opacity: 1;"><text id="SvgjsText1362" font-family="Helvetica, Arial, sans-serif" x="33" y="33" text-anchor="middle" dominant-baseline="auto" font-size="16px" font-weight="600" fill="var(--theme-deafult)" class="apexcharts-text apexcharts-datalabel-label" style="font-family: Helvetica, Arial, sans-serif;">series-1</text><text id="SvgjsText1363" font-family="Helvetica, Arial, sans-serif" x="33" y="37" text-anchor="middle" dominant-baseline="auto" font-size="10px" font-weight="400" fill="var(--tag-text-color--edit)" class="apexcharts-text apexcharts-datalabel-value" style="font-family: Helvetica, Arial, sans-serif;">75%</text></g></g></g></g><line id="SvgjsLine1366" x1="0" y1="0" x2="66" y2="0" stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1" stroke-linecap="butt" class="apexcharts-ycrosshairs"></line><line id="SvgjsLine1367" x1="0" y1="0" x2="66" y2="0" stroke-dasharray="0" stroke-width="0" stroke-linecap="butt" class="apexcharts-ycrosshairs-hidden"></line></g><g id="SvgjsG1351" class="apexcharts-annotations"></g></svg><div class="apexcharts-legend"></div></div></div>
+            </div>
+            <div> <a class="f-w-500 f-14 " href="">{{ object.label }}</a>
+                {% if false %}
+              <div class="project-comment-icon">
+                <div class="project-link">
+                  <svg>
+                    <use href="../assets/svg/icon-sprite.svg#messages-2"></use>
+                  </svg><span class="f-w-500 f-light f-12">20</span>
+                </div>
+                <div class="project-link">
+                  <svg>
+                    <use href="../assets/svg/icon-sprite.svg#paperclip"></use>
+                  </svg><span class="f-w-500 f-light f-12">7</span>
+                </div>
+              </div>
+                {% endif %}
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="product-sub"><a class="f-w-500 f-14 " href="product.html">Darrell Steward</a><span class="f-w-500 f-light f-12 d-block">darrells@example.com</span></div>
+        </td>
+        <td>
+          <div class="product-sub"><a class="f-w-500 f-14 " href="product.html">15 Nov, 2024</a><span class="f-w-500 f-light f-12 d-block">8 Days Left</span></div>
+        </td>
+        <td>
+          <div class="product-sub"><a class="f-w-500 f-14 " href="product.html">Team Roha</a><span class="f-w-500 f-light f-12 d-block">12 Member</span></div>
+        </td>
+        <td>
+          <div class="txt-primary d-flex gap-2 align-items-center justify-content-center"><span class="pending bg-primary"></span><span class="f-w-500 f-13 txt-primary">Active</span></div>
+        </td>
+        <td>
+          <div class="product-sub">
+            <div class="dropdown">
+              <div id="dropdownMenuButtonicon11" data-bs-toggle="dropdown" aria-expanded="false" role="menu">
+                <svg class="invoice-icon">
+                  <use href="../assets/svg/icon-sprite.svg#more-horizontal"></use>
+                </svg>
+              </div>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButtonicon11"><span class="dropdown-item">Last Month</span><span class="dropdown-item">Last Week</span><span class="dropdown-item">Last Day </span></div>
+            </div>
+          </div>
+        </td>
+      </tr>
+        {% empty %}
+
+        {% endfor %}
+
+
+    </tbody>
+  </table>
+</div>

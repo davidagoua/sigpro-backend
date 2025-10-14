@@ -1,0 +1,88 @@
+{% load humanize %}
+<div>
+    <table class="table " x-data="{ openComposants: {}, openSousComposants: {}, openIndiacteurs: {} }">
+        <tr>
+            <th style="width: 25px"></th>
+            <th>Composantes/Indicateurs/Activités</th>
+            <th>Categorie Dépense</th>
+            <th>Unité</th>
+            <th>Montant Planifié</th>
+            <th>Montant Engagé</th>
+            <th>Montant Payé</th>
+            <th>Reste à payer</th>
+        </tr>
+        {% for composant in composants %}
+            <tr style="background-color: #FFFF00; color: black; font-weight: bold">
+                <td style="width: 25px"></td>
+                <td class="text-left">
+                    <button @click="openComposants['{{ composant.pk }}'] = !openComposants['{{ composant.pk }}']"
+                            class="btn btn-link text-black black black-text"
+                            style="text-decoration: none; text-align: left; font-weight: bold">{{ composant.label }}</button>
+                </td>
+                <td style="color: black">
+
+                </td>
+                <td></td>
+                <td style="color: black">{{ composant.montant_planifier|intcomma }}</td>
+                <td style="color: black">{{ composant.montant_engage }}</td>
+                <td style="color: black">{{ composant.somme_drf }}</td>
+                <td style="color: black">{{ composant.reste_a_payer }}</td>
+            </tr>
+                {% for sous_compo in composant.souscomposants.all %}
+                    <tr  style="background-color: #DDEBF7">
+                        <td style="width: 25px"></td>
+                        <td width="500px">
+                            <button
+                                    class="btn btn-link text-let"
+                                    style="color: black; text-decoration: none; text-align: left"
+                                    @click="openSousComposants['{{ sous_compo.pk }}'] = !openSousComposants['{{ sous_compo.pk }}']"
+                            >{{ sous_compo.label }}</button>
+                        </td>
+                        <td style="color: black"></td>
+                        <td style="color: black"></td>
+                        <td style="color: black">{{ sous_compo.montant_planifier|intcomma }}</td>
+                        <td style="color: black">{{ sous_compo.montant_engage|intcomma }}</td>
+                        <td style="color: black">{{ sous_compo.somme_drf|intcomma }}</td>
+                        <td style="color: black">{{ sous_compo.reste_a_payer|intcomma }}</td>
+                    </tr>
+                    {% for indicateur in sous_compo.indicateur_set.all %}
+                    	<tr
+                            style="background-color: #F8CBAD"
+                        >
+                            <td style="width: 25px"></td>
+                            <td>
+                                <button
+                                    class="btn btn-link text-left"
+                                    style="text-align: left; color: black !important;"
+                                >
+                                    <b>{% if indicateur.type == 'ILD' %} {{ forloop. }} {{ indicateur.status }}: {% endif %}</b> {{ indicateur.label }}
+                                </button>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td>{{ indicateur.montant_planifier|intcomma }}</td>
+                            <td >{{ indicateur.montant_engage|intcomma }}</td>
+                            <td >{{ indicateur.somme_drf|intcomma }}</td>
+                            <td >{{ indicateur.reste_a_payer|intcomma }}</td>
+                        </tr>
+                        {% for tache in indicateur.tache_set.all %}
+                        	<tr>
+                                {% include 'suivi/action_suivi_projet.html' with tache=tache %}
+                                <td>{{ tache.label }}</td>
+                                <td>{{ tache.categorie.label }}</td>
+                                <td>{{ tache.unite }}</td>
+                                <td>{{ tache.montant_planifier|intcomma }}</td>
+                                <td>{{ tache.montant_engage|intcomma }}</td>
+                                <td>{{ tache.total_decaissement|intcomma }}</td>
+                                <td>{{ tache.reste_paye }}</td>
+                            </tr>
+                        {% endfor %}
+
+                    {% endfor %}
+
+                {% endfor %}
+
+        {% endfor %}
+
+    </table>
+</div>

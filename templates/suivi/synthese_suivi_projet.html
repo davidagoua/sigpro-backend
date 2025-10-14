@@ -1,0 +1,78 @@
+{% load humanize %}
+<div x-data="{'current_year': Date.now().getFullYear()}">
+    <table class="table " x-data="{ openComposants: {}, openSousComposants: {}, openIndiacteurs: {} }">
+        <tr>
+            <th style="width: 25px"></th>
+            <th>Composants/Indicateurs/Activités</th>
+
+            <th>Montant Engagé</th>
+            {% for exercice in exercices %}
+            	<th>Coût Total {{ exercice.label }}</th>
+            {% endfor %}
+            <th>
+                Coût Total à executer PTBA {{ year }}
+            </th>
+
+        </tr>
+        {% for composant in composants %}
+            <tr style="background-color: yellow; color: black; font-weight: bold">
+                <td style="width: 25px"></td>
+                <td class="text-left">
+                    <button @click="openComposants['{{ composant.pk }}'] = !openComposants['{{ composant.pk }}']" class="btn btn-link text-black" style="text-decoration: none; text-align: left"><b>{{ composant.label }}</b> </button>
+                </td>
+                <td  style="color: black">{{ composant.montant_engage }}</td>
+                {% for cout in composant.couts_total_annee %}
+                	<td>{{ cout|intcomma }}</td>
+                {% endfor %}
+                <td>{{ composant.sum_couts_total_annee|intcomma }}</td>
+            </tr>
+                {% for sous_compo in composant.souscomposants.all %}
+                    <tr x-show="openComposants['{{ composant.pk }}']" style="background-color: #7298ce; font-weight: bold;">
+                        <td style="width: 25px"></td>
+                        <td width="500px">
+                            <button
+                                class="btn btn-link text-let"
+                                style="color: white; text-decoration: none; text-align: left"
+                                @click="openSousComposants['{{ sous_compo.pk }}'] = !openSousComposants['{{ sous_compo.pk }}']"
+                            >{{ sous_compo.label }}</button>
+                        </td>
+                        <td>{{ sous_compo.montant_engage|intcomma }}</td>
+                        {% for cout in sous_compo.couts_total_annee %}
+                        	<td>{{ cout|intcomma }}</td>
+                        {% endfor %}
+                        <td>{{ sous_compo.sum_couts_total_annee|intcomma }}</td>
+
+                    </tr>
+                    {% for indicateur in sous_compo.indicateur_set.all %}
+                    	<tr
+                            style="background-color: white"
+                            x-show="openSousComposants['{{ sous_compo.pk }}'] && openComposants['{{ composant.pk }}']"
+                        >
+                            <td style="width: 25px"></td>
+                            <td>
+                                <button
+                                    class="btn btn-link text-left"
+                                    style="text-align: left; text-decoration: none"
+                                    @click="openIndiacteurs['{{ indicateur.pk }}'] = !openIndiacteurs['{{ indicateur.pk }}']"
+                                >
+                                    <b> {% if indicateur.type == 'ILD' %} {{ indicateur.type }} {{ indicateur.status }}: {% endif %}</b> {{ indicateur.label }}
+                                </button>
+                            </td>
+                            <td>{{ indicateur.montant_engage|intcomma }}</td>
+                            {% for cout_total in indicateur.couts_total_annee_by_exercice %}
+                            	<td>{{ cout_total|intcomma }}</td>
+                            {% endfor %}
+                            <td>
+                                {{ indicateur.sum_couts_total_annee_by_exercice|intcomma }}
+                            </td>
+
+                        </tr>
+
+                    {% endfor %}
+
+                {% endfor %}
+
+        {% endfor %}
+
+    </table>
+</div>

@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="page-body">
+          <div class="container-fluid">
+            <div class="page-title">
+              <div class="row">
+                <div class="col-6">
+                  <h4>Gestion Utilisateurs</h4>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <!-- Container-fluid starts-->
+          <div class="container-fluid">
+            <div class="row">
+                <div class="col-xxl-4">
+                    <div class="card">
+                    <div class="card-body">
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <p class="text-right mt-5">
+                                <button type="submit" class="btn btn-primary">Enregistrer</button>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+                </div>
+                <div class="col-xxl-8">
+                    <div class="card recent-order">
+                      <div class="card-header card-no-border total-revenue">
+                        <h4 class="m-0">Liste des utilisateurs</h4>
+                      </div>
+                      <div class="card-body pt-0">
+                        <div class="client-list-table table-responsive custom-scrollbar">
+                          <table class="order-table w-100">
+                            <tbody>
+                                {% for user in users %}
+                                	<tr>
+                                        <td class="client-list">
+                                            <div class="user-comment">
+                                                <a href="{% url 'delete_user' pk=user.pk %}" class="btn btn-xs btn-danger">
+                                                    <span class="fa fa-trash text-white "></span>
+                                                </a>
+                                            </div>
+                                          <div class="user-id">
+                                            <div class="avatars me-2">
+                                              <div class="avatar"><img class="img-50 rounded-circle" src="../assets/images/user/29.png" alt="#">
+                                                <div class="status status-dnd bg-warning"> </div>
+                                              </div>
+                                            </div>
+                                            <div class="product-sub"><a class="f-14 f-w-500 " href="">{{ user.username }}</a><span class="d-block f-light f-w-500">{{ user.role.name }}</span></div>
+                                          </div>
+                                          <div class="user-comment w-100">
+                                            <div class="product-sub"> <a class="f-14 f-w-500 " href="">{{ user.email}}</a><span class="d-block f-light f-w-500">{{ user.departement.name }} </span></div>
+                                            <div class="product-sub">
+                                              <svg class="invoice-icon">
+                                                <use href="../assets/svg/icon-sprite.svg#messages-3"></use>
+                                              </svg>
+                                            </div>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                {% empty %}
+
+                                {% endfor %}
+
+
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <!-- Container-fluid Ends-->
+        </div>
+{% endblock %}

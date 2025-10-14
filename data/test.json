@@ -1,0 +1,3430 @@
+{
+  "composantes": [
+    {
+      "name": "Composante 1:",
+      "description": "Alphab\u00e9tisation",
+      "actions": [
+        {
+          "ddr": "Action 1.1",
+          "name": "Mettre en \u0153uvre la Strat\u00e9gie Nationale d'Alphab\u00e9tisation (SNA) (Programme National d'Alphab\u00e9tisation Familiale et Nutrition (PNAFN) ) dans les zones d'intervention du PforR",
+          "activites": [
+            {
+              "name": "Activit\u00e9 1.1.1",
+              "description": "Organiser un atelier d'orientation des COGES pour la mise en \u0153uvre du programme d'alphab\u00e9tisation (Directions du sous Domaine de R\u00e9sultats 1) et en d\u00e9concentr\u00e9 des COGES (12 Conseillers COGES en DRENA, 80 Conseillers COGES en IEPP, 12 Coordonnateurs, pour la mise en \u0153uvre du projet",
+              "responsable": "DAPS COGES",
+              "localisation": NaN,
+              "type_activite": "Contractuelle RLD",
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": "X",
+                  "mai": "X",
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": [
+                {
+                  "name": "Tache 1.1.1.1",
+                  "description": "Elaborer les TDR de l'atelier d'orientation  des acteurs en centrale ",
+                  "responsable": "DAPS COGES",
+                  "localisation": "ABIDJAN",
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": NaN,
+                  "quantity": 1,
+                  "duree": 1,
+                  "frecuence": 1,
+                  "cout_unitaire": 0,
+                  "cout_total": 0,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "Tache 1.1.1.2",
+                  "description": "frais d'organisation de l'atelier",
+                  "responsable": "DAPS COGES",
+                  "localisation": "YAKRO",
+                  "partenaire": "DRENA IEPP",
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "atelier",
+                  "quantity": 104,
+                  "duree": 2,
+                  "frecuence": 1,
+                  "cout_unitaire": 93000,
+                  "cout_total": 19344000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": "629200 Frais de r\u00e9ception, de f\u00eates et de c\u00e9r\u00e9monies",
+                  "ref_ddp_ligne_budgetaire": 629200.0,
+                  "ppm": NaN
+                }
+              ]
+            },
+            {
+              "name": "Activit\u00e9 1.1.1.2",
+              "description": "Renforcer les capacit\u00e9s de 540 acteurs et gestionnaires des COGES (60 Directeurs d'Ecoles, 60 Pr\u00e9sidents de BE, 60 VP de BE, 60 SG, 60 SGA, 60 Commissaires aux Comptes, 60 Commissaires aux Comptes Adjoints, 60 Tr\u00e9soriers G\u00e9n\u00e9raux, 60 Tr\u00e9soriers G\u00e9n\u00e9raux Adjoints) sur les missions et attributions du COGES, \u00e9laboration du PACC, \u00e9laboration du Projet Ecole, l'\u00e9ducation parentale et le suivi scolaire",
+              "responsable": "DAPS COGES",
+              "localisation": "YAKRO",
+              "type_activite": "Contractuelle RLD",
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": "X",
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": [
+                {
+                  "name": "Tache 1.1.1.2.1",
+                  "description": "Elaborer les TDR des ateliers de renforcement des capacit\u00e9s des acteurs et gestionnaires",
+                  "responsable": "DAPS COGES",
+                  "localisation": "YAKRO",
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": NaN,
+                  "quantity": NaN,
+                  "duree": NaN,
+                  "frecuence": NaN,
+                  "cout_unitaire": NaN,
+                  "cout_total": NaN,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "Tache 1.1.1.2.2",
+                  "description": "Prise en charge ",
+                  "responsable": "DAPS COGES",
+                  "localisation": "12 DRENA",
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "Forfait",
+                  "quantity": 1,
+                  "duree": 1,
+                  "frecuence": 1,
+                  "cout_unitaire": 75000000,
+                  "cout_total": 75000000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": "629200 Frais de r\u00e9ception, de f\u00eates et de c\u00e9r\u00e9monies",
+                  "ref_ddp_ligne_budgetaire": 629200.0,
+                  "ppm": NaN
+                }
+              ]
+            },
+            {
+              "name": "Activit\u00e9 1.1.1.3",
+              "description": "Sensibiliser les autorit\u00e9s et les communaut\u00e9s des zones du programme  ",
+              "responsable": "DAAJE",
+              "localisation": NaN,
+              "type_activite": "Contractuelle RLD",
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": "X",
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": [
+                {
+                  "name": "Tache 1.1.1.3.1",
+                  "description": "Organiser une mission de sensibilisation des autorit\u00e9s et des communaut\u00e9s des zones du programme",
+                  "responsable": "DAAJE",
+                  "localisation": "Zones du programme",
+                  "partenaire": "DMDA,DCSPA,DMOSS,DAPS-COGES,UGP-PRSEB",
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "Personne",
+                  "quantity": 24,
+                  "duree": 10,
+                  "frecuence": 1,
+                  "cout_unitaire": 60000,
+                  "cout_total": 14400000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": "611900 Autres frais de transport et de mission",
+                  "ref_ddp_ligne_budgetaire": 611900.0,
+                  "ppm": NaN
+                },
+                {
+                  "name": "Tache 1.1.1.3.2",
+                  "description": "Prendre en charge les forfaits d\u00e9placement des conseillers d'alphab\u00e9tisation (60) et les conseillers COGES (60)",
+                  "responsable": "DAAJE",
+                  "localisation": "Zones du programme",
+                  "partenaire": "UGP-PRSEB",
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "Fofait d\u00e9placement",
+                  "quantity": 120,
+                  "duree": 1,
+                  "frecuence": 1,
+                  "cout_unitaire": 10000,
+                  "cout_total": 1200000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": "611900 Autres frais de transport et de mission",
+                  "ref_ddp_ligne_budgetaire": 611900.0,
+                  "ppm": NaN
+                },
+                {
+                  "name": "Tache 1.1.1.3.3",
+                  "description": "Prendre en charge les frais de carburant",
+                  "responsable": "DAAJE",
+                  "localisation": "Zones du programme",
+                  "partenaire": "UGP-PRSEB",
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "Litre",
+                  "quantity": 2760,
+                  "duree": 1,
+                  "frecuence": 1,
+                  "cout_unitaire": 850,
+                  "cout_total": 2346000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": "601200 Achats de carburants et lubrifiants",
+                  "ref_ddp_ligne_budgetaire": 601200.0,
+                  "ppm": NaN
+                }
+              ]
+            },
+            {
+              "name": "Activit\u00e9 1.1.1.5",
+              "description": "Organiser 1 atelier de validation des items \u00e0 int\u00e9grer dans la base de donn\u00e9es de la DESPS pour le recueil et le traitement des donn\u00e9es statistiques en aphab\u00e9tisation et en \u00e9ducation non formelle",
+              "responsable": "DCSPA",
+              "localisation": "Yamoussoukro",
+              "type_activite": "Contractuelle RLD",
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": "x",
+                  "mai": NaN,
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": [
+                {
+                  "name": "T\u00e2che 1.1.1.5.1",
+                  "description": "Prendre en charge les frais d'organisation de l'atelier",
+                  "responsable": NaN,
+                  "localisation": "Yamoussoukro",
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "h/j",
+                  "quantity": 20,
+                  "duree": 5,
+                  "frecuence": 1,
+                  "cout_unitaire": 93000,
+                  "cout_total": 9300000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": "629200/611900",
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                }
+              ]
+            },
+            {
+              "name": "Activit\u00e9 1.1.1.6",
+              "description": "Organiser un atelier sur les bonnes pratiques et partage d'exp\u00e9riences d'Alphab\u00e9tisation et d'Education Non Formelle en C\u00f4te d'Ivoire ",
+              "responsable": "DCSPA",
+              "localisation": "Yamoussoukro",
+              "type_activite": "Contractuelle RLD",
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": "x"
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": NaN,
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": [
+                {
+                  "name": "T\u00e2che 1.1.1.6.1.1",
+                  "description": "Prendre en charge les frais d'organisation de l'atelier",
+                  "responsable": NaN,
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "h/j",
+                  "quantity": 74,
+                  "duree": 5,
+                  "frecuence": 1,
+                  "cout_unitaire": 93000,
+                  "cout_total": 34410000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": "629200/611900",
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                }
+              ]
+            },
+            {
+              "name": "Activit\u00e9 1.1.1.7",
+              "description": "Produire le rapport g\u00e9n\u00e9ral de l'ann\u00e9e 2024 de l'AENF en C\u00f4te d'Ivoire",
+              "responsable": "DCSPA",
+              "localisation": "Abidjan",
+              "type_activite": "Contractuelle RLD",
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": "x"
+                },
+                "Q2": {
+                  "avril": "x",
+                  "mai": NaN,
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": [
+                {
+                  "name": "T\u00e2che 1.1.1.7.1",
+                  "description": "Prendre en charge les frais d'\u00e9dition de 100 exemplaires du rapport",
+                  "responsable": NaN,
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "Document",
+                  "quantity": 100,
+                  "duree": 1,
+                  "frecuence": 1,
+                  "cout_unitaire": 15000,
+                  "cout_total": 1500000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": 622110,
+                  "nature_economique": "PPM",
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                }
+              ]
+            },
+            {
+              "name": "Activit\u00e9 1.1.1.8",
+              "description": "Organiser une c\u00e9r\u00e9monie de r\u00e9mise officielle du rapport g\u00e9n\u00e9ral de l'ann\u00e9e 2024 de l'Alphab\u00e9tisation et de l'Education Non Formelle en C\u00f4te d'Ivoire \u00e0 Madame la MENA",
+              "responsable": "DCSPA",
+              "localisation": "Abidjan",
+              "type_activite": "Contractuelle RLD",
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": "x",
+                  "mai": NaN,
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": [
+                {
+                  "name": "T\u00e2che 1.1.1.8.1",
+                  "description": "Recruter un prestataire pour l'organisation d'un cocktail pour 100 invit\u00e9s",
+                  "responsable": NaN,
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "Personne",
+                  "quantity": 100,
+                  "duree": 1,
+                  "frecuence": 1,
+                  "cout_unitaire": 10000,
+                  "cout_total": 1000000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": 622110,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 1.1.1.8.2",
+                  "description": "Prendre en charge les frais de location d'une salle de 200 places",
+                  "responsable": NaN,
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "Salle",
+                  "quantity": 1,
+                  "duree": 1,
+                  "frecuence": 1,
+                  "cout_unitaire": 250000,
+                  "cout_total": 250000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 1.1.1.8.3",
+                  "description": "Prendre en charge les frais de couverture m\u00e9dia de la c\u00e9r\u00e9monie",
+                  "responsable": NaN,
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "Presse",
+                  "quantity": 8,
+                  "duree": 1,
+                  "frecuence": 1,
+                  "cout_unitaire": 50000,
+                  "cout_total": 400000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                }
+              ]
+            },
+            {
+              "name": "Activit\u00e9 1.1.1.9",
+              "description": "Renforcer les capacit\u00e9s de 20 agents des Directions de l'Alphab\u00e9tisation et de l'Education Non Formelle en Gestion et Suivi et Evaluation des Projets/Programmes\u00a0",
+              "responsable": "DCSPA",
+              "localisation": "DE",
+              "type_activite": "Contractuelle RLD",
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": "x",
+                  "mai": "x",
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": [
+                {
+                  "name": "T\u00e2che 1.1.1.9.1",
+                  "description": "Recruter un Cabinet pour assurer la formation",
+                  "responsable": NaN,
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "PM",
+                  "quantity": 1,
+                  "duree": 1,
+                  "frecuence": 1,
+                  "cout_unitaire": 0,
+                  "cout_total": 0,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                }
+              ]
+            },
+            {
+              "name": "Activit\u00e9 1.1.1.10",
+              "description": "R\u00e9aliser l'\u00e9valuation des acquis des apprentissages des b\u00e9n\u00e9ficiaires des programmes d'alphab\u00e9tisation, y compris l'Alphab\u00e9tisation familiale, selon l'approche RAMAED",
+              "responsable": "DCSPA",
+              "localisation": NaN,
+              "type_activite": "Contractuelle RLD",
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": "x"
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": NaN,
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": "x"
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": [
+                {
+                  "name": "T\u00e2che 1.1.1.7.1.1",
+                  "description": "Prendre en charge les frais d'organisation de l'atelier",
+                  "responsable": "DCSPA",
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "h/j",
+                  "quantity": 40,
+                  "duree": 6,
+                  "frecuence": 1,
+                  "cout_unitaire": 93000,
+                  "cout_total": 22320000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": "629200/611900",
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 1.1.1.7.2.1",
+                  "description": "Prendre en charge les frais de reprographie de 2 000 cahiers et 60 livrets pour l'\u00e9valuation de 1 000 b\u00e9n\u00e9ficiaires du programme",
+                  "responsable": NaN,
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": NaN,
+                  "quantity": 2060,
+                  "duree": 1,
+                  "frecuence": 1,
+                  "cout_unitaire": 1000,
+                  "cout_total": 2060000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": "D\u00e9velopper les outils sur tablettes\n",
+                  "nature_economique": "D\u00e9velopper les outils sur tablettes\n",
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 1.1.1.7.3.1",
+                  "description": "Prendre en charge les frais d'organisation de l'atelier (Non r\u00e9sidentiel)",
+                  "responsable": NaN,
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "h/j",
+                  "quantity": 69,
+                  "duree": 4,
+                  "frecuence": 1,
+                  "cout_unitaire": 40000,
+                  "cout_total": 11040000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": "629200/611900",
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 1.1.1.7.4.1",
+                  "description": "Prendre en charge les frais de mission de l'\u00e9quipe de supervision",
+                  "responsable": NaN,
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "h/j",
+                  "quantity": 6,
+                  "duree": 4,
+                  "frecuence": 1,
+                  "cout_unitaire": 60000,
+                  "cout_total": 1440000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": 611200,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 1.1.1.7.4.2",
+                  "description": "Prendre en charge les frais de mission de l'\u00e9quipe d'\u00e9valuation sur 6 axes",
+                  "responsable": NaN,
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "h/j",
+                  "quantity": 60,
+                  "duree": 2,
+                  "frecuence": 1,
+                  "cout_unitaire": 35000,
+                  "cout_total": 4200000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": 611200,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 1.1.1.7.4.3",
+                  "description": "Prendre en charge les frais de transport de l'\u00e9quipe d'\u00e9valuation sur 6 axes",
+                  "responsable": NaN,
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "h/j",
+                  "quantity": 60,
+                  "duree": 1,
+                  "frecuence": 1,
+                  "cout_unitaire": 50000,
+                  "cout_total": 3000000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": 611900,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 1.1.1.7.4.4",
+                  "description": "Prendre en charge le forfait carburant des agents en d\u00e9concentr\u00e9s",
+                  "responsable": NaN,
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "Forfait",
+                  "quantity": 30,
+                  "duree": 1,
+                  "frecuence": 1,
+                  "cout_unitaire": 10000,
+                  "cout_total": 300000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": 601200,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 1.1.1.7.4.5",
+                  "description": "Prendre en charge la location de v\u00e9hicules de type 4x4",
+                  "responsable": NaN,
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "V\u00e9hicule",
+                  "quantity": 6,
+                  "duree": 4,
+                  "frecuence": 1,
+                  "cout_unitaire": 90000,
+                  "cout_total": 2160000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": 612700,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 1.1.1.7.4.6",
+                  "description": "Prendre en charge les frais de carburant",
+                  "responsable": NaN,
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "Litre",
+                  "quantity": 1437,
+                  "duree": 1,
+                  "frecuence": 1,
+                  "cout_unitaire": 875,
+                  "cout_total": 1257375,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": 601200,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 1.1.1.7.5.1",
+                  "description": "Prendre en charge les frais d'organisation de l'atelier pour 15 personnes",
+                  "responsable": NaN,
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "h/j",
+                  "quantity": 15,
+                  "duree": 5,
+                  "frecuence": 1,
+                  "cout_unitaire": 93000,
+                  "cout_total": 6975000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": "611900/629200",
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ddr": "Action 1.2",
+          "name": "Assurer le suivi de la mise en \u0153uvre de la Strat\u00e9gie Nationale de l'Alphab\u00e9tisation dans les zones d'intervention du PforR",
+          "activites": [
+            {
+              "name": "Activit\u00e9 1.2.1",
+              "description": "Tenir des r\u00e9unions locales (mensuelles, trimestrielles) de suivi et encadrement pr\u00e9sid\u00e9es par le DRENA",
+              "responsable": "DAPS COGES",
+              "localisation": NaN,
+              "type_activite": "Non contractuelle",
+              "2025": {
+                "Q1": {
+                  "janv": "x",
+                  "fevr": "x",
+                  "mars": "x"
+                },
+                "Q2": {
+                  "avril": "x",
+                  "mai": "x",
+                  "juin": "x"
+                },
+                "Q3": {
+                  "juil": "x",
+                  "Aout": "x",
+                  "Sept": "x"
+                },
+                "Q4": {
+                  "Oct": "x",
+                  "Nov": "x",
+                  "Dec": "x"
+                }
+              },
+              "taches": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Composante 2:",
+      "description": "Sant\u00e9 et Nutrition Scolaire",
+      "actions": [
+        {
+          "ddr": "Action 2.1",
+          "name": "Cr\u00e9er un environnement favorable \u00e0 la mise en \u0153uvre des interventions en mati\u00e8re de Sant\u00e9 et de Nutrition scolaires",
+          "activites": [
+            {
+              "name": "Activit\u00e9 2.1.1",
+              "description": "Veiller \u00e0 la d\u00e9signation des membres du GTT-SNS et le rendre fonctionnel ",
+              "responsable": "DMOSS",
+              "localisation": NaN,
+              "type_activite": " Contractuelle MR",
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": "x",
+                  "mai": "x",
+                  "juin": "x"
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": [
+                {
+                  "name": "T\u00e2che 2.1.1.1",
+                  "description": "Proposer des projets de courriers soumis \u00e0 la signature du MENA sollicitant la d\u00e9signation des membres du GTT-SNS",
+                  "responsable": "DMOSS",
+                  "localisation": "ABIDJAN",
+                  "partenaire": "GTT - SNS",
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": "non contractuelle",
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": NaN,
+                  "quantity": NaN,
+                  "duree": NaN,
+                  "frecuence": NaN,
+                  "cout_unitaire": NaN,
+                  "cout_total": 0,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 2.1.1.2",
+                  "description": "Suivre les courriers de d\u00e9signation des membres GTT-SNS",
+                  "responsable": "DMOSS",
+                  "localisation": "ABIDJAN",
+                  "partenaire": "GTT - SNS",
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": "non contractuelle",
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": NaN,
+                  "quantity": NaN,
+                  "duree": NaN,
+                  "frecuence": NaN,
+                  "cout_unitaire": NaN,
+                  "cout_total": 0,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                }
+              ]
+            },
+            {
+              "name": "Activit\u00e9 2.1.2",
+              "description": "Organiser 12 missions r\u00e9gionales de plaidoyer ciblant les Autorit\u00e9s administratives et Territoriales (Corps Pr\u00e9fectoral, Collectivit\u00e9s Territoriales) pour la mobilisation en faveur du Sous-Domaine Alpha, Sant\u00e9 et Nutrition Scolaires",
+              "responsable": "DMOSS",
+              "localisation": NaN,
+              "type_activite": " Contractuelle MR",
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": "x",
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": [
+                {
+                  "name": "T\u00e2che 2.1.2.2",
+                  "description": "Service d'h\u00f4tellerie(cocktail pour les participants)",
+                  "responsable": "DMOSS",
+                  "localisation": "12 DRENA",
+                  "partenaire": "GTT - SNS",
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "Atelier",
+                  "quantity": 365,
+                  "duree": 1,
+                  "frecuence": 1,
+                  "cout_unitaire": 3000,
+                  "cout_total": 1095000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 2.1.2.3",
+                  "description": "Prendre en charge la location d'une salle \u00e9quip\u00e9e  de 100 places TTC",
+                  "responsable": "DMOSS",
+                  "localisation": NaN,
+                  "partenaire": "GTT - SNS",
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "Atelier",
+                  "quantity": 12,
+                  "duree": 1,
+                  "frecuence": 1,
+                  "cout_unitaire": 80000,
+                  "cout_total": 960000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 2.1.2.4",
+                  "description": "Prendre les kits des participants",
+                  "responsable": "DMOSS",
+                  "localisation": "12 DRENA",
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "Atelier",
+                  "quantity": 365,
+                  "duree": 1,
+                  "frecuence": 1,
+                  "cout_unitaire": 3000,
+                  "cout_total": 1095000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 2.1.2.5",
+                  "description": "Perdiems des membres des \u00e9quipes de missions",
+                  "responsable": "DMOSS",
+                  "localisation": "12 DRENA",
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "Perdiem",
+                  "quantity": 4,
+                  "duree": 6,
+                  "frecuence": 6,
+                  "cout_unitaire": 60000,
+                  "cout_total": 8640000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 2.1.2.7",
+                  "description": "Location de vehicule +chauffeur",
+                  "responsable": "DMOSS",
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "service",
+                  "quantity": 6,
+                  "duree": 7,
+                  "frecuence": 1,
+                  "cout_unitaire": 90000,
+                  "cout_total": 3780000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 2.1.2.8",
+                  "description": "Prendre en charge les frais de carburant des  Autorit\u00e9s administratives et des collectivit\u00e9s Territoriales (Ministre Gouverneur (6), Pr\u00e9sidents de CG(9)  et Pr\u00e9fets (34), Sous- Pr\u00e9fets (160) et Maires (59))",
+                  "responsable": "DMOSS",
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "Personne",
+                  "quantity": 268,
+                  "duree": 1,
+                  "frecuence": 1,
+                  "cout_unitaire": 50000,
+                  "cout_total": 13400000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 2.1.2.6",
+                  "description": "Prendre en charge la couverture m\u00e9diatique des ateliers",
+                  "responsable": NaN,
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "Atelier",
+                  "quantity": 12,
+                  "duree": 1,
+                  "frecuence": 1,
+                  "cout_unitaire": 300000,
+                  "cout_total": 3600000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                }
+              ]
+            },
+            {
+              "name": "Activit\u00e9 2.1.3",
+              "description": "Organiser un atelier d'appropriation \u00e0 l\u2019attention des IEPP et DR  du MFFE en lien avec les activit\u00e9s de la composante Sant\u00e9 et de la Nutrition Scolaires du PRSEB",
+              "responsable": "DMOSS",
+              "localisation": NaN,
+              "type_activite": " Contractuelle MR",
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": NaN,
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": "x"
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": [
+                {
+                  "name": "T\u00e2che 2.1.1.2",
+                  "description": "Prendre en charge les frais d'organisation de l'aelier d'appropriation",
+                  "responsable": "DMOSS",
+                  "localisation": "YAMOUSSOUKRO",
+                  "partenaire": "GTT - SNS",
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "H/J",
+                  "quantity": 118,
+                  "duree": 2,
+                  "frecuence": 1,
+                  "cout_unitaire": 93000,
+                  "cout_total": 21948000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ddr": "Action 2.2",
+          "name": "Renforcer les capacit\u00e9s des acteurs des  niveaux central et d\u00e9concentr\u00e9 pour la mise en \u0153uvre du paquet d'appui en sant\u00e9 et nutrition scolaires",
+          "activites": [
+            {
+              "name": "Activit\u00e9 2.2.1",
+              "description": "Disposer d'un Guide du formateur en Sant\u00e9, Nutrition et D\u00e9veloppement de la Petite Enfance (DPE)",
+              "responsable": "DMOSS",
+              "localisation": NaN,
+              "type_activite": " Non Contractuelle ",
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": NaN,
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": "X",
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": []
+            },
+            {
+              "name": "Sous-Activit\u00e9 2.2.1.1",
+              "description": "organiser un atelier d'\u00e9laboration du Guide du formateur en mati\u00e8re de sante, Nutrition et D\u00e9veloppement de la Petite Enfance (DPE)",
+              "responsable": "DMOSS",
+              "localisation": NaN,
+              "type_activite": NaN,
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": NaN,
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": [
+                {
+                  "name": "T\u00e2che 2.1.1.2",
+                  "description": "Prendre en charge les frais d'organisation de l'aelier",
+                  "responsable": "DMOSS",
+                  "localisation": "YAMOUSSOUKRO",
+                  "partenaire": "GTT - SNS",
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "H/J",
+                  "quantity": 27,
+                  "duree": 5,
+                  "frecuence": 1,
+                  "cout_unitaire": 93000,
+                  "cout_total": 12550000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                }
+              ]
+            },
+            {
+              "name": "Sous-Activit\u00e9 2.2.1.2",
+              "description": "Editer et poduire le Manuel de formation des formateurs en mati\u00e8re de sant\u00e9, de nutrition et de D\u00e9veloppement de la Petite Enfance (DPE)",
+              "responsable": "DMOSS",
+              "localisation": NaN,
+              "type_activite": NaN,
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": NaN,
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": []
+            },
+            {
+              "name": "Activit\u00e9  2.2.3",
+              "description": "Organiser un (01) atelier de renforcement de capacit\u00e9s des acteurs locaux (DRENA, DR Sant\u00e9, DD Sant\u00e9, M\u00e9decins,Coordo CEC/CS et IDE) charg\u00e9s de la mise en oeuvre de la visite m\u00e9dicale des apprenants du pr\u00e9scolaire, pr\u00e9primaire et CP1 dans les zones du PRSEB",
+              "responsable": "DMOSS",
+              "localisation": NaN,
+              "type_activite": "Contractuelle RLD",
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": NaN,
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": "x",
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": [
+                {
+                  "name": "T\u00e2che 2.3.1.3",
+                  "description": "Prendre en charge les frais d'organisation de l'atelier ",
+                  "responsable": "DMOSS",
+                  "localisation": "YAMOUSSOUKRO",
+                  "partenaire": "GTT - SNS",
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "H/J",
+                  "quantity": 251,
+                  "duree": 3,
+                  "frecuence": 1,
+                  "cout_unitaire": 93000,
+                  "cout_total": 70029000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ddr": "Action 2.3",
+          "name": "Assurer la pr\u00e9paration et la fourniture du paquet d'appui sant\u00e9 et nutrition scolaires",
+          "activites": [
+            {
+              "name": "Activit\u00e9 2.3.1",
+              "description": "Rendre disponible les fiches de la visite m\u00e9dicale des \u00e9coliers du Pr\u00e9scolaire, Pr\u00e9-primaire et du Primaire (CP1) dans les zones vuln\u00e9rables du Programme PRSEB",
+              "responsable": "DMOSS",
+              "localisation": NaN,
+              "type_activite": "Contractuelle RLD",
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": NaN,
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": "x",
+                  "Aout": "X",
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": [
+                {
+                  "name": "T\u00e2che 2.3.1.1",
+                  "description": "acqu\u00e9rir les fiches pour les \u00e9coliers du Pr\u00e9scolaire",
+                  "responsable": NaN,
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "Fiches",
+                  "quantity": 55539,
+                  "duree": 1,
+                  "frecuence": 1,
+                  "cout_unitaire": 50,
+                  "cout_total": 2776950,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 2.3.1.2",
+                  "description": "acqu\u00e9rir les fiches pour \u00e9coliers du Primaire  (Pr\u00e9-primaire et CP1)",
+                  "responsable": NaN,
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "Fiches",
+                  "quantity": 254963,
+                  "duree": 1,
+                  "frecuence": 1,
+                  "cout_unitaire": 50,
+                  "cout_total": 12748150,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 2.3.1.4",
+                  "description": "Recruter un prestataire pour l'acheminement des fiches induviduelles de la visite m\u00e9dicale jusqu\u2019aux sites de mise en oeuvre (Districts Sanitaires vers les centres de mise en oeuvre)",
+                  "responsable": "DMOSS",
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": "prestataire",
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "forfait",
+                  "quantity": 1,
+                  "duree": 1,
+                  "frecuence": 1,
+                  "cout_unitaire": 5000000,
+                  "cout_total": 5000000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                }
+              ]
+            },
+            {
+              "name": "Activit\u00e9 2.3.2",
+              "description": "Rendre disponibles les intrants (d\u00e9parasitant et vitamines A) de la visite m\u00e9dicale et \u00e9laborer un plan de distribution",
+              "responsable": "DMOSS",
+              "localisation": NaN,
+              "type_activite": "Contractuelle RLD",
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": NaN,
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": "x",
+                  "Aout": "x",
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": []
+            },
+            {
+              "name": "Sous-Activit\u00e9 2.3.2.1",
+              "description": "Rendre disponible les d\u00e9parasitants de la visite m\u00e9dicale des \u00e9coliers du Pr\u00e9scolaire, Pr\u00e9-primaire et du Primaire (CP1) dans les zones vuln\u00e9rables du Programme PRSEB",
+              "responsable": NaN,
+              "localisation": NaN,
+              "type_activite": NaN,
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": NaN,
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": [
+                {
+                  "name": "T\u00e2che 2.3.2.1.1",
+                  "description": "Acqu\u00e9rir les d\u00e9parasitants pour les \u00e9coliers du Pr\u00e9scolaire",
+                  "responsable": NaN,
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "d\u00e9parasitants",
+                  "quantity": 55539,
+                  "duree": 1,
+                  "frecuence": 2,
+                  "cout_unitaire": 46,
+                  "cout_total": 5109588,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 2.3.2.1.2",
+                  "description": "Acqu\u00e9rir les d\u00e9parasitants  pour \u00e9coliers du Primaire (Pr\u00e9-primaire et CP1)",
+                  "responsable": NaN,
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "d\u00e9parasitants",
+                  "quantity": 254963,
+                  "duree": 1,
+                  "frecuence": 2,
+                  "cout_unitaire": 46,
+                  "cout_total": 23456596,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 2.3.2.1.3",
+                  "description": "Sous total acquisition des d\u00e9parasitants  ",
+                  "responsable": NaN,
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": NaN,
+                  "quantity": NaN,
+                  "duree": NaN,
+                  "frecuence": NaN,
+                  "cout_unitaire": NaN,
+                  "cout_total": NaN,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 2.3.2.1.4",
+                  "description": "Recruter un prestataire pour l'acheminement des d\u00e9parasitants de la visite m\u00e9dicale jusqu\u2019aux sites de mise en oeuvre (Districts Sanitaires vers les centres de mise en oeuvre)",
+                  "responsable": "DMOSS",
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": "prestataire",
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "forfait",
+                  "quantity": 1,
+                  "duree": 1,
+                  "frecuence": 2,
+                  "cout_unitaire": 5000000,
+                  "cout_total": 5250960,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                }
+              ]
+            },
+            {
+              "name": "Sous-Activit\u00e9 2.3.2.2",
+              "description": "Rendre disponible les m\u00e9dicaments de premi\u00e8re ncessit\u00e9 de la visite m\u00e9dicale des \u00e9coliers du Pr\u00e9scolaire, Pr\u00e9-primaire et du Primaire (CP1) dans les zones vuln\u00e9rables du Programme PRSEB",
+              "responsable": NaN,
+              "localisation": NaN,
+              "type_activite": NaN,
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": NaN,
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": [
+                {
+                  "name": "T\u00e2che 2.3.1.1",
+                  "description": "Elaborer les TDR des sp\u00e9cifict\u00e9s techiniques les m\u00e9dicaments de premi\u00e8re ncessit\u00e9 de la visite m\u00e9dicale des \u00e9coliers du Pr\u00e9scolaire, Pr\u00e9-primaire et du Primaire (CP1) dans les zones vuln\u00e9rables du Programme PRSEB",
+                  "responsable": "DMOSS",
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "Rencontre",
+                  "quantity": NaN,
+                  "duree": NaN,
+                  "frecuence": NaN,
+                  "cout_unitaire": NaN,
+                  "cout_total": 0,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 2.3.1.2",
+                  "description": "Recruter un prestataire pour  l'acquisition et l'acheminement des d\u00e9parasitants de la visite m\u00e9dicale jusqu\u2019aux chefs-lieux districts (entrep\u00f4t Abidjan aux Districts Sanitaires)",
+                  "responsable": "DMOSS",
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": "prestataire",
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "Service",
+                  "quantity": NaN,
+                  "duree": NaN,
+                  "frecuence": NaN,
+                  "cout_unitaire": NaN,
+                  "cout_total": NaN,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                }
+              ]
+            },
+            {
+              "name": "Sous-Activit\u00e9 2.3.2.3",
+              "description": "Rendre disponible la vitamine A de la visite m\u00e9dicale des \u00e9coliers du Pr\u00e9scolaire, Pr\u00e9-primaire et du Primaire (CP1) dans les zones vuln\u00e9rables du Programme PRSEB",
+              "responsable": NaN,
+              "localisation": NaN,
+              "type_activite": NaN,
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": NaN,
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": []
+            },
+            {
+              "name": "Sous-Activit\u00e9 2.3.2.4",
+              "description": "Rendre disponible le Mat\u00e9riel technique de la visite m\u00e9dicale des \u00e9coliers du Pr\u00e9scolaire, Pr\u00e9-primaire et du Primaire (CP1) dans les zones vuln\u00e9rables du Programme PRSEB",
+              "responsable": NaN,
+              "localisation": NaN,
+              "type_activite": NaN,
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": NaN,
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": [
+                {
+                  "name": "T\u00e2che 2.3.1.1",
+                  "description": "Elaborer les TDR des sp\u00e9cifict\u00e9s  du mat\u00e9riel techinique dela visite m\u00e9dicale des \u00e9coliers du Pr\u00e9scolaire, Pr\u00e9-primaire et du Primaire (CP1) dans les zones vuln\u00e9rables du Programme PRSEB",
+                  "responsable": "DMOSS",
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "Rencontre",
+                  "quantity": NaN,
+                  "duree": NaN,
+                  "frecuence": NaN,
+                  "cout_unitaire": NaN,
+                  "cout_total": 0,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 2.3.1.2",
+                  "description": "Recruter un prestataire pour  l'acquisition et l'acheminement du mat\u00e9riel technique de la visite m\u00e9dicale jusqu\u2019aux chefs-lieux districts (entrep\u00f4t Abidjan aux Districts Sanitaires)",
+                  "responsable": "DMOSS",
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": "prestataire",
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "Service",
+                  "quantity": NaN,
+                  "duree": NaN,
+                  "frecuence": NaN,
+                  "cout_unitaire": NaN,
+                  "cout_total": NaN,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 2.3.1.3",
+                  "description": "Recruter un prestataire pour l'acheminement des d\u00e9parasitants de la visite m\u00e9dicale jusqu\u2019aux sites de mise en oeuvre (Districts Sanitaires vers les centres de mise en oeuvre)",
+                  "responsable": "DMOSS",
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": "prestataire",
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "forfait",
+                  "quantity": 1,
+                  "duree": 1,
+                  "frecuence": 2,
+                  "cout_unitaire": 5000000,
+                  "cout_total": 5250960,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                }
+              ]
+            },
+            {
+              "name": "Activit\u00e9 2.3.3",
+              "description": "Fournir le Paquet d'appui en sant\u00e9 et nutrition scolaires aux \u00e9coliers du Pr\u00e9scolaire, Pr\u00e9-primaire et du Primaire (CP1) dans les zones vuln\u00e9rables du Programme PRSEB",
+              "responsable": "DMOSS",
+              "localisation": NaN,
+              "type_activite": "Contractuelle RLD",
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": "X",
+                  "mai": "X",
+                  "juin": "X"
+                },
+                "Q3": {
+                  "juil": "X",
+                  "Aout": "X",
+                  "Sept": "X"
+                },
+                "Q4": {
+                  "Oct": "X",
+                  "Nov": "X",
+                  "Dec": "X"
+                }
+              },
+              "taches": []
+            },
+            {
+              "name": "Sous-Activit\u00e9 2.3.3.1",
+              "description": "Organiser le 2\u00e8me passage du D\u00e9parasitage et de la suppl\u00e9mentation en vitamineA destin\u00e9 aux \u00e9coliers du Pr\u00e9scolaire, Pr\u00e9-primaire et du Primaire (CP1 et CP2) dans les zones vuln\u00e9rables du Programme PRSEB (campagne d'administration + supervision)",
+              "responsable": "DMOSS",
+              "localisation": NaN,
+              "type_activite": NaN,
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": "X",
+                  "mai": "X",
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": [
+                {
+                  "name": "T\u00e2che  2.3.3.1.1",
+                  "description": "Prendre en chagre les frais de la campagne du 2\u00e8me passage du D\u00e9parasitage et de la suppl\u00e9mentation en vitamineA destin\u00e9 aux \u00e9coliers du Pr\u00e9scolaire, Pr\u00e9-primaire et du Primaire (CP1 et CP2) dans les zones vuln\u00e9rables du Programme PRSEB (campagne d'administration + supervision)",
+                  "responsable": "DMOSS",
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": "Programme PRSEP",
+                  "unite": NaN,
+                  "quantity": NaN,
+                  "duree": NaN,
+                  "frecuence": NaN,
+                  "cout_unitaire": NaN,
+                  "cout_total": NaN,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che  2.3.3.1.2",
+                  "description": "Prendre en chagre les frais de la campagne de d\u00e9parasitage et de la suppl\u00e9mentation en Vitamine A des \u00e9coliers du Pr\u00e9scolaire",
+                  "responsable": NaN,
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "Ecoliers",
+                  "quantity": 50490,
+                  "duree": 1,
+                  "frecuence": 1,
+                  "cout_unitaire": 250,
+                  "cout_total": 12622500,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                }
+              ]
+            },
+            {
+              "name": "Sous-Activit\u00e9 2.3.3.2",
+              "description": "Prendre en charges les frais de la visite m\u00e9dicale au b\u00e9n\u00e9fice des \u00e9coliers du pr\u00e9-scolaire, Pr\u00e9-primaire et Primaire (CP1) dans les zones du Programme PRSEB",
+              "responsable": NaN,
+              "localisation": NaN,
+              "type_activite": NaN,
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": NaN,
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": "X",
+                  "Dec": NaN
+                }
+              },
+              "taches": [
+                {
+                  "name": "T\u00e2che  2.3.3.2.1",
+                  "description": "Prendre en charge les frais du 1er passage de la visite m\u00e9dicale des \u00e9coliers du Pr\u00e9scolaire",
+                  "responsable": NaN,
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "d\u00e9parasitants",
+                  "quantity": 50490,
+                  "duree": 1,
+                  "frecuence": 1,
+                  "cout_unitaire": 500,
+                  "cout_total": 25245000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                }
+              ]
+            },
+            {
+              "name": "Sous-Activit\u00e9 2.3.3.3",
+              "description": "Prendre en charge les frais de communication t\u00e9l\u00e9phonique li\u00e9s aux activit\u00e9s de suivi/\u00e9valuation de la visite m\u00e9dicale des \u00e9coliers du pr\u00e9-scolaire, Pr\u00e9-primaire et Primaire (CP1) dans les zones du Programme PRSEB",
+              "responsable": NaN,
+              "localisation": NaN,
+              "type_activite": NaN,
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": NaN,
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": "X",
+                  "Dec": NaN
+                }
+              },
+              "taches": [
+                {
+                  "name": "T\u00e2che  2.3.3.3.1",
+                  "description": "R\u00e9diger les TDR pour \u00e9valuer les frais de communication t\u00e9l\u00e9phonique li\u00e9s aux activit\u00e9s des acteurs (CEC/CS et SMOSS)  de la composante sant\u00e9 et nutrition scolaires dun PRSEB",
+                  "responsable": NaN,
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": NaN,
+                  "quantity": NaN,
+                  "duree": NaN,
+                  "frecuence": NaN,
+                  "cout_unitaire": NaN,
+                  "cout_total": 0,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che  2.3.3.3.2",
+                  "description": "Prendre en charge les frais de  communication t\u00e9l\u00e9phonique li\u00e9s aux activit\u00e9s des acteurs (CEC/CS et SMOSS) un \u00e9tat de vaccination non \u00e0 jour et autres anomalies telles que les handicaps, les d\u00e9sordres nutritionnels",
+                  "responsable": "DMOSS",
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": "PRSEP",
+                  "unite": "Agents",
+                  "quantity": 93,
+                  "duree": 1,
+                  "frecuence": 1,
+                  "cout_unitaire": 10000,
+                  "cout_total": 930000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che  2.3.3.3.3",
+                  "description": "Prendre en charge les frais de  communication t\u00e9l\u00e9phonique li\u00e9s des acteurs m\u00e9dicaux dans lacadre du suivi des r\u00e9f\u00e9rences pour rattrage vaccinal",
+                  "responsable": "DMOSS",
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": "PRSEP",
+                  "unite": "Agents",
+                  "quantity": 165,
+                  "duree": 1,
+                  "frecuence": 1,
+                  "cout_unitaire": 10000,
+                  "cout_total": 1650000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ddr": "Action 2.4",
+          "name": "Assurer la planification, la coordination, le suivi et l'\u00e9valuation des interventions relatives \u00e0 la sant\u00e9, \u00e0 la nutrition scolaire et \u00e0 l'alphab\u00e9tisation",
+          "activites": [
+            {
+              "name": "Activit\u00e9 2.4.1",
+              "description": "Equiper les Directions Centrales et R\u00e9gionales de la composante \"Alphab\u00e9tisation\"",
+              "responsable": "DAAJE",
+              "localisation": NaN,
+              "type_activite": "Non Contractuelle ",
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": NaN,
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": []
+            },
+            {
+              "name": "Sous-Activit\u00e9 2.4.1.1",
+              "description": "Doter les Directions Centrales et R\u00e9gionales en mat\u00e9riel informatique",
+              "responsable": "DAAJE",
+              "localisation": NaN,
+              "type_activite": NaN,
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": NaN,
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": [
+                {
+                  "name": "T\u00e2che 2.4.1.1.1",
+                  "description": "Elaborer les TDR pour recruter un prestataire pour l'achat et la livraison des \u00e9quipements informatique pour les Coordinations Centrales et R\u00e9gionales",
+                  "responsable": "DAAJE",
+                  "localisation": "ABIDJAN",
+                  "partenaire": "Equipe de coordination PforR",
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": "s\u00e9ance de travail",
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": NaN,
+                  "quantity": NaN,
+                  "duree": NaN,
+                  "frecuence": NaN,
+                  "cout_unitaire": NaN,
+                  "cout_total": NaN,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 2.4.1.1.2",
+                  "description": "Recruter un prestataire pour l'achat et la livraison des \u00e9quipements informatiques pour les Coordinations Centrales et R\u00e9gionales",
+                  "responsable": "DAAJE",
+                  "localisation": "ABIDJAN",
+                  "partenaire": "DTSI",
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": "fourniture",
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": NaN,
+                  "quantity": NaN,
+                  "duree": NaN,
+                  "frecuence": NaN,
+                  "cout_unitaire": NaN,
+                  "cout_total": NaN,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": 2421,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                }
+              ]
+            },
+            {
+              "name": "Sous-Activit\u00e9 2.4.1.2",
+              "description": "Doter les Coordinations Centrales et R\u00e9gionales en mat\u00e9riel roulant",
+              "responsable": "DAAJE",
+              "localisation": NaN,
+              "type_activite": NaN,
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": NaN,
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": [
+                {
+                  "name": "T\u00e2che 2.4.1.2.1",
+                  "description": "Elaborer le cahier des charges du prestataire pour l'acquisition du v\u00e9hicule pick up et des motos les coordinations centrale et r\u00e9gionale",
+                  "responsable": "DAAJE",
+                  "localisation": "ABIDJAN",
+                  "partenaire": "Equipe de coordination PforR",
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "cahier de charge",
+                  "quantity": NaN,
+                  "duree": NaN,
+                  "frecuence": NaN,
+                  "cout_unitaire": NaN,
+                  "cout_total": NaN,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 2.4.1.2.2",
+                  "description": "Acqu\u00e9rir v\u00e9hicule pick up de type 4x4 pour la Coordinations Centrale (Alphab\u00e9tisation et Mobilisation Communautaire)",
+                  "responsable": "DAAJE",
+                  "localisation": "ABIDJAN",
+                  "partenaire": "Equipe de coordination PforR",
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "v\u00e9hicule",
+                  "quantity": 2,
+                  "duree": "PM",
+                  "frecuence": "PM",
+                  "cout_unitaire": "PM",
+                  "cout_total": NaN,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": 2432,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 2.4.1.2.3",
+                  "description": "Acqu\u00e9rir des motos pour les Coordinations R\u00e9gionales et Locales (motos type 125 cc et casques)",
+                  "responsable": "DAAJE",
+                  "localisation": "ABIDJAN",
+                  "partenaire": "Equipe de coordination PforR",
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "moto",
+                  "quantity": 24,
+                  "duree": 1,
+                  "frecuence": 1,
+                  "cout_unitaire": 1500000,
+                  "cout_total": 36000000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": "243300 V\u00e9hicules \u00e0 2 roues et tricycles",
+                  "ref_ddp_ligne_budgetaire": 243300.0,
+                  "ppm": "PPM"
+                },
+                {
+                  "name": "T\u00e2che 2.4.1.2.4",
+                  "description": "Prendre en charge les frais de carburant pour les motos",
+                  "responsable": "DAAJE",
+                  "localisation": "ABIDJAN",
+                  "partenaire": "Equipe de coordination PforR",
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "forfait",
+                  "quantity": 48,
+                  "duree": 0,
+                  "frecuence": 12,
+                  "cout_unitaire": 7000,
+                  "cout_total": 0,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": 601200,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                }
+              ]
+            },
+            {
+              "name": "Activit\u00e9 2.4.2",
+              "description": "Equiper les Coordinations Centrales et R\u00e9gionales de la composante \"Sant\u00e9 et Nutrition\" ",
+              "responsable": "DMOSS",
+              "localisation": NaN,
+              "type_activite": "Non Contractuelle ",
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": "X",
+                  "juin": "X"
+                },
+                "Q3": {
+                  "juil": "X",
+                  "Aout": "X",
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": []
+            },
+            {
+              "name": "Sous-Activit\u00e9 2.4.2.1",
+              "description": "Doter les 12 Coordinations r\u00e9gionales (CR-SNS) en mat\u00e9riel informatique",
+              "responsable": "DMOSS",
+              "localisation": NaN,
+              "type_activite": NaN,
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": "X",
+                  "juin": "X"
+                },
+                "Q3": {
+                  "juil": "X",
+                  "Aout": "X",
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": [
+                {
+                  "name": "T\u00e2che 3.1.2.1.1",
+                  "description": "Elaborer les TDR pour recruter un prestataire pour l'achat et la livraison des \u00e9quipements informatique pour les Coordinations R\u00e9gionales CR-SNS et CD-SNS",
+                  "responsable": "DMOSS",
+                  "localisation": "ABIDJAN",
+                  "partenaire": "Equipe de coordination PforR",
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": "s\u00e9ance de travail",
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": NaN,
+                  "quantity": NaN,
+                  "duree": NaN,
+                  "frecuence": NaN,
+                  "cout_unitaire": NaN,
+                  "cout_total": 0,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 3.1.2.1.2",
+                  "description": "Recruter un prestataire pour l'achat et la livraison des \u00e9quipements informatiques pour les 12 CR-SNS et CD-SNS",
+                  "responsable": "DMOSS",
+                  "localisation": "ABIDJAN",
+                  "partenaire": "DTSI",
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": "fourniture",
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": NaN,
+                  "quantity": NaN,
+                  "duree": NaN,
+                  "frecuence": NaN,
+                  "cout_unitaire": NaN,
+                  "cout_total": NaN,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                }
+              ]
+            },
+            {
+              "name": "Sous-Activit\u00e9 2.4.2.2",
+              "description": "Doter les Coordinations r\u00e9gionales et locales en mat\u00e9riel roulant",
+              "responsable": NaN,
+              "localisation": NaN,
+              "type_activite": NaN,
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": "X",
+                  "juin": "X"
+                },
+                "Q3": {
+                  "juil": "X",
+                  "Aout": "X",
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": [
+                {
+                  "name": "T\u00e2che 3.1.2.2.1",
+                  "description": "Prendre en charge les frais d'entretien et r\u00e9paration des v\u00e9hicules",
+                  "responsable": "DMOSS",
+                  "localisation": "ABIDJAN",
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "forfait",
+                  "quantity": 1,
+                  "duree": 1,
+                  "frecuence": 1,
+                  "cout_unitaire": 2500000,
+                  "cout_total": 2500000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 3.1.2.2.2",
+                  "description": "Acqu\u00e9rir 48 motos pour les Coordinations R\u00e9gionales et Locales  (motos type 125 cc et casques)",
+                  "responsable": "DMOSS",
+                  "localisation": "ABIDJAN",
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "moto",
+                  "quantity": 48,
+                  "duree": 1,
+                  "frecuence": 1,
+                  "cout_unitaire": 1500000,
+                  "cout_total": 72000000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 3.1.2.2.3",
+                  "description": "Prendre en charge les frais de carburant pour les motos",
+                  "responsable": "DMOSS",
+                  "localisation": "ABIDJAN",
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "forfait",
+                  "quantity": 93,
+                  "duree": 1,
+                  "frecuence": 12,
+                  "cout_unitaire": 7000,
+                  "cout_total": 7812000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                }
+              ]
+            },
+            {
+              "name": "Activit\u00e9 2.1.3",
+              "description": "Organiser  les rencontres hebdomadaires du cadre du Leadership Collaboratif, en vue booster les activit\u00e9s de la Composau Sant\u00e9 et Nutrition Scolaires du PRSEB",
+              "responsable": "DMOSS",
+              "localisation": NaN,
+              "type_activite": "Non Contractuelle ",
+              "2025": {
+                "Q1": {
+                  "janv": "X",
+                  "fevr": "X",
+                  "mars": "X"
+                },
+                "Q2": {
+                  "avril": "X",
+                  "mai": "X",
+                  "juin": "X"
+                },
+                "Q3": {
+                  "juil": "X",
+                  "Aout": "X",
+                  "Sept": "X"
+                },
+                "Q4": {
+                  "Oct": "X",
+                  "Nov": "X",
+                  "Dec": "X"
+                }
+              },
+              "taches": []
+            },
+            {
+              "name": "Activit\u00e9 3.1.4",
+              "description": "Organiser six (06) rencontres du GTT-SNS du Sous-Domaine \"Alphab\u00e9tisation, Sant\u00e9 et Nutrition Scolaires\" dont deux (02) en pr\u00e9sentiel",
+              "responsable": "DMOSS",
+              "localisation": NaN,
+              "type_activite": " Contractuelle MR ",
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": "X"
+                },
+                "Q2": {
+                  "avril": "X",
+                  "mai": "X",
+                  "juin": "X"
+                },
+                "Q3": {
+                  "juil": "X",
+                  "Aout": "X",
+                  "Sept": "X"
+                },
+                "Q4": {
+                  "Oct": "X",
+                  "Nov": "X",
+                  "Dec": "X"
+                }
+              },
+              "taches": []
+            },
+            {
+              "name": "Activit\u00e9 3.1.5",
+              "description": "Organiser  quatre (04) rencontres du CR-SNS au niveau r\u00e9gional du Sous-Domaine \"Alphab\u00e9tisation, Sant\u00e9 et Nutrition Scolaires\"  dont Deux (02) en pr\u00e9sentiel",
+              "responsable": "DMOSS",
+              "localisation": NaN,
+              "type_activite": " Contractuelle MR ",
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": NaN,
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": "X",
+                  "Nov": "X",
+                  "Dec": "X"
+                }
+              },
+              "taches": []
+            },
+            {
+              "name": "Activit\u00e9 3.1.6",
+              "description": "Organiser quatre (04) rencontres du CD-SNS au niveau d\u00e9partemental des interventions du Sous-Domaine \"Alphab\u00e9tisation, Sant\u00e9 et Nutrition Scolaires\"  dont Deux (02) en pr\u00e9sentiel",
+              "responsable": "DMOSS",
+              "localisation": NaN,
+              "type_activite": " Contractuelle MR ",
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": NaN,
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": "X",
+                  "Nov": "X",
+                  "Dec": "X"
+                }
+              },
+              "taches": []
+            },
+            {
+              "name": "Activit\u00e9 3.1.7",
+              "description": "Organiser six (06) rencontres de la CS/P-SNS en lien avec les interventions du Sous-Domaine \"Alphab\u00e9tisation, Sant\u00e9 et Nutrition Scolaires\" dont deux (02) en presentiel",
+              "responsable": "DMOSS",
+              "localisation": NaN,
+              "type_activite": " Contractuelle MR ",
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": NaN,
+                  "juin": "X"
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": []
+            },
+            {
+              "name": "Activit\u00e9 3.1.8",
+              "description": "Elaborer le rapport semestriel du sous-domaine \"Alphab\u00e9tisation, Sant\u00e9 et Nutrition Scolaires\"",
+              "responsable": "DMOSS",
+              "localisation": NaN,
+              "type_activite": "Non  Contractuelle ",
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": NaN,
+                  "juin": "X"
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": []
+            },
+            {
+              "name": "Activit\u00e9 3.1.9",
+              "description": " Organiser des missions de supervision de la campagne de d\u00e9parasitage et de la suppl\u00e9mentation en Vitamine A des \u00e9coliers du Primaire (Pr\u00e9-primaire et CP1)",
+              "responsable": "DMOSS",
+              "localisation": NaN,
+              "type_activite": " Contractuelle MR ",
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": "X",
+                  "mai": "X",
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": [
+                {
+                  "name": "T\u00e2che 3.1.9.1",
+                  "description": "Elaborer les TDR des missions rdes missions de supervision de la campagne de d\u00e9parasitage et de la suppl\u00e9mentation en Vitamine A des \u00e9coliers du Primaire (Pr\u00e9-primaire et CP1)",
+                  "responsable": "DMOSS",
+                  "localisation": "ABIDJAN",
+                  "partenaire": "GTT - SNS",
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "Rencontre",
+                  "quantity": NaN,
+                  "duree": NaN,
+                  "frecuence": NaN,
+                  "cout_unitaire": NaN,
+                  "cout_total": 0,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 3.1.9.2",
+                  "description": "Service h\u00f4telerie",
+                  "responsable": "DMOSS",
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": NaN,
+                  "quantity": NaN,
+                  "duree": NaN,
+                  "frecuence": NaN,
+                  "cout_unitaire": NaN,
+                  "cout_total": NaN,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 3.1.9.3 Carburant des v\u00e9hicules de mission 12 DRENA",
+                  "description": "\nAxe 1(Abidjan-Daloa-Issia-Abidjan)",
+                  "responsable": "DMOSS",
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "1896 km",
+                  "quantity": 284,
+                  "duree": 248850,
+                  "frecuence": 7000,
+                  "cout_unitaire": 875,
+                  "cout_total": 255850,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 3.1.9.4",
+                  "description": "Location de vehicule +chauffeur",
+                  "responsable": "DMOSS",
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "service",
+                  "quantity": 6,
+                  "duree": 14,
+                  "frecuence": 1,
+                  "cout_unitaire": 90000,
+                  "cout_total": 7560000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                }
+              ]
+            },
+            {
+              "name": "Activit\u00e9 3.1.10",
+              "description": "Organiser une mission de supervision des activit\u00e9s en lien avec la visite m\u00e9dicale des \u00e9coliers du Primaire (Pr\u00e9-primaire et CP1)",
+              "responsable": "DMOSS",
+              "localisation": NaN,
+              "type_activite": " Contractuelle RLD",
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": NaN,
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": "X",
+                  "Dec": "X"
+                }
+              },
+              "taches": [
+                {
+                  "name": "T\u00e2che 3.1.9.1",
+                  "description": "Elaborer les TDR des missions rdes missions de supervision de la campagne de d\u00e9parasitage et de la suppl\u00e9mentation en Vitamine A des \u00e9coliers du Primaire (Pr\u00e9-primaire et CP1)",
+                  "responsable": "DMOSS",
+                  "localisation": "ABIDJAN",
+                  "partenaire": "GTT - SNS",
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": "non contractuelle",
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "Rencontre",
+                  "quantity": NaN,
+                  "duree": NaN,
+                  "frecuence": NaN,
+                  "cout_unitaire": NaN,
+                  "cout_total": 0,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 3.1.9.2",
+                  "description": "Frais d\u2019H\u00e9bergement des membres des \u00e9quipes de mission",
+                  "responsable": "DMOSS",
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "perdiem",
+                  "quantity": 2,
+                  "duree": 12,
+                  "frecuence": 6,
+                  "cout_unitaire": 40000,
+                  "cout_total": 5760000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 3.1.9.3",
+                  "description": "Carburant des v\u00e9hicules de mission et payage \nAxe 1(Abidjan-Daloa-Issia-Abidjan)",
+                  "responsable": "DMOSS",
+                  "localisation": "12 DRENA",
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": NaN,
+                  "quantity": 1,
+                  "duree": 1,
+                  "frecuence": 1,
+                  "cout_unitaire": 255850,
+                  "cout_total": 255850,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che 3.1.9.4",
+                  "description": "Location de vehicule +chauffeur",
+                  "responsable": "DMOSS",
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "service",
+                  "quantity": 6,
+                  "duree": 14,
+                  "frecuence": 1,
+                  "cout_unitaire": 90000,
+                  "cout_total": 7560000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                }
+              ]
+            },
+            {
+              "name": "Activit\u00e9 3.1.11",
+              "description": "Organiser un Atelier Bilan et de planification des activit\u00e9s du Sous(Domaine Alphab\u00e9tisation, Sant\u00e9 et Nutrition Scolaires du Programme PRSEB",
+              "responsable": "DMOSS",
+              "localisation": NaN,
+              "type_activite": " Contractuelle MR",
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": NaN,
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": "X",
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": [
+                {
+                  "name": "T\u00e2che 3.1.11.1",
+                  "description": "Prendre en charge les frais d'organisation de l'aelier",
+                  "responsable": "DMOSS",
+                  "localisation": "YAMOUSSOUKRO",
+                  "partenaire": "GTT - SNS",
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": "PM",
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "H/J",
+                  "quantity": 40,
+                  "duree": 5,
+                  "frecuence": 1,
+                  "cout_unitaire": 0,
+                  "cout_total": 0,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                }
+              ]
+            },
+            {
+              "name": "Activit\u00e9 3.1.12",
+              "description": "Elaborer le rapport annuel du sous-domaine  \"Alphab\u00e9tisation, Sant\u00e9 et Nutrition Scolaires\"",
+              "responsable": "DMOSS",
+              "localisation": NaN,
+              "type_activite": " Contractuelle RLD ",
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": NaN
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": NaN,
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": "X",
+                  "Dec": NaN
+                }
+              },
+              "taches": [
+                {
+                  "name": "T\u00e2che  3.1.12.1",
+                  "description": "Elaborer les TDR du rapport annuel du sous-domaine  \"Alphab\u00e9tisation, Sant\u00e9 et Nutrition Scolaires\"",
+                  "responsable": "DMOSS",
+                  "localisation": "ABIDJAN",
+                  "partenaire": "Coord PForR",
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": NaN,
+                  "quantity": NaN,
+                  "duree": NaN,
+                  "frecuence": NaN,
+                  "cout_unitaire": NaN,
+                  "cout_total": NaN,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che  3.1.12.2",
+                  "description": "R\u00e9diger le rapport annuel",
+                  "responsable": "DMOSS",
+                  "localisation": "ABIDJAN",
+                  "partenaire": "Coord PForR",
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "rapport",
+                  "quantity": "PM",
+                  "duree": "PM",
+                  "frecuence": "PM",
+                  "cout_unitaire": "PM",
+                  "cout_total": "PM",
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                },
+                {
+                  "name": "T\u00e2che  3.1.12.3",
+                  "description": "R\u00e9diger le rapport semestriel",
+                  "responsable": "DMOSS",
+                  "localisation": "ABIDJAN",
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "rapport",
+                  "quantity": "PM",
+                  "duree": "PM",
+                  "frecuence": "PM",
+                  "cout_unitaire": "PM",
+                  "cout_total": "PM",
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                }
+              ]
+            },
+            {
+              "name": "Activit\u00e9 1.1.3",
+              "description": "Organiser un atelier  de sensibilisation  contre les addictions en milieu scolaire          ",
+              "responsable": "DVS",
+              "localisation": "11 DRENA",
+              "type_activite": "Non contractuel",
+              "2025": {
+                "Q1": {
+                  "janv": NaN,
+                  "fevr": NaN,
+                  "mars": "X"
+                },
+                "Q2": {
+                  "avril": NaN,
+                  "mai": NaN,
+                  "juin": NaN
+                },
+                "Q3": {
+                  "juil": NaN,
+                  "Aout": NaN,
+                  "Sept": NaN
+                },
+                "Q4": {
+                  "Oct": NaN,
+                  "Nov": NaN,
+                  "Dec": NaN
+                }
+              },
+              "taches": [
+                {
+                  "name": "T\u00e2che 1.1.3.1",
+                  "description": "Prendre en charge les perdiems des participants",
+                  "responsable": NaN,
+                  "localisation": NaN,
+                  "partenaire": NaN,
+                  "2025": {
+                    "Q1": {}
+                  },
+                  "type_activite": NaN,
+                  "ild": NaN,
+                  "source": NaN,
+                  "unite": "personnes",
+                  "quantity": 65,
+                  "duree": 4,
+                  "frecuence": 1,
+                  "cout_unitaire": 93000,
+                  "cout_total": 24180000,
+                  "ref_ddp": NaN,
+                  "ref_ddp_natures": NaN,
+                  "ref_ddp_actions": NaN,
+                  "ref_ddp_activites": NaN,
+                  "nature_economique": NaN,
+                  "ref_ddp_ligne_budgetaire": NaN,
+                  "ppm": NaN
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

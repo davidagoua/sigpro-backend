@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="page-body">
+          <div class="container-fluid">
+            <div class="page-title">
+              <div class="row">
+                <div class="col-6">
+                  <h4>Suivi PTBA Programme</h4>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <!-- Container-fluid starts-->
+          <div class="container-fluid">
+            <div class="row">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <ul class="simple-wrapper nav nav-tabs" id="myTab" role="tablist">
+                                {% for souscomposant in souscomposants %}
+                                    <li class="nav-item" role="presentation"><a class="nav-link txt-primary active" id="home-tab" data-bs-toggle="tab" href="#tab-{{ souscomposant.pk }}" role="tab" aria-controls="home" aria-selected="true">{{ souscomposant.label }}</a></li>
+                                {% endfor %}
+
+
+                            </ul>
+                            <div class="table-responsive">
+                                <table class="table  table-bordered table-hover table-sm">
+                                    <tr>
+                                        <th>Domaine</th>
+                                        <th>Libellé</th>
+                                        <th>Structure</th>
+                                        <th>Villere</th>
+                                        <th>ILD en lien</th>
+                                    </tr>
+                                    {% for composant in composants %}
+                                    	<tr style="background-color: #414242; color: white;" class="text-white">
+                                            <td class="text-white">{{ composant.label }}</td>
+                                            <td colspan="5" class="text-white">{{ composant.description }}</td>
+                                        </tr>
+                                        {% for scp in composant.action_set.all %}
+                                        	<tr style="background-color: #afd097;">
+                                                <td>{{ scp.label }}</td>
+                                                <td colspan="5">{{ scp.description }}</td>
+                                            </tr>
+                                            {% for activite in scp.activite_set.all %}
+                                            	<tr style="background-color: rebeccapurple; color: white;">
+                                                    <td class="text-white"
+                                                    >{{ activite.label }}</td>
+                                                    <td class="text-white"
+                                                    >{{ activite.description }}</td>
+                                                    <td class="text-white"
+                                                    >{{ activite.responsable }}</td>
+                                                    <td class="text-white"
+                                                    >{{ activite.localisation }}</td>
+                                                    <td class="text-white"
+                                                    >{{ activite.indicateur.label }}</td>
+                                                </tr>
+                                                
+
+                                            {% endfor %}
+
+                                        {% endfor %}
+
+                                    {% endfor %}
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <!-- Container-fluid Ends-->
+        </div>
+{% endblock %}

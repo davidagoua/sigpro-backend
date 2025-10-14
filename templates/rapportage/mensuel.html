@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="page-body">
+  <div class="container-fluid">
+    <div class="page-title">
+      <div class="row">
+        <div class="col-6">
+          <h4>{{ title }}</h4>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- Container-fluid starts-->
+  <div class="container-fluid">
+    <div class="row">
+        <div class="card" x-data={search: ''}>
+            <div class="card-header">
+                <h4>Rapports Consolidés</h4>
+            </div>
+            <div class="card-body">
+                <div class="">
+                    <div class="list-product-header">
+                      <div>
+                        <div>
+                            <input type="text" class="form-control" x-model="search" placeholder="Rechercher un rapport">
+                        </div>
+
+                        
+                      
+                    </div>
+                    <table class="table table-responsive">
+                        <tr>
+                            <th>Intitulé</th>
+                            <th>Roles</th>
+                            <th>Departements</th>
+                            <th></th>
+                        </tr>
+                        {% for object in rapport_consolides %}
+                        	<tr>
+                                <td> <b>{{ object.label }}</b></td>
+                                <td>
+                                    {%for role in object.roles.all %}
+                                        <span class="badge bg-info">{{ role.name }}</span>
+                                    {% endfor %}
+                                </td>
+                                <td>
+                                    {%for departement in object.departements.all %}
+                                        <span class="badge bg-info">{{ departement.name }}</span>
+                                    {% endfor %}
+                                </td>
+                                <td>
+                                    {% if perms.rapport.delete %}
+                                    <a href="{% url 'rapport:delete_rapport' pk=object.pk %}" class="btn  btn-outline-primary" title="Télécharger"><span class="fa fa-trash"></span></a>
+                                    {% endif %}
+                                    <a href="{% url 'rapport:download_file' pk=object.pk %}?next={{ request.path }}" class="btn  btn-outline-primary" title="Télécharger"><span class="fa fa-file-download"></span> </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="card" x-data={search: ''}>
+            <div class="card-header">
+                <h4>Rapports en cours</h4>
+            </div>
+            <div class="card-body">
+                <div class="">
+                    <div class="list-product-header">
+                      <div>
+                        <div>
+                            <input type="text" class="form-control" x-model="search" placeholder="Rechercher un rapport">
+                        </div>
+                        {% if user.is_staff %}
+                        <a class="btn btn-primary" href="#" data-bs-toggle="modal" data-bs-target="#add-rapport-modal"><i class="fa fa-plus"></i>Ajouter</a>
+                        <div class="modal" id="add-rapport-modal">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <form enctype="multipart/form-data" action="" method="post">
+                                            {% csrf_token %}
+                                            {{ form.as_p }}
+                                            <input type="hidden" name="next" value="{{ request.path }}">
+                                            <button class="btn btn-primary">Enregistrer</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        {% endif %}
+                      
+                    </div>
+                    <table class="table table-responsive">
+                        <tr>
+                            <th>Intitulé</th>
+                            <th>Roles</th>
+                            <th>Departements</th>
+                            <th></th>
+                        </tr>
+                        {% for object in object_list %}
+                        	<tr>
+                                <td> <b>{{ object.label }}</b></td>
+                                <td>
+                                    {%for role in object.roles.all %}
+                                        <span class="badge bg-info">{{ role.name }}</span>
+                                    {% endfor %}
+                                </td>
+                                <td>
+                                    {%for departement in object.departements.all %}
+                                        <span class="badge bg-info">{{ departement.name }}</span>
+                                    {% endfor %}
+                                </td>
+                                
+                                <td class="d-flex">
+
+                                    <a href="{% url 'rapport:download_file' pk=object.pk %}?next={{ request.path }}" class="btn btn-sm btn-outline-info"><span class="fa fa-file-download" title="Télécharger"></span></a>
+                                    
+                                    
+
+                                    <form action="{{ object.generate_collabora_url }}" enctype="multipart/form-data" method="post">
+
+                                        <input name="access_token" value="{{ access_token }}" type="hidden"/>
+                                
+                                        <button type="submit" class="btn btn-sm btn-outline-info"><span class="fa fa-pencil" title="Editer"></span></button>
+                                
+                                    </form>
+
+                                    
+                                    {% if request.user.is_staff %}
+                                    <a href="{% url 'rapport:update_state' pk=object.pk %}?status=10&next={{ request.path }}" class="btn btn-sm btn-primary" title="Consolider"><span class="fa fa-check"></span></a>
+                                    <a href="{% url 'rapport:delete_rapport' pk=object.pk %}?next={{ request.path }}" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce rapport ?')" class="btn btn-sm btn-danger" title="Supprimer"><span class="fa fa-trash"></span></a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- Container-fluid Ends-->
+</div>
+{% endblock %}

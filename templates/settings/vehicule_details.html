@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="page-body">
+
+  <!-- Container-fluid starts-->
+  <div class="container-fluid">
+    <div class="row">
+        <div class="card">
+    <div class="card-body">
+        <div class="d-flex justify-content-between">
+            <h2>Details véhicule {{ object }}</h2>
+            <div>
+                <a href="{% url 'setting:vehicule_list' %}" class="btn btn-primary">Liste</a>
+                <a href="{% url 'setting:vehicule_list' %}" class="btn btn-primary">Rapport</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+    </div>
+  </div>
+  <!-- Container-fluid Ends-->
+</div>
+
+{% endblock %}

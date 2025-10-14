@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="page-body">
+
+  <!-- Container-fluid starts-->
+  <div class="container-fluid">
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <h2>Liste des sorties de véhicules</h2>
+                    <a href="{% url 'setting:emprunt_add' %}" class="btn btn-primary">Ajouter un emprunt</a>
+                </div>
+                <table class="table mt-4">
+                    <thead>
+                        <tr>
+                            <th>Véhicule</th>
+                            <th>Date de sortie</th>
+                            <th>Date de retour</th>
+                            <th>Utilisateur</th>
+                            <th>Chauffeur</th>
+                            <th>Panne</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for emprunt in emprunts %}
+                        <tr>
+                            <td>{{ emprunt.vehicule }}</td>
+                            <td>{{ emprunt.date_sortie|date:"d/m/Y H:i" }}</td>
+                            <td>{{ emprunt.date_retour|date:"d/m/Y H:i" }}</td>
+                            <td>{{ emprunt.nom_prenom }}</td>
+                            <td>{{ emprunt.nom_chauffeur }}</td>
+
+                            <td>{{ emprunt.is_panne|yesno:"Oui,Non" }}</td>
+                            <td>
+                                <a href="{% url 'setting:emprunt_edit' emprunt.pk %}" class="btn btn-sm btn-primary">Modifier</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- Container-fluid Ends-->
+</div>
+
+{% endblock %}

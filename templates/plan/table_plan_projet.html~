@@ -1,0 +1,94 @@
+{% load humanize %}
+<div>
+    <table class="table " x-data="{ openComposants: {}, openSousComposants: {}, openIndiacteurs: {} }">
+        <tr>
+            <th style="width: 25px"></th>
+            <th>Composantes/Indicateurs/Activités</th>
+            <th>Categorie Dépense</th>
+            <th>Unité</th>
+            <th>Coût</th>
+            <th>Quantité</th>
+            <th>Fréquence</th>
+            <th>Montant Planifié</th>
+        </tr>
+        {% for composant in composants %}
+            <tr style="background-color: #FFFF00; color: black">
+                <td style="width: 25px"></td>
+                <td class="text-left">
+                    <button @click="openComposants['{{ composant.pk }}'] = !openComposants['{{ composant.pk }}']"
+                            class="btn btn-link text-black black black-text"
+                            style="text-decoration: none; text-align: left"><b>{{ composant.label }}</b> </button>
+                </td>
+                <td style="color: black">
+
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td style="color: black">{{ composant.montant_planifier|intcomma }}</td>
+
+            </tr>
+                {% for sous_compo in composant.souscomposants.all %}
+                    <tr  style="background-color: #DDEBF7">
+                        <td style="width: 25px"></td>
+                        <td width="500px">
+                            <button
+                                    class="btn btn-link text-let"
+                                    style="color: black; text-decoration: none; text-align: left"
+                                    @click="openSousComposants['{{ sous_compo.pk }}'] = !openSousComposants['{{ sous_compo.pk }}']"
+                            > <b>{{ sous_compo.label }}</b></button>
+                        </td>
+                        <td style="color: black"></td>
+                        <td style="color: black"></td>
+                        <td style="color: black"></td>
+                        <td style="color: black"></td>
+                        <td style="color: black"></td>
+                        <td style="color: black">{{ sous_compo.montant_planifier|intcomma }}</td>
+
+                    </tr>
+                    {% for indicateur in sous_compo.indicateur_set.all %}
+                    	<tr
+                            style="background-color: #F8CBAD"
+                        >
+                            <td style="width: 25px"></td>
+                            <td>
+                                <button
+                                    class="btn btn-link text-left"
+                                    style="text-align: left; color: black"
+                                    @click="openIndiacteurs['{{ indicateur.pk }}'] = !openIndiacteurs['{{ indicateur.pk }}']"
+                                >
+                                    <b>{{ indicateur.type }}{{ indicateur.pk }}</b>: {{ indicateur.label }}
+                                </button>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><b>{{ indicateur.montant_planifier|intcomma }}</b></td>
+
+                        </tr>
+                        {% for tache in indicateur.tache_set.all %}
+                        	<tr
+                                
+                            >
+                                {% include 'suivi/action_suivi_projet.html' with tache=tache %}
+                                <td>{{ tache.label }}</td>
+                                <td>{{ tache.categorie.label }}</td>
+                                <td>{{ tache.unite }}</td>
+                                <td>{{ tache.planificationcout_set.last.cout }}</td>
+                                <td>{{ tache.planificationcout_set.last.quantite }}</td>
+                                <td>{{ tache.planificationcout_set.last.frequence }}</td>
+                                <td>{{ tache.planificationcout_set.last.montant_planifier|intcomma }}</td>
+                            </tr>
+                        {% endfor %}
+
+                    {% endfor %}
+
+                {% endfor %}
+
+        {% endfor %}
+
+    </table>
+</div>
