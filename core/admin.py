@@ -4,7 +4,8 @@ from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import Group
 
-from core.models import User, Departement, Role, Drf
+from core.models import User, Departement, Role
+from planification.models import Drf
 
 
 

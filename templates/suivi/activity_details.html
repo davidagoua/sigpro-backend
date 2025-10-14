@@ -1,0 +1,498 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="page-body">
+
+
+    <div class="container-fluid py-4">
+    <!-- En-tête -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h3 class="h3 mb-1">{{ tdr.label}}</h3>
+            <p class="text-muted mb-0">Détails du programme</p>
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-outline-danger">
+                <i class="fas fa-times"></i> Annuler
+            </button>
+            <button class="btn btn-primary">
+                <i class="fas fa-download"></i> Exporter
+            </button>
+        </div>
+    </div>
+
+    <!-- Carte principale -->
+    <div class="row">
+        <div class="col-lg-8">
+            <!-- Informations générales -->
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-info-circle me-2"></i>Informations Générales
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <table class="table table-borderless">
+                                <tr>
+                                    <th width="40%">Libellé :</th>
+                                    <td>{{ tdr.label|default:"Non spécifié" }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Activité :</th>
+                                    <td>
+                                        {% if tdr.activity %}
+                                            <span class="badge bg-info">{{ tdr.activity.nom }}</span>
+                                        {% else %}
+                                            <span class="text-muted">Non assigné</span>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Créé par :</th>
+                                    <td>{{ tdr.user.get_full_name|default:tdr.user.username }}</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-md-6">
+                            <table class="table table-borderless">
+                                <tr>
+                                    <th width="40%">Statut :</th>
+                                    <td>
+                                        <span class="badge {% if tdr.state == 0 %}bg-secondary{% elif tdr.state == 1 %}bg-warning{% elif tdr.state == 3 %}bg-success{% else %}bg-danger{% endif %}">
+                                            {{ tdr.get_state_display }}
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Date création :</th>
+                                    <td>{{ tdr.created|date:"d/m/Y H:i" }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Dernière modification :</th>
+                                    <td>{{ tdr.modified|date:"d/m/Y H:i" }}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fichiers -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-file me-2"></i>Documents
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="file-card p-3 border rounded">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-file-pdf text-danger fa-2x me-3"></i>
+                                    <div class="flex-grow-1">
+                                        <h6 class="mb-1">TDR Soumis</h6>
+                                        <p class="text-muted mb-1 small">
+                                            {{ tdr.file.name|slice:"-20:" }}
+                                        </p>
+                                        <a href="{{ tdr.file.url }}" class="btn btn-sm btn-outline-primary" target="_blank">
+                                            <i class="fas fa-eye me-1"></i>Voir
+                                        </a>
+                                        <a href="{{ tdr.file.url }}" download class="btn btn-sm btn-outline-secondary">
+                                            <i class="fas fa-download me-1"></i>Télécharger
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% if tdr.file_final %}
+                        <div class="col-md-6">
+                            <div class="file-card p-3 border rounded">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-file-contract text-success fa-2x me-3"></i>
+                                    <div class="flex-grow-1">
+                                        <h6 class="mb-1">TDR Final</h6>
+                                        <p class="text-muted mb-1 small">
+                                            {{ tdr.file_final.name|slice:"-20:" }}
+                                        </p>
+                                        <a href="{{ tdr.file_final.url }}" class="btn btn-sm btn-outline-primary" target="_blank">
+                                            <i class="fas fa-eye me-1"></i>Voir
+                                        </a>
+                                        <a href="{{ tdr.file_final.url }}" download class="btn btn-sm btn-outline-secondary">
+                                            <i class="fas fa-download me-1"></i>Télécharger
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Indicateurs de performance -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-chart-bar me-2"></i>Indicateurs de Performance
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <canvas id="progressChart" width="400" height="200"></canvas>
+                        </div>
+                        <div class="col-md-6">
+                            <canvas id="riskChart" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tableau des activités -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-tasks me-2"></i>Planning des Activités
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Activité</th>
+                                    <th>Date début</th>
+                                    <th>Date fin</th>
+                                    <th>Responsable</th>
+                                    <th>Statut</th>
+                                    <th>Progression</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Analyse des besoins</td>
+                                    <td>01/01/2024</td>
+                                    <td>15/01/2024</td>
+                                    <td>Jean Dupont</td>
+                                    <td><span class="badge bg-success">Terminé</span></td>
+                                    <td>
+                                        <div class="progress" style="height: 8px;">
+                                            <div class="progress-bar bg-success" style="width: 100%"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Rédaction du TDR</td>
+                                    <td>16/01/2024</td>
+                                    <td>30/01/2024</td>
+                                    <td>Marie Martin</td>
+                                    <td><span class="badge bg-primary">En cours</span></td>
+                                    <td>
+                                        <div class="progress" style="height: 8px;">
+                                            <div class="progress-bar bg-primary" style="width: 75%"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Validation technique</td>
+                                    <td>01/02/2024</td>
+                                    <td>15/02/2024</td>
+                                    <td>Pierre Durand</td>
+                                    <td><span class="badge bg-warning">Planifié</span></td>
+                                    <td>
+                                        <div class="progress" style="height: 8px;">
+                                            <div class="progress-bar bg-warning" style="width: 0%"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+            <!-- Statut de validation -->
+            <div class="card mb-4">
+                <div class="card-header bg-{% if tdr.accorder %}success{% else %}warning{% endif %} text-white">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-clipboard-check me-2"></i>Validation
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="text-center mb-3">
+                        {% if tdr.accorder %}
+                            <i class="fas fa-check-circle text-success fa-3x mb-3"></i>
+                            <h5 class="text-success">TDR Accordé</h5>
+                        {% else %}
+                            <i class="fas fa-clock text-warning fa-3x mb-3"></i>
+                            <h5 class="text-warning">En attente de validation</h5>
+                        {% endif %}
+                    </div>
+
+                    <div class="list-group list-group-flush">
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            ANO Envoyé
+                            <span class="badge {% if tdr.injonction %}bg-danger{% else %}bg-secondary{% endif %}">
+                                {{ tdr.injonction|yesno:"Oui,Non" }}
+                            </span>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            ANO accordé
+                            <span class="badge {% if tdr.accorder %}bg-success{% else %}bg-warning{% endif %}">
+                                {{ tdr.accorder|yesno:"Accordé,En attente" }}
+                            </span>
+                        </div>
+                        {% if tdr.date_soumission %}
+                        <div class="list-group-item">
+                            <small class="text-muted">Soumis le :</small><br>
+                            {{ tdr.date_soumission|date:"d/m/Y H:i" }}
+                        </div>
+                        {% endif %}
+                        {% if tdr.date_approbation %}
+                        <div class="list-group-item">
+                            <small class="text-muted">Approuvé le :</small><br>
+                            {{ tdr.date_approbation|date:"d/m/Y H:i" }}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leçons apprises -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-graduation-cap me-2"></i>Leçons Apprises
+                    </h5>
+                </div>
+                <div class="card-body">
+                    {% if tdr.lessons %}
+                        <p class="card-text">{{ tdr.lessons|linebreaks }}</p>
+                    {% else %}
+                        <p class="text-muted text-center">
+                            <i class="fas fa-info-circle me-1"></i>
+                            Aucune leçon apprise enregistrée
+                        </p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Risques identifiés -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-exclamation-triangle me-2"></i>Risques Identifiés
+                    </h5>
+                </div>
+                <div class="card-body">
+                    {% if tdr.risks %}
+                        <p class="card-text">{{ tdr.risks|linebreaks }}</p>
+                    {% else %}
+                        <p class="text-muted text-center">
+                            <i class="fas fa-info-circle me-1"></i>
+                            Aucun risque identifié
+                        </p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Recommandations -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-lightbulb me-2"></i>Recommandations
+                    </h5>
+                </div>
+                <div class="card-body">
+                    {% if tdr.recommendations %}
+                        <p class="card-text">{{ tdr.recommendations|linebreaks }}</p>
+                    {% else %}
+                        <p class="text-muted text-center">
+                            <i class="fas fa-info-circle me-1"></i>
+                            Aucune recommandation
+                        </p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Actions rapides -->
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-bolt me-2"></i>Actions Rapides
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="d-grid gap-2">
+                        {% if tdr.peut_etre_modifie %}
+                        <a href="{% url 'tdr_edit' tdr.pk %}" class="btn btn-outline-primary">
+                            <i class="fas fa-edit me-1"></i>Modifier
+                        </a>
+                        {% endif %}
+
+
+
+                        {% if perms.core.change_tdrprogramme %}
+                        <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#validationModal">
+                            <i class="fas fa-check me-1"></i>Valider
+                        </button>
+                        {% endif %}
+
+                        <a href="{% url 'suivi:tdr_technique' %}" class="btn btn-outline-secondary">
+                            <i class="fas fa-arrow-left me-1"></i>Retour à la liste
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Commentaires -->
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title mb-0">
+                <i class="fas fa-comments me-2"></i>Commentaires ({{ tdr.comments.count }})
+            </h5>
+        </div>
+        <div class="card-body">
+            {% for comment in tdr.comments.all %}
+            <div class="comment-item border-bottom pb-3 mb-3">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                        <strong>{{ comment.user.get_full_name }}</strong>
+                        <small class="text-muted ms-2">{{ comment.created|date:"d/m/Y H:i" }}</small>
+                    </div>
+                    {% if comment.user == request.user %}
+                    <div class="btn-group btn-group-sm">
+                        <button class="btn btn-outline-secondary btn-sm">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn btn-outline-danger btn-sm">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                    {% endif %}
+                </div>
+                <p class="mb-0 mt-2">{{ comment.content }}</p>
+            </div>
+            {% empty %}
+            <p class="text-muted text-center">Aucun commentaire pour le moment</p>
+            {% endfor %}
+
+
+        </div>
+    </div>
+</div>
+    <!-- Container-fluid starts-->
+    <div class="container-fluid">
+        <div class="text-right">
+            {% if not object.injonction %}
+            <a href="" class="btn btn-primary ">ANO envoyé</a>
+            {% endif %}
+            {% if not object.injonction %}
+            <a href="" class="btn btn-primary ">ANO accordé</a>
+            {% endif %}
+            <button class="btn btn-success ">Clôturer</button>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Modal de validation -->
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+// Graphique de progression
+const progressCtx = document.getElementById('progressChart').getContext('2d');
+const progressChart = new Chart(progressCtx, {
+    type: 'doughnut',
+    data: {
+        labels: ['Terminé', 'En cours', 'Planifié'],
+        datasets: [{
+            data: [30, 45, 25],
+            backgroundColor: [
+                '#28a745',
+                '#007bff',
+                '#ffc107'
+            ]
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            title: {
+                display: true,
+                text: 'Progression des activités'
+            }
+        }
+    }
+});
+
+// Graphique des risques
+const riskCtx = document.getElementById('riskChart').getContext('2d');
+const riskChart = new Chart(riskCtx, {
+    type: 'bar',
+    data: {
+        labels: ['Faible', 'Moyen', 'Élevé', 'Critique'],
+        datasets: [{
+            label: 'Niveau de risque',
+            data: [12, 19, 8, 5],
+            backgroundColor: [
+                '#28a745',
+                '#ffc107',
+                '#fd7e14',
+                '#dc3545'
+            ]
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            title: {
+                display: true,
+                text: 'Distribution des risques'
+            }
+        }
+    }
+});
+
+// Tooltips Bootstrap
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+});
+</script>
+
+<style>
+.file-card {
+    transition: transform 0.2s;
+}
+.file-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.comment-item {
+    transition: background-color 0.2s;
+}
+.comment-item:hover {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    padding: 10px;
+}
+.card-header {
+    border-bottom: 2px solid #e9ecef;
+}
+</style>
+{% endblock %}

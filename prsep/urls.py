@@ -14,12 +14,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import urls as auth_urls
 import core.views
-#from debug_toolbar.toolbar import debug_toolbar_urls
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -39,8 +39,11 @@ urlpatterns = [
     path('programme/', include('programme.urls', namespace='programme')),
     path('setting/', include('setting.urls', namespace='setting')),
     path('change-password/', core.views.change_password, name='change_password'),
-    path('/update-exercice', core.views.update_current_exercice, name='update_current_exercice'),
+    path('update-exercice', core.views.update_current_exercice, name='update_current_exercice'),
+    path('exercices', core.views.ExerciceListView.as_view(), name='exercices_list'),
+    path('exercices-create', core.views.ExerciceCreateView.as_view(), name='exercices_create'),
 ]
 
-#if settings.DEBUG:
-#    urlpatterns  += debug_toolbar_urls()
+if settings.DEBUG:
+    from debug_toolbar.toolbar import debug_toolbar_urls
+    urlpatterns  += debug_toolbar_urls()

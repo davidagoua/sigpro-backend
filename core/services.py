@@ -20,8 +20,9 @@ def decoder_texte(texte_encode):
     return texte_encode
 
 
-def upload_ptba():
-    file = Path(Path(__file__).parent / "./ptba.json")
+def upload_ptba(file=None):
+    if file is None:
+        file = Path(Path(__file__).parent / "./ptba.json")
     ptba = json.load(file.open('r'))
 
 
@@ -71,6 +72,9 @@ def upload_ptba():
                         pass
 
     return ptba
+
+
+__all__ = ['upload_ptba']
 
 if __name__ == "__main__":
     upload_ptba()

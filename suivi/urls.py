@@ -3,8 +3,10 @@ from django.urls import path
 from suivi.views import SuiviPTBAProjetView, UpdateTacheView, ajouter_decaissements, AddDecaissementView, \
     delete_decaissement, update_state, ActivitiesListView, CreateTDRView, update_tdr_state, delete_tdr, \
     TDRLocalListView, TDRTechniqueListView, download_tdr, TDRCoordinationListView, get_tdr_stats, cancel_tdr, \
-    CreateTDRProgrammeView, update_tdrprogram_state, download_tdr_programme, cancel_tdr_programme, delete_tdr_programme, UpdateTDRProgrammeView, UpdateTDRView, \
-    UpdateTDRCoordinationView, UpdateTDRProgrammeCoordinationView, FinalizeTDRView, updateTDRCoordinationView, stats_view
+    CreateTDRProgrammeView, update_tdrprogram_state, download_tdr_programme, cancel_tdr_programme, delete_tdr_programme, \
+    UpdateTDRProgrammeView, UpdateTDRView, \
+    UpdateTDRCoordinationView, UpdateTDRProgrammeCoordinationView, FinalizeTDRView, updateTDRCoordinationView, \
+    stats_view, ActivityDetailsView
 
 from suivi.comsumer import TDRConsumer
 
@@ -40,5 +42,5 @@ urlpatterns = [
     path('tdr-coordination/<int:pk>/update', updateTDRCoordinationView, name='update_tdr_coordination'),
     path('tdr-finalize/<int:pk>/update', FinalizeTDRView.as_view(), name='finalize_tdr'),
     path('stats/', stats_view, name='stats'),
-
+    path('tdr-details/<int:pk>', ActivityDetailsView.as_view(), name='tdr_details'),
 ]

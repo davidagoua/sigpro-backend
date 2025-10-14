@@ -164,6 +164,12 @@ class TDRTechniqueListView(LoginRequiredMixin, generic.ListView):
     state = 20
 
     def get_queryset(self):
+
+        if self.request.user.is_staff:
+            return Tache.objects.filter(
+                Q(pk__in=[tdr.activity.pk for tdr in TDR.objects.filter(state=self.state)])
+            )
+
         return Tache.objects.filter(responsable=self.request.user.departement.name).filter(
             Q(pk__in=[tdr.activity.pk for tdr in TDR.objects.filter(state=self.state)])
         )
@@ -434,5 +440,11 @@ def stats_view(request):
         'tdr_programme_stats': tdr_programme_stats,
     }
     return render(request, 'home_stats.html', context)
+
+
+
+class ActivityDetailsView(LoginRequiredMixin, generic.DetailView):
+    model = TDR
+    template_name = 'suivi/activity_details.html'
 
 

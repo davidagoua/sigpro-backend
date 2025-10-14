@@ -3,13 +3,15 @@ from django_extensions.db.models import TimeStampedModel
 from django.contrib.auth import get_user_model
 from django.dispatch import receiver
 
-from core.models import Departement
-from planification.models import Tache, Exercice
+from core.models import Departement, Exercice
+from planification.models import Tache, Drf
 from programme.models import Activite, TacheProgram
 from django.contrib.contenttypes.fields import GenericForeignKey, GenericRelation
 from django.contrib.contenttypes.models import ContentType
 from channels.layers import get_channel_layer
 from asgiref.sync import async_to_sync
+
+
 
 User = get_user_model()
 
@@ -90,10 +92,6 @@ def tdr_post_save(sender, instance, created, **kwargs):
             print(e)
 
 
-class Drf(models.Model):
-    exercice = models.ForeignKey(Exercice, on_delete=models.SET_NULL, null=True, blank=True)
-    montant = models.PositiveIntegerField(default=0)
-    date = models.DateField()
-    label = models.TextField(null=True, blank=True)
+
         
         

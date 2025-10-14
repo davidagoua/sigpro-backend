@@ -6,7 +6,7 @@ from django.shortcuts import render, redirect, get_object_or_404, resolve_url
 from django.views import generic
 from django.contrib.auth import logout
 
-from core.forms import UserCreationWithRoleForm
+from core.forms import UserCreationWithRoleForm, ExerciceForm
 from core.models import User
 from core.services import upload_ptba
 from planification.models import Tache, PTBAProjet, Exercice
@@ -106,3 +106,26 @@ def update_current_exercice(request):
         request.session['current_exercice'] = current_exercice.id
         messages.success(request, "Exercice modifié")
     return redirect(request.META.get('HTTP_REFERER', '/'))
+
+
+
+class ExerciceListView(LoginRequiredMixin, generic.ListView):
+    model = Exercice
+    template_name = 'core/exercice_list.html'
+    queryset = Exercice.objects.all()
+
+    def get_context_data(self, **kwargs):
+
+        return {
+            'exercices': Exercice.objects.all(),
+            'form_class': ExerciceForm,
+            **kwargs,
+        }
+
+
+class ExerciceCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Exercice
+    form_class = ExerciceForm
+
+    def get_success_url(self):
+        return resolve_url('exercices_list')

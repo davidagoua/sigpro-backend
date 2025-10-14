@@ -1,139 +1,159 @@
 {% load static %}
 <div class="sidebar-wrapper" data-layout="stroke-svg">
-          <div class="logo-wrapper"><a href="index.html"><img class="img-fluid" height="auto" width="70" src="{% static '/assets/images/logo/logo.png' %}" alt=""></a>
-            <div class="back-btn"><i class="fa fa-angle-left"> </i></div>
-            <div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle" data-feather="grid"> </i></div>
+    <div class="logo-wrapper"><a href="index.html"><img class="img-fluid" height="auto" width="70"
+                                                        src="{% static 'assets/images/logo/logo.png' %}" alt=""></a>
+        <div class="back-btn"><i class="fa fa-angle-left"> </i></div>
+        <div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle" data-feather="grid"> </i></div>
 
-          </div>
+    </div>
 
-          <div class="logo-icon-wrapper"><a href="index.html"><img class="img-fluid" height="auto" width="70" src="{% static '/assets/images/logo/logo.png' %}" alt=""></a></div>
+    <div class="logo-icon-wrapper"><a href="index.html"><img class="img-fluid" height="auto" width="70"
+                                                             src="{% static 'assets/images/logo/logo.png' %}"
+                                                             alt=""></a></div>
 
-        <nav class="sidebar-main">
-            <div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
+    <nav class="sidebar-main">
+        <div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
 
-              <div id="sidebar-menu">
+        <div id="sidebar-menu">
 
-              <ul x-data="{
+            <ul x-data="{
                 tdr_stats: [],
                 tdr_stats_programme: [],
-              }" x-init="tdr_stats = await (await fetch('{%  url 'suivi:get_tdr_stats' %}')).json(); tdr_stats_programme = await (await fetch('{%  url 'programme:stats-programme' %}')).json();" class="sidebar-links" id="simple-bar">
-                <li class="back-btn"><a href="index.html"><img class="img-fluid" height="auto" width="70" src="{% static '/assets/images/logo/logo.png' %}" alt=""></a>
-                  <div class="mobile-back text-end"> <span>Back </span><i class="fa fa-angle-right ps-2" aria-hidden="true"></i></div>
+              }"
+                x-init="tdr_stats = await (await fetch('{%  url 'suivi:get_tdr_stats' %}')).json(); tdr_stats_programme = await (await fetch('{%  url 'programme:stats-programme' %}')).json();"
+                class="sidebar-links" id="simple-bar">
+                <li class="back-btn"><a href="index.html"><img class="img-fluid" height="auto" width="70"
+                                                               src="{% static 'assets/images/logo/logo.png' %}" alt=""></a>
+                    <div class="mobile-back text-end"><span>Back </span><i class="fa fa-angle-right ps-2"
+                                                                           aria-hidden="true"></i></div>
                 </li>
                 <li class="pin-title sidebar-main-title">
-                  <div>
-                    <h6>Pinned</h6>
-                  </div>
+                    <div>
+                        <h6>Pinned</h6>
+                    </div>
                 </li>
                 <li class="sidebar-main-title">
-                  <div>
-                    <h6 class="lan-1">Général</h6>
-                  </div>
+                    <div>
+                        <h6 class="lan-1">Général</h6>
+                    </div>
                 </li>
                 <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="{% url 'home' %}">
                     <span class="fa text-white fa-home ml-2"></span>
                     <span>Tableau de bord</span></a>
                 </li>
-                  <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="{% url 'cartographie' %}">
-                        <span class="fa text-white fa-map ml-2"></span>
-                      <span>Cartographie</span></a>
+                <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="{% url 'cartographie' %}">
+                    <span class="fa text-white fa-map ml-2"></span>
+                    <span>Cartographie</span></a>
                 </li>
 
 
                 <li class="sidebar-main-title">
-                  <div>
-                    <h6 class="">Planification</h6>
-                  </div>
+                    <div>
+                        <h6 class="">Planification</h6>
+                    </div>
                 </li>
 
-                <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="{% url 'plan:ptba-projet' %}">
+                <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
+                                            href="{% url 'plan:ptba-projet' %}">
                     <span class="fa text-white fa-calendar ml-2"></span>
                     <span>PTBA Projet</span></a>
                 </li>
-                  <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="{% url 'plan:ptba-programme' %}">
+                <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
+                                            href="{% url 'plan:ptba-programme' %}">
                     <span class="fa text-white fa-calendar ml-2"></span>
-                      <span>PTBA Programme</span></a>
+                    <span>PTBA Programme</span></a>
                 </li>
 
                 {% if request.user.role.name == 'Coordination' or request.user.is_staff %}
                 <li class="sidebar-main-title">
-                  <div>
-                    <h6 class="">Suivi & Planification</h6>
-                  </div>
+                    <div>
+                        <h6 class="">Suivi & Planification</h6>
+                    </div>
                 </li>
 
-                <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="{% url 'suivi:ptba-projet' %}">
+                <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
+                                            href="{% url 'suivi:ptba-projet' %}">
                     <span class="fa text-white fa-binoculars ml-2"></span>
                     <span>Suivi PTBA Projet</span></a>
                 </li>
-                  <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="{% url 'programme:suivi' %}">
-                        <span class="fa text-white fa-binoculars ml-2"></span>
-                      <span>PTBA Programme</span></a>
+                <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
+                                            href="{% url 'programme:suivi' %}">
+                    <span class="fa text-white fa-binoculars ml-2"></span>
+                    <span>PTBA Programme</span></a>
                 </li>
 
                 {% endif %}
 
                 <li class="sidebar-main-title">
-                  <div>
-                    <h6 class="">Suivi Execution Projet</h6>
-                  </div>
+                    <div>
+                        <h6 class="">Suivi Execution Projet</h6>
+                    </div>
                 </li>
                 {% if request.user.is_staff or request.user.role.name == 'PointFocal' %}
-                  <li class="sidebar-list"> <a class="sidebar-link sidebar-title link-nav" href="{% url 'suivi:list_activities' %}">
+                <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
+                                            href="{% url 'suivi:list_activities' %}">
                     <span class="fa text-white fa-binoculars ml-2"></span>
-                    <span>Agent de Saisie <span x-text="tdr_stats['pointFocal'] ?? 0" class="bg-danger p-1 rounded-pill"></span></span></a></li>
-                  {% endif%}
-                  {% if request.user.is_staff or request.user.role.name == 'DirecteurLocal' %}
-                  <li class="sidebar-list"> <a class="sidebar-link sidebar-title link-nav" href="{% url 'suivi:tdr_local' %}">
+                    <span>Agent de Saisie <span x-text="tdr_stats['pointFocal'] ?? 0"
+                                                class="bg-danger p-1 rounded-pill"></span></span></a></li>
+                {% endif%}
+                {% if request.user.is_staff or request.user.role.name == 'DirecteurLocal' %}
+                <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
+                                            href="{% url 'suivi:tdr_local' %}">
                     <span class="fa text-white fa-binoculars ml-2"></span>
-                    <span>Direction Centrale <span x-text="tdr_stats[10] ?? 0" class="bg-warning p-1 rounded-pill"></span></span></a></li>
-                  {% endif%}
-                  {% if request.user.is_staff  %}
-                  <li class="sidebar-list"> <a class="sidebar-link sidebar-title link-nav" href="{% url 'suivi:tdr_technique' %}">
+                    <span>Direction Centrale <span x-text="tdr_stats[10] ?? 0"
+                                                   class="bg-warning p-1 rounded-pill"></span></span></a></li>
+                {% endif%}
+                {% if request.user.is_staff %}
+                <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
+                                            href="{% url 'suivi:tdr_technique' %}">
                     <span class="fa text-white fa-binoculars ml-2"></span>
-                    <span>Coordination <span x-text="tdr_stats[20] ?? 0" class="bg-light-info p-1 rounded-pill"></span></span></a></li>
-                  {% endif%}
-                
-
-                <li class="sidebar-main-title">
-                  <div>
-                    <h6 class="">Suivi Execution Programme</h6>
-                  </div>
+                    <span>Coordination <span x-text="tdr_stats[20] ?? 0" class="bg-light-info p-1 rounded-pill"></span></span></a>
                 </li>
-
-                {% if request.user.is_staff or request.user.role.name == 'PointFocal' %}
-                  <li class="sidebar-list"> <a class="sidebar-link sidebar-title link-nav" href="{% url 'programme:liste-tache' %}"> 
-                    <span class="fa text-white fa-binoculars ml-2"></span>
-                    <span>Agent de Saisie <span x-text="tdr_stats_programme['pointFocal'] ?? 0" class="bg-danger p-1 rounded-pill"></span></span></a></li>
-                  {% endif%}
-                  {% if request.user.is_staff or request.user.role.name == 'DirecteurLocal' %}
-                  <li class="sidebar-list"> <a class="sidebar-link sidebar-title link-nav" href="{% url 'programme:liste-tache-local' %}"> 
-                    <span class="fa text-white fa-binoculars ml-2"></span>
-                    <span>Direction Centrale <span x-text="tdr_stats_programme[10] ?? 0" class="bg-warning p-1 rounded-pill"></span></span></a></li>
-                  {% endif%}
-                  {% if request.user.is_staff or request.user.role.name == 'Directeur' %}
-                  <li class="sidebar-list"> <a class="sidebar-link sidebar-title link-nav" href="{% url 'programme:tdr_technique' %}">
-                    <span class="fa text-white fa-binoculars ml-2"></span>
-                    <span>Comité Technique <span x-text="tdr_stats_programme[20] ?? 0" class="bg-light-info p-1 rounded-pill"></span></span></a></li>
-                  {% endif%}
-                  {% if request.user.is_staff or request.user.role.name == 'DirecteurExe' %}
-
-                  <li class="sidebar-list"> <a class="sidebar-link d-flex sidebar-title link-nav" href="{% url 'programme:tdr_coord' %}">
-                    <span class="fa text-white fa-binoculars ml-2"></span>
-                    <span class="grow-1">Direction Executive <span x-text="tdr_stats_programme[40] ?? 0" class="bg-light-info p-1 rounded-pill"></span></span></a></li>
-                  {% endif%}
-                
-
-
-                
-
-
+                {% endif%}
 
 
                 <li class="sidebar-main-title">
-                  <div>
-                    <h6 class="">Rapportage Projet</h6>
-                  </div>
+                    <div>
+                        <h6 class="">Suivi Execution Programme</h6>
+                    </div>
+                </li>
+
+                {% if request.user.is_staff or request.user.role.name == 'PointFocal' %}
+                <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
+                                            href="{% url 'programme:liste-tache' %}">
+                    <span class="fa text-white fa-binoculars ml-2"></span>
+                    <span>Agent de Saisie <span x-text="tdr_stats_programme['pointFocal'] ?? 0"
+                                                class="bg-danger p-1 rounded-pill"></span></span></a></li>
+                {% endif%}
+                {% if request.user.is_staff or request.user.role.name == 'DirecteurLocal' %}
+                <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
+                                            href="{% url 'programme:liste-tache-local' %}">
+                    <span class="fa text-white fa-binoculars ml-2"></span>
+                    <span>Direction Centrale <span x-text="tdr_stats_programme[10] ?? 0"
+                                                   class="bg-warning p-1 rounded-pill"></span></span></a></li>
+                {% endif%}
+                {% if request.user.is_staff or request.user.role.name == 'Directeur' %}
+                <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
+                                            href="{% url 'programme:tdr_technique' %}">
+                    <span class="fa text-white fa-binoculars ml-2"></span>
+                    <span>Comité Technique <span x-text="tdr_stats_programme[20] ?? 0"
+                                                 class="bg-light-info p-1 rounded-pill"></span></span></a></li>
+                {% endif%}
+                {% if request.user.is_staff or request.user.role.name == 'DirecteurExe' %}
+
+                <li class="sidebar-list"><a class="sidebar-link d-flex sidebar-title link-nav"
+                                            href="{% url 'programme:tdr_coord' %}">
+                    <span class="fa text-white fa-binoculars ml-2"></span>
+                    <span class="grow-1">Direction Executive <span x-text="tdr_stats_programme[40] ?? 0"
+                                                                   class="bg-light-info p-1 rounded-pill"></span></span></a>
+                </li>
+                {% endif%}
+
+
+                <li class="sidebar-main-title">
+                    <div>
+                        <h6 class="">Rapportage Projet</h6>
+                    </div>
                 </li>
 
                 <li class="sidebar-list">
@@ -142,16 +162,17 @@
                         <span>Fiche Mensuelle</span>
                     </a>
                 </li>
-                  <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="{%  url 'rapport:rapport-trimestriel-projet' %}">
-                        <span class="fa text-white fa-file-pen ml-2"></span>
-                      <span>Rapport Trimestriel</span></a>
+                <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
+                                            href="{%  url 'rapport:rapport-trimestriel-projet' %}">
+                    <span class="fa text-white fa-file-pen ml-2"></span>
+                    <span>Rapport Trimestriel</span></a>
                 </li>
 
 
-              <li class="sidebar-main-title">
-                  <div>
-                    <h6 class="">Rapportage Programme</h6>
-                  </div>
+                <li class="sidebar-main-title">
+                    <div>
+                        <h6 class="">Rapportage Programme</h6>
+                    </div>
                 </li>
 
                 <li class="sidebar-list">
@@ -160,55 +181,62 @@
                         <span>Fiche Mensuelle</span>
                     </a>
                 </li>
-                  <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="{%  url 'rapport:rapport-trimestriel-programme' %}">
-                        <span class="fa text-white fa-file-pen ml-2"></span>
-                      <span>Rapport Trimestriel</span></a>
-                </li>
-
-
-                  <li class="sidebar-main-title">
-                  <div>
-                    <h6 class="">Autres Rapports</h6>
-                  </div>
-                </li>
-
-
-                  <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="{%  url 'rapport:rapport-semestriel' %}">
-                        <span class="fa text-white fa-file-pen ml-2"></span>
-                      <span>Rapport Semestriel</span></a>
-                </li>
-                  <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="{%  url 'rapport:rapport-annuel' %}">
+                <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
+                                            href="{%  url 'rapport:rapport-trimestriel-programme' %}">
                     <span class="fa text-white fa-file-pen ml-2"></span>
-                      <span>Rapport Annuel</span></a>
+                    <span>Rapport Trimestriel</span></a>
                 </li>
-                  <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="{%  url 'rapport:rapport-circonstancier' %}">
+
+
+                <li class="sidebar-main-title">
+                    <div>
+                        <h6 class="">Autres Rapports</h6>
+                    </div>
+                </li>
+
+
+                <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
+                                            href="{%  url 'rapport:rapport-semestriel' %}">
                     <span class="fa text-white fa-file-pen ml-2"></span>
-                      <span>Rapport Circonstancier</span></a>
+                    <span>Rapport Semestriel</span></a>
+                </li>
+                <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
+                                            href="{%  url 'rapport:rapport-annuel' %}">
+                    <span class="fa text-white fa-file-pen ml-2"></span>
+                    <span>Rapport Annuel</span></a>
+                </li>
+                <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
+                                            href="{%  url 'rapport:rapport-circonstancier' %}">
+                    <span class="fa text-white fa-file-pen ml-2"></span>
+                    <span>Rapport Circonstancier</span></a>
                 </li>
 
                 <li class="sidebar-main-title">
-                  <div>
-                    <h6 class="">Gestion Vehicule</h6>
-                  </div>
+                    <div>
+                        <h6 class="">Gestion Vehicule</h6>
+                    </div>
                 </li>
-                 <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="{%  url 'setting:vehicule_list' %}">
+                <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
+                                            href="{%  url 'setting:vehicule_list' %}">
                     <span class="fa text-white fa-file-pen ml-2"></span>
-                      <span>Véhicules</span></a>
+                    <span>Véhicules</span></a>
                 </li>
-                <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="{%  url 'setting:emprunt_list' %}">
+                <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
+                                            href="{%  url 'setting:emprunt_list' %}">
                     <span class="fa text-white fa-file-pen ml-2"></span>
-                      <span>Emprunts</span></a>
+                    <span>Emprunts</span></a>
                 </li>
-                <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="{%  url 'setting:emprunt_list' %}">
+                <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
+                                            href="{%  url 'setting:emprunt_list' %}">
                     <span class="fa text-white fa-file-pen ml-2"></span>
-                      <span>Entretients</span></a>
+                    <span>Entretients</span></a>
                 </li>
 
                 {% if request.user.is_staff %}
                 <li class="sidebar-main-title">
-                  <div>
-                    <h6 class="">Paramètres</h6>
-                  </div>
+                    <div>
+                        <h6 class="">Paramètres</h6>
+                    </div>
                 </li>
 
                 <li class="sidebar-list">
@@ -218,14 +246,20 @@
                     </a>
                 </li>
                 <li class="sidebar-list">
+                    <a class="sidebar-link sidebar-title link-nav" href="{% url 'exercices_list' %}">
+                        <span class="fa text-white fa-users ml-2"></span>
+                        <span>Exercice</span>
+                    </a>
+                </li>
+                <li class="sidebar-list">
                     <a class="sidebar-link sidebar-title link-nav" href="{% url 'setting:composantes' %}">
                         <span class="fa text-white fa-boxes-stacked ml-2"></span>
                         <span>Composantes</span>
                     </a>
                 </li>
                 {% endif %}
-              </ul>
-              <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
-            </div>
-          </nav>
+            </ul>
+            <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
         </div>
+    </nav>
+</div>

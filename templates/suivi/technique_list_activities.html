@@ -13,6 +13,7 @@
                 </div>
             </div>
         </div>
+
         <!-- Container-fluid starts-->
         <div class="container-fluid">
             <div class="row">
@@ -90,6 +91,7 @@
                                                     <button class="btn btn-xs btn-primary  ml-2" data-bs-toggle="modal"
                                                             data-bs-target="#add-tdr-{{ tdr.pk }}"> <span class="fa fa-file-upload"></span> joindre
                                                     </button>&nbsp;
+                                                    <a href="{% url 'suivi:tdr_details' pk=tdr.pk %}" class="btn btn-primary btn-sm"><span class="fa fa-eye"></span> Details</a>
                                                     <div class="modal  fade" id="add-tdr-{{ tdr.pk }}">
                                                         <div class="modal-dialog bg-white ">
                                                             <div class=" bg-white modal-content">

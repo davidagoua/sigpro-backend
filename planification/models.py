@@ -6,10 +6,15 @@ from django.db import models
 from django.db.models import Sum
 from django.utils.timezone import now
 from django_extensions.db.models import TimeStampedModel
-from core.models import Departement, User
-from suivi.models import Drf
+from core.models import Departement, User, Exercice
 
-from app.suivi.models import Drf
+
+
+class Drf(models.Model):
+    exercice = models.ForeignKey(Exercice, on_delete=models.SET_NULL, null=True, blank=True)
+    montant = models.PositiveIntegerField(default=0)
+    date = models.DateField()
+    label = models.TextField(null=True, blank=True)
 
 
 class PTBAProjet(TimeStampedModel, models.Model  ):
@@ -217,37 +222,7 @@ class TypeUGP(models.Model):
 
 
 
-class Exercice(TimeStampedModel, models.Model):
-    label = models.CharField(max_length=100)
-    date_debut = models.DateField()
-    date_fin = models.DateField()
-    montant_total = models.BigIntegerField(default=0)
-    status = models.IntegerField(default=0)
 
-    def __str__(self):
-        return str(self.label)
-
-    @property
-    def montant_planifier(self) -> int:
-        return sum(tache.montant_planifier for tache in self.planificationcout_set.filter(status__gte=30))
-
-    @property
-    def montant_engage(self) -> int:
-        return sum(tache.montant_engage for tache in self.tache_set.filter(status=30))
-
-    @property
-    def somme_drf(self) -> int:
-        return sum(
-            tache.total_decaissement for tache in self.tache_set.filter(status=30)
-        )
-
-    @property
-    def reste_a_payer(self) -> int:
-        return self.montant_engage - self.somme_drf
-
-    @property
-    def reste_a_planifier(self) -> int:
-        return self.montant_total - self.montant_engage
 
 
 class TachePublicManager(models.Manager):
