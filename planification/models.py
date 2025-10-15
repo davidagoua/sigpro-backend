@@ -203,9 +203,11 @@ class Decaissement(TimeStampedModel, models.Model):
     montant = models.BigIntegerField(default=0)
     status = models.IntegerField(default=0)
     in_drf = models.BooleanField(default=False)
+    exercice = models.ForeignKey(Exercice, on_delete=models.SET_NULL, null=True, blank=True)
     order = models.IntegerField(default=0)
     tache = models.ForeignKey('Tache', on_delete=models.SET_NULL, null=True)
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    motif = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return f'DRF:{self.pk} {self.montant}'

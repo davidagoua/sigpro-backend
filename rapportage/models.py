@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from django_extensions.db.models import TimeStampedModel
-from core.models import Departement, Role
+from core.models import Departement, Role, Exercice
 import urllib.parse
 
 
@@ -38,6 +38,7 @@ class Rapport(TimeStampedModel, models.Model):
     departements = models.ManyToManyField(Departement)
     roles = models.ManyToManyField(Role)
     status = models.IntegerField(default=0)
+    exercice = models.ForeignKey(Exercice, on_delete=models.SET_NULL, null=True, blank=True)
 
     @property
     def generate_collabora_url(self):

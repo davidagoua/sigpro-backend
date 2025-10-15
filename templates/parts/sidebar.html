@@ -81,6 +81,11 @@
                     <span class="fa text-white fa-binoculars ml-2"></span>
                     <span>PTBA Programme</span></a>
                 </li>
+                <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
+                                            href="{% url 'suivi:decaissements' %}">
+                    <i class="fa-solid text-white fa-money-bill-transfer ml-2"></i>
+                    <span>Décaissements</span></a>
+                </li>
 
                 {% endif %}
 
@@ -248,7 +253,7 @@
                 <li class="sidebar-list">
                     <a class="sidebar-link sidebar-title link-nav" href="{% url 'exercices_list' %}">
                         <span class="fa text-white fa-users ml-2"></span>
-                        <span>Exercice</span>
+                        <span>Année d'exercice</span>
                     </a>
                 </li>
                 <li class="sidebar-list">

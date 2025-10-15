@@ -13,6 +13,7 @@ dependencies = [
     "django-debug-toolbar>=6.0.0",
     "django-extensions==3.2.3",
     "django-mathfilters>=1.0.0",
+    "dotenv>=0.9.9",
     "gevent>=25.9.1",
     "gunicorn>=23.0.0",
     "ipdb>=0.13.13",

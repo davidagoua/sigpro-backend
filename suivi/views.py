@@ -7,6 +7,8 @@ from django.utils.timezone import now
 from django.views import generic
 from django.views.generic.detail import SingleObjectTemplateResponseMixin
 from django.shortcuts import resolve_url
+
+from core.redis_service import get_redis_service
 from planification.forms import UpdateTacheForm, DecaissementFormSet
 from planification.models import SousComposantProjet, ComposantProjet, Tache, Decaissement, Exercice, Indicateur
 from programme.models import Activite
@@ -14,6 +16,9 @@ from .forms import CancelTDRForm
 from .models import TDR, TDRProgramme
 from core.models import Departement
 from suivi.models import Drf
+
+
+redis_service = get_redis_service()
 
 
 class SuiviPTBAProjetView(generic.TemplateView):
@@ -369,6 +374,7 @@ def get_tdr_stats(request):
     ).count()
     return JsonResponse(result)
 
+
 def cancel_tdr(request, pk):
     if request.method == 'POST':
         tdr = TDR.objects.get(pk=pk)
@@ -446,5 +452,11 @@ def stats_view(request):
 class ActivityDetailsView(LoginRequiredMixin, generic.DetailView):
     model = TDR
     template_name = 'suivi/activity_details.html'
+
+
+
+class DecaissementListView(LoginRequiredMixin, generic.ListView):
+    model = Decaissement
+    template_name = 'suivi/decaissement_list.html'
 
 

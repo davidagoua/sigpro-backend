@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -10,8 +12,10 @@ from core.forms import UserCreationWithRoleForm, ExerciceForm
 from core.models import User
 from core.services import upload_ptba
 from planification.models import Tache, PTBAProjet, Exercice
+from prsep.settings.base import pusher_client
 
 from .models import Departement, Role
+
 
 class HomePageView(LoginRequiredMixin, generic.TemplateView):
     template_name = "home.html"
@@ -29,7 +33,7 @@ class HomePageView(LoginRequiredMixin, generic.TemplateView):
         }
 
 
-class CartigraphieView(LoginRequiredMixin, generic.TemplateView):
+class CartographieView(LoginRequiredMixin, generic.TemplateView):
     template_name = "carto.html"
 
 
@@ -41,7 +45,7 @@ class AnalyseView(LoginRequiredMixin, generic.TemplateView):
 def logout_view(request):
     logout(request)
     messages.success(request, "Vous avez été déconnecté avec succès.")
-    return redirect('login')  # Remplacez 'login' par l'URL nommée ou le chemin de votre page de connexion
+    return redirect('login')
 
 
 @login_required
@@ -115,10 +119,12 @@ class ExerciceListView(LoginRequiredMixin, generic.ListView):
     queryset = Exercice.objects.all()
 
     def get_context_data(self, **kwargs):
-
+        next_year = datetime.now().year + 1
         return {
             'exercices': Exercice.objects.all(),
             'form_class': ExerciceForm,
+
+            'next_year': next_year,
             **kwargs,
         }
 
@@ -129,3 +135,12 @@ class ExerciceCreateView(LoginRequiredMixin, generic.CreateView):
 
     def get_success_url(self):
         return resolve_url('exercices_list')
+
+
+def delete_exercice(request, pk):
+    exercice = get_object_or_404(Exercice, pk=pk)
+    exercice.delete()
+    messages.success(request, "Exercice supprimé")
+    print(pusher_client.trigger('all', 'exercice_changes', {'exercice': pk, "message": "Exercice supprimé"}))
+    return redirect(resolve_url('exercices_list'))
+

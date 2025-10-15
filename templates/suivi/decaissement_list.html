@@ -1,0 +1,95 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="page-body">
+    <div class="container-fluid">
+        <div class="page-title">
+            <div class="row">
+                <div class="col-6">
+                    <h4>Gestion des décaissements</h4>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row container-fluid">
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <span>Montant hors DRf</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <span>Montant en DRf</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <span>Montant à marcher</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <span>Montant Total</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <div class="col-md-8" x-data="{drf: ''}">
+                <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="card-title"><span class="fas fa-money-bill-transfer"></span> Liste de décaissements</h5>
+                <div class="d-flex justify-content-between align-items-center">
+                    <label for="">Status: &nbsp;</label>
+                    <select x-model="drf" name="" id="" class="form-control">
+                        <option value="">En DRF</option>
+                        <option value="">Hors DRF</option>
+                    </select>
+                </div>
+            </div>
+            <div class="card-body">
+                <div>
+                    <span x-text="drf"></span>
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Date</th>
+                            <th>Activité</th>
+                            <th>Montant</th>
+                            <th>Status</th>
+                        </tr>
+                        {% for object in object_list%}
+                        <tr>
+                            <td>{{object.created}}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5>DRF</h5>
+                        <div>
+                            <button data-bs-toggle="modal" data-bs-target="#drf-add-modal" class="btn btn-primary">+ Ajouter</button>
+                        </div>
+                    </div>
+                    <div class="card-body"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

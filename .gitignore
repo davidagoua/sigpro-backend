@@ -1,0 +1,13 @@
+/app/prsep/settings/dev.py
+/app/db.sqlite3
+/app/medias
+/postgis
+/.env
+/staticfiles/
+/data/
+/app/treatexcel.ipynb
+*.pyc
+__pycache__/
+static\connection.php
+*.py[cod]
+*$py.class

@@ -40,6 +40,7 @@ class IndicateurProgram(TimeStampedModel,models.Model):
     def __str__(self):
         return self.label
 
+
 class Action(TimeStampedModel,models.Model):
     label = models.CharField(max_length=100)
     description = models.TextField(null=True, blank=True)

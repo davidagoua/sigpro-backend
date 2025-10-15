@@ -1,53 +1,372 @@
 {% extends 'base.html' %}
-
+{% load static %}
 
 {% block content %}
 <div class="page-body">
     <div class="container-fluid">
+        <!-- Header amélioré -->
         <div class="page-title">
-            <div class="row">
-                <div class="col-6">
-                    <h4>Gestion Exercices</h4>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h4 class="mb-2">
+                        <i class="fas fa-calendar-alt text-primary me-2"></i>
+                        Gestion des Exercices
+                    </h4>
+                    <p class="text-muted mb-0">Gérez les périodes d'exercice de votre organisation</p>
                 </div>
-
+                <div class="col-md-6 text-end">
+                    <div class="btn-group">
+                        <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#helpModal">
+                            <i class="fas fa-question-circle me-1"></i>Aide
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- Container-fluid starts-->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xxl-4">
-                <div class="card">
-                    <div class="card-body d-flex">
-                        <div class="w-50 pr-3">
-                            <form action="{%url 'exercices_create' %}" method="post">
-                                {% csrf_token %}
-                                {{ form_class.as_p }}
-                                <p class="text-right mt-5">
-                                    <button type="submit" class="btn btn-primary">Enregistrer</button>
-                                </p>
-                            </form>
-                        </div>
-                        <div class="w-50 pl-3">
-                            <h3>Exercices</h3>
-                            {% for object in exercices %}
-                            <div class="card m-3">
-                                <div class="card-body">
-                                    <h3>{{ object.label }}</h3>
-                                    <h6 class="text-muted"><span class="fa fa-calendar"></span> {{ object.date_debut }} -
-                                        {{object.date_fin}}
-                                    </h6>
+
+        <!-- Container-fluid starts-->
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Carte des indicateurs -->
+                <div class="col-xxl-3 col-md-6 mb-4">
+                    <div class="card bg-primary text-white">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h6 class="card-title text-white-50">Exercice Actif</h6>
+                                    <h3 class="mb-0">
+                                        {% with exercices|first as first_exercice %}
+                                            {{ first_exercice.annee|default:"Aucun" }}
+                                        {% endwith %}
+                                    </h3>
+                                </div>
+                                <div class="align-self-center">
+                                    <i class="fas fa-play-circle fa-2x text-white-50"></i>
                                 </div>
                             </div>
-                            {% empty %}
+                        </div>
+                    </div>
+                </div>
 
-                            {% endfor %}
+                <div class="col-xxl-3 col-md-6 mb-4">
+                    <div class="card bg-success text-white">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h6 class="card-title text-white-50">Total Exercices</h6>
+                                    <h3 class="mb-0">{{ exercices.count }}</h3>
+                                </div>
+                                <div class="align-self-center">
+                                    <i class="fas fa-layer-group fa-2x text-white-50"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xxl-3 col-md-6 mb-4">
+                    <div class="card bg-warning text-white">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h6 class="card-title text-white-50">Prochain Exercice</h6>
+                                    <h3 class="mb-0">{{ next_year }}</h3>
+                                </div>
+                                <div class="align-self-center">
+                                    <i class="fas fa-forward fa-2x text-white-50"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xxl-3 col-md-6 mb-4">
+                    <div class="card bg-info text-white">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h6 class="card-title text-white-50">Durée Moyenne</h6>
+                                    <h3 class="mb-0">12 mois</h3>
+                                </div>
+                                <div class="align-self-center">
+                                    <i class="fas fa-clock fa-2x text-white-50"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Formulaire de création -->
+                <div class="col-xxl-4 col-lg-5">
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="card-title mb-0">
+                                <i class="fas fa-plus-circle me-2"></i>
+                                Créer un Nouvel Exercice
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <form action="{% url 'exercices_create' %}" method="post" id="exerciceForm">
+                                {% csrf_token %}
+                                
+                                {% for field in form_class %}
+                                <div class="mb-3">
+                                    <label for="{{ field.id_for_label }}" class="form-label">
+                                        <strong>{{ field.label }}</strong>
+                                    </label>
+                                    {{ field }}
+                                    {% if field.help_text %}
+                                    <div class="form-text">{{ field.help_text }}</div>
+                                    {% endif %}
+                                    {% if field.errors %}
+                                    <div class="invalid-feedback d-block">
+                                        {{ field.errors.0 }}
+                                    </div>
+                                    {% endif %}
+                                </div>
+                                {% endfor %}
+                                
+                                <div class="d-grid gap-2 mt-4">
+                                    <button type="submit" class="btn btn-primary btn-lg">
+                                        <i class="fas fa-save me-2"></i>Créer l'Exercice
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Carte d'aide rapide -->
+                    <div class="card mt-4">
+                        <div class="card-header bg-light">
+                            <h6 class="card-title mb-0">
+                                <i class="fas fa-lightbulb text-warning me-2"></i>
+                                Bon à savoir
+                            </h6>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2">
+                                    <i class="fas fa-check text-success me-2"></i>
+                                    Un seul exercice peut être actif à la fois
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-check text-success me-2"></i>
+                                    Les dates ne doivent pas se chevaucher
+                                </li>
+                                <li class="mb-0">
+                                    <i class="fas fa-check text-success me-2"></i>
+                                    L'exercice actif impacte toutes les données
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Liste des exercices -->
+                <div class="col-xxl-8 col-lg-7">
+                    <div class="card">
+                        <div class="card-header bg-transparent">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h5 class="card-title mb-0">
+                                    <i class="fas fa-list-alt me-2"></i>
+                                    Liste des Exercices
+                                </h5>
+                                <span class="badge bg-primary rounded-pill">
+                                    {{ exercices.count }} exercice{{ exercices.count|pluralize }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            {% if exercices %}
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Exercice</th>
+                                            <th>Période</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for object in exercices %}
+                                        <tr class="{% if object.est_actif %}table-active{% endif %}">
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-shrink-0">
+                                                        <i class="fas fa-calendar fa-lg text-primary me-3"></i>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="mb-0">{{ object.label }}</h6>
+                                                        <small class="text-muted">{{ object.label }}</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <small class="text-muted">Du</small><br>
+                                                <strong>{{ object.date_debut|date:"d/m/Y" }}</strong><br>
+                                                <small class="text-muted">au</small><br>
+                                                <strong>{{ object.date_fin|date:"d/m/Y" }}</strong>
+                                            </td>
+
+
+                                            <td>
+                                                <div class="btn-group  btn-group-sm">
+
+                                                    <a href=""
+                                                       class="btn btn-outline-primary btn-sm"
+                                                       title="Modifier">
+                                                        Modifier
+                                                    </a>
+                                                    <a onclick="return confirm('Êtes-vous sûr de vouloir executer cette action')" href="{% url 'exercices_delete' pk=object.pk %}" class="btn btn-danger">
+                                                            Supprimer
+                                                        </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            {% else %}
+                            <div class="text-center py-5">
+                                <div class="empty-state">
+                                    <i class="fas fa-calendar-times fa-4x text-muted mb-3"></i>
+                                    <h5 class="text-muted">Aucun exercice créé</h5>
+                                    <p class="text-muted">Commencez par créer votre premier exercice en utilisant le formulaire à gauche.</p>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <!-- Graphique de timeline -->
+                    <div class="card mt-4">
+                        <div class="card-header bg-transparent">
+                            <h5 class="card-title mb-0">
+                                <i class="fas fa-chart-timeline me-2"></i>
+                                Chronologie des Exercices
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="timeline">
+                                {% for object in exercices %}
+                                <div class="timeline-item {% if object.est_actif %}active{% endif %}">
+                                    <div class="timeline-marker">
+                                        <i class="fas fa-calendar"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h6 class="mb-1">Exercice {{ object.label }}</h6>
+                                        <p class="text-muted mb-0">
+                                            {{ object.date_debut|date:"d/m/Y" }} - {{ object.date_fin|date:"d/m/Y" }}
+                                        </p>
+                                        {% if object.est_actif %}
+                                        <span class="badge bg-success mt-1">Actuel</span>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Container-fluid Ends-->
     </div>
-    <!-- Container-fluid Ends-->
 </div>
+
+<!-- Modal d'aide -->
+<div class="modal fade" id="helpModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-question-circle text-primary me-2"></i>
+                    Aide - Gestion des Exercices
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Qu'est-ce qu'un exercice ?</h6>
+                        <p class="text-muted">Un exercice représente une période de travail (généralement une année) pendant laquelle toutes les activités et données sont regroupées.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Exercice actif</h6>
+                        <p class="text-muted">Seul un exercice peut être actif à la fois. Toutes les nouvelles données seront automatiquement associées à l'exercice actif.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.empty-state {
+    opacity: 0.7;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline-item {
+    position: relative;
+    padding: 15px 0;
+    border-left: 2px solid #e9ecef;
+}
+
+.timeline-item.active {
+    border-left-color: #0d6efd;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -30px;
+    top: 15px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #6c757d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 10px;
+}
+
+.timeline-item.active .timeline-marker {
+    background: #0d6efd;
+}
+
+.timeline-content {
+    margin-left: 20px;
+}
+
+.progress {
+    background-color: #e9ecef;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.075);
+}
+
+.card {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.card-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+</style>
+
+<script>
+
+</script>
 {% endblock %}
