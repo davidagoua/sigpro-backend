@@ -7,6 +7,8 @@ from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404, resolve_url
 from django.views import generic
 from django.contrib.auth import logout
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 
 from core.forms import UserCreationWithRoleForm, ExerciceForm
 from core.models import User
@@ -15,6 +17,7 @@ from planification.models import Tache, PTBAProjet, Exercice
 from prsep.settings.base import pusher_client
 
 from .models import Departement, Role
+from .serializers import ExerciceSerializer
 
 
 class HomePageView(LoginRequiredMixin, generic.TemplateView):
@@ -107,7 +110,9 @@ def change_password(request):
 def update_current_exercice(request):
     if request.method == "POST":
         current_exercice = get_object_or_404(Exercice, pk=request.POST.get('exercice'))
-        request.session['current_exercice'] = current_exercice.id
+        request.session['current_exercice_id'] = current_exercice.id
+        request.session['current_exercice_label'] = current_exercice.label
+        request.exercice = current_exercice
         messages.success(request, "Exercice modifié")
     return redirect(request.META.get('HTTP_REFERER', '/'))
 
@@ -143,4 +148,10 @@ def delete_exercice(request, pk):
     messages.success(request, "Exercice supprimé")
     print(pusher_client.trigger('all', 'exercice_changes', {'exercice': pk, "message": "Exercice supprimé"}))
     return redirect(resolve_url('exercices_list'))
+
+
+@api_view(['GET'])
+def get_exercices(request):
+    exercices = ExerciceSerializer(Exercice.objects.all(), many=True)
+    return Response(exercices.data)
 

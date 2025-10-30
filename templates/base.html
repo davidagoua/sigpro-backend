@@ -150,20 +150,20 @@
     </div>
 </div>
 {% endif %}
-<div class="modal" id="change-exercice">
+<div class="modal" id="change-exercice" x-data="{exercices: []}" x-init="exercices = await (await fetch('/api/exercices')).json()">
     <div class="modal-dialog">
         <div class="modal-content text-black bg-white">
-            <div class="modal-header">Changer d'exercice</div>
+            <div class="modal-header"><h5 class="modal-title">Changer d'exercice</h5></div>
             <div class="modal-body">
                 <form action="{% url 'update_current_exercice' %}?next={{ request.path }}" method="post">
                     {% csrf_token %}
                     <div class="mb-3">
                         <select class="form-control" name="exercice" id="">
-                            {% for exercice in exercice_list %}
-                            <option value="{{ exercice.pk }}">{{ exercice.date_debut|date:"Y" }} - {{
-                                exercice.date_fin|date:"Y" }}
-                            </option>
-                            {% endfor %}
+                            <template x-for="exercice in exercices">
+                                <option :value="exercice.id" x-text="exercice.label" :selected="exercice.id === {{request.session.current_exercice_id}}">
+
+                                </option>
+                            </template>
 
                         </select>
                     </div>
@@ -178,7 +178,20 @@
 
 <div class="modal " id="drf-add-modal">
     <div class="modal-dialog">
-        <div class="modal-content text-black bg-white"></div>
+        <div class="modal-content ">
+            <div class="modal-header">
+
+            </div>
+            <div class="modal-body">
+                <form action="{% url 'suivi:drf_create' %}?next={{request.get_full_path}}" method="post">
+                    {% csrf_token %}
+                        {{ drf_form.as_p }}
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                </form>
+
+
+            </div>
+        </div>
     </div>
 </div>
 <script>
@@ -198,13 +211,16 @@
     channel.bind('tdr-change', function(data) {
         console.log('TDR updated:', data);
         console.table(data)
-        toastr.success('New TDR added');
+        Swal.fire({
+          title: "TDR Validé",
+          icon: "success"
+        });
     });
 
-    let user_channel = pusher.subcribe('role-{{ request.user.pk}}');
-
-
+    let user_channel = pusher.subscribe('role-{{ request.user.pk}}');
     document.querySelector('#c-pills-tab').style.display = "none"
+
+
 </script>
 
 </body>

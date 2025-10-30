@@ -6,4 +6,4 @@ class SuiviConfig(AppConfig):
     name = "suivi"
 
     def ready(self):
-        import suivi.signals
+        pass

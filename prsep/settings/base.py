@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.humanize",
+    "rest_framework",
     "core","planification","suivi","rapportage","django_extensions",
     "setting","programme",
     "channels","mathfilters"

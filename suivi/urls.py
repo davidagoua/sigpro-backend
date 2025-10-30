@@ -6,7 +6,7 @@ from suivi.views import SuiviPTBAProjetView, UpdateTacheView, ajouter_decaisseme
     CreateTDRProgrammeView, update_tdrprogram_state, download_tdr_programme, cancel_tdr_programme, delete_tdr_programme, \
     UpdateTDRProgrammeView, UpdateTDRView, \
     UpdateTDRCoordinationView, UpdateTDRProgrammeCoordinationView, FinalizeTDRView, updateTDRCoordinationView, \
-    stats_view, ActivityDetailsView, DecaissementListView
+    stats_view, ActivityDetailsView, DecaissementListView, DrfCreateView
 
 from suivi.comsumer import TDRConsumer
 
@@ -44,4 +44,5 @@ urlpatterns = [
     path('stats/', stats_view, name='stats'),
     path('tdr-details/<int:pk>', ActivityDetailsView.as_view(), name='tdr_details'),
     path('decaissement/', DecaissementListView.as_view(), name='decaissements'),
+    path('drf-create/', DrfCreateView.as_view(), name='drf_create'),
 ]

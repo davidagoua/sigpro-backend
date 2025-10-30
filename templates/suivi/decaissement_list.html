@@ -46,46 +46,74 @@
     <div class="container-fluid mt-3">
         <div class="row">
             <div class="col-md-8" x-data="{drf: ''}">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            {{ decaissement_form.as_p }}
+                            <p>
+                                <button class="btn btn-sm btn-primary">Enregistré</button>
+                            </p>
+
+                        </form>
+                    </div>
+                </div>
                 <div class="card">
-            <div class="card-header d-flex justify-content-between align-items-center">
-                <h5 class="card-title"><span class="fas fa-money-bill-transfer"></span> Liste de décaissements</h5>
-                <div class="d-flex justify-content-between align-items-center">
-                    <label for="">Status: &nbsp;</label>
-                    <select x-model="drf" name="" id="" class="form-control">
-                        <option value="">En DRF</option>
-                        <option value="">Hors DRF</option>
-                    </select>
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="card-title"><span class="fas fa-money-bill-transfer"></span> Liste de décaissements
+                        </h5>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <label for="">Status: &nbsp;</label>
+                            <select x-model="drf" name="" id="" class="form-control">
+                                <option value="">En DRF</option>
+                                <option value="">Hors DRF</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <span x-text="drf"></span>
+                            <table class="table table-striped">
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Activité</th>
+                                    <th>Montant</th>
+                                    <th>Status</th>
+                                </tr>
+                                {% for object in object_list%}
+                                <tr>
+                                    <td>{{object.created}}</td>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="card-body">
-                <div>
-                    <span x-text="drf"></span>
-                    <table class="table table-striped">
-                        <tr>
-                            <th>Date</th>
-                            <th>Activité</th>
-                            <th>Montant</th>
-                            <th>Status</th>
-                        </tr>
-                        {% for object in object_list%}
-                        <tr>
-                            <td>{{object.created}}</td>
-                        </tr>
-                        {% endfor %}
-                    </table>
-                </div>
-            </div>
-        </div>
             </div>
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h5>DRF</h5>
                         <div>
-                            <button data-bs-toggle="modal" data-bs-target="#drf-add-modal" class="btn btn-primary">+ Ajouter</button>
+                            <button data-bs-toggle="modal" data-bs-target="#drf-add-modal" class="btn btn-primary">+
+                                Ajouter
+                            </button>
                         </div>
                     </div>
-                    <div class="card-body"></div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-striped">
+                            {% for drf in drfs%}
+                            <li class="list-group-item d-flex justify-content-between">
+                                <div>
+                                    <span>{{drf.label}}</span><br>
+                                    <small class="text-muted">{{drf.date}}</small>
+                                </div>
+                                <span>{{drf.montant}} FCFA</span>
+
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

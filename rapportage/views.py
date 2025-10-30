@@ -271,6 +271,7 @@ class RapportCirconstancierView(LoginRequiredMixin, FormView):
             )
         return context
 
+
 class RapportMensuelProgrammeView(LoginRequiredMixin, FormView):
     template_name = 'rapportage/mensuel.html'
     form_class = RapportForm

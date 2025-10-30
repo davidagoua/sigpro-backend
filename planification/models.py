@@ -14,7 +14,7 @@ class Drf(models.Model):
     exercice = models.ForeignKey(Exercice, on_delete=models.SET_NULL, null=True, blank=True)
     montant = models.PositiveIntegerField(default=0)
     date = models.DateField()
-    label = models.TextField(null=True, blank=True)
+    label = models.CharField(null=True, blank=True, max_length=255)
 
 
 class PTBAProjet(TimeStampedModel, models.Model  ):
@@ -218,13 +218,6 @@ class TypeUGP(models.Model):
 
     def __str__(self):
         return str(self.label)
-
-
-
-
-
-
-
 
 
 class TachePublicManager(models.Manager):

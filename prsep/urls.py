@@ -43,6 +43,7 @@ urlpatterns = [
     path('exercices', core.views.ExerciceListView.as_view(), name='exercices_list'),
     path('exercices-create', core.views.ExerciceCreateView.as_view(), name='exercices_create'),
     path('exercices-delete/<int:pk>', core.views.delete_exercice, name='exercices_delete'),
+    path('api/exercices/', core.views.get_exercices, name='get_exercices'),
 ]
 
 if settings.DEBUG:

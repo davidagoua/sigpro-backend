@@ -8,11 +8,12 @@ from django.views import generic
 from django.views.generic.detail import SingleObjectTemplateResponseMixin
 from django.shortcuts import resolve_url
 
+from core.forms import DrfForm
 from core.redis_service import get_redis_service
 from planification.forms import UpdateTacheForm, DecaissementFormSet
 from planification.models import SousComposantProjet, ComposantProjet, Tache, Decaissement, Exercice, Indicateur
 from programme.models import Activite
-from .forms import CancelTDRForm
+from .forms import CancelTDRForm, DecaisementForm
 from .models import TDR, TDRProgramme
 from core.models import Departement
 from suivi.models import Drf
@@ -123,7 +124,9 @@ class ActivitiesListView(LoginRequiredMixin, generic.ListView):
 
     def get_queryset(self):
         if self.request.user.is_staff:
-            return Tache.objects.select_related("indicateur").all()
+            return Tache.objects.select_related("indicateur").filter(
+                exercice__pk=self.request.session.get('exercice_id'),
+            ).all()
         return Tache.objects.filter(responsable=self.request.user.departement.name)
 
     def get_context_data(self, **kwargs):
@@ -140,10 +143,12 @@ class TDRLocalListView(LoginRequiredMixin, generic.ListView):
     def get_queryset(self):
         if self.request.user.is_staff:
             return Tache.objects.filter(
-                Q(pk__in=[tdr.activity.pk for tdr in TDR.objects.filter(state=20)])
+                Q(pk__in=[tdr.activity.pk for tdr in TDR.objects.filter(state=20)]),
+                exercice__pk=self.request.session.get('exercice_id'),
             )
         return Tache.objects.filter(responsable=self.request.user.departement.name).filter(
-            Q(pk__in=[tdr.activity.pk for tdr in TDR.objects.filter(state=20)])
+            Q(pk__in=[tdr.activity.pk for tdr in TDR.objects.filter(state=20)]),
+            exercice__pk=self.request.session.get('exercice_id'),
         )
 
     def get_context_data(self, **kwargs):
@@ -151,11 +156,13 @@ class TDRLocalListView(LoginRequiredMixin, generic.ListView):
         
         if self.request.user.is_staff:
             context['object_list'] = Tache.objects.filter(
-                Q(pk__in=[tdr.activity.pk for tdr in TDR.objects.filter(state=self.state)])
+                Q(pk__in=[tdr.activity.pk for tdr in TDR.objects.filter(state=self.state)]),
+                exercice__pk=self.request.session.get('exercice_id'),
             )
         else:
             context['object_list'] = Tache.objects.filter(responsable=self.request.user.departement.name).filter(
-                Q(pk__in=[tdr.activity.pk for tdr in TDR.objects.filter(state=self.state)])
+                Q(pk__in=[tdr.activity.pk for tdr in TDR.objects.filter(state=self.state)]),
+                exercice__pk=self.request.session.get('exercice_id'),
             )
 
         return context | {
@@ -172,11 +179,13 @@ class TDRTechniqueListView(LoginRequiredMixin, generic.ListView):
 
         if self.request.user.is_staff:
             return Tache.objects.filter(
-                Q(pk__in=[tdr.activity.pk for tdr in TDR.objects.filter(state=self.state)])
+                Q(pk__in=[tdr.activity.pk for tdr in TDR.objects.filter(state=self.state)]),
+                exercice__pk=self.request.session.get('exercice_id'),
             )
 
         return Tache.objects.filter(responsable=self.request.user.departement.name).filter(
-            Q(pk__in=[tdr.activity.pk for tdr in TDR.objects.filter(state=self.state)])
+            Q(pk__in=[tdr.activity.pk for tdr in TDR.objects.filter(state=self.state)]),
+            exercice__pk=self.request.session.get('exercice_id'),
         )
 
     def get_context_data(self, **kwargs):
@@ -184,11 +193,13 @@ class TDRTechniqueListView(LoginRequiredMixin, generic.ListView):
         
         if self.request.user.is_staff:
             context['object_list'] = Tache.objects.filter(
-                Q(pk__in=[tdr.activity.pk for tdr in TDR.objects.filter(state__gt=0)])
+                Q(pk__in=[tdr.activity.pk for tdr in TDR.objects.filter(state__gt=0)]),
+                exercice__pk=self.request.session.get('exercice_id'),
             )
         else:
             context['object_list'] = Tache.objects.filter(responsable=self.request.user.departement.name).filter(
-                Q(pk__in=[tdr.activity.pk for tdr in TDR.objects.filter(state__gt=0)])
+                Q(pk__in=[tdr.activity.pk for tdr in TDR.objects.filter(state__gt=0)]),
+                exercice__pk=self.request.session.get('exercice_id'),
             )
 
         return context | {
@@ -201,7 +212,8 @@ class TDRCoordinationListView(LoginRequiredMixin, generic.ListView):
 
     def get_queryset(self):
         return Tache.objects.filter(responsable=self.request.user.departement.name).filter(
-            Q(pk__in=[tdr.activity.pk for tdr in TDR.objects.filter(state=30)])
+            Q(pk__in=[tdr.activity.pk for tdr in TDR.objects.filter(state=30)]),
+            exercice__pk=self.request.session.get('exercice_id'),
         )
 
     def get_context_data(self, **kwargs):
@@ -209,11 +221,13 @@ class TDRCoordinationListView(LoginRequiredMixin, generic.ListView):
         
         if self.request.user.is_staff:
             context['object_list'] = Tache.objects.filter(
-                Q(pk__in=[tdr.activity.pk for tdr in TDR.objects.filter(state=30)])
+                Q(pk__in=[tdr.activity.pk for tdr in TDR.objects.filter(state=30)]),
+                exercice__pk=self.request.session.get('exercice_id'),
             )
         else:
             context['object_list'] = Tache.objects.filter(responsable=self.request.user.departement.name).filter(
-                Q(pk__in=[tdr.activity.pk for tdr in TDR.objects.filter(state=30)])
+                Q(pk__in=[tdr.activity.pk for tdr in TDR.objects.filter(state=30)]),
+                exercice__pk=self.request.session.get('exercice_id'),
             )
 
         return context | {
@@ -245,8 +259,10 @@ class CreateTDRView(LoginRequiredMixin, generic.CreateView):
         tdr.user = self.request.user
         tdr.activity = get_object_or_404(Tache, pk=self.request.POST.get('activity_id'))
         tdr.departemnt = tdr.activity.departement
+        tdr.exercice_id = self.request.session.get('exercice_id')
         tdr.save()
         return super().form_valid(form)
+
 
 class CreateTDRProgrammeView(LoginRequiredMixin, generic.CreateView):
     model = TDRProgramme
@@ -260,6 +276,7 @@ class CreateTDRProgrammeView(LoginRequiredMixin, generic.CreateView):
         tdr = form.save(commit=False)
         tdr.user = self.request.user
         tdr.activity = Activite.objects.get(pk=self.request.POST.get('activity_id'))
+        tdr.exercice_id = self.request.session.get('exercice_id')
         tdr.save()
         return super().form_valid(form)
 
@@ -448,7 +465,6 @@ def stats_view(request):
     return render(request, 'home_stats.html', context)
 
 
-
 class ActivityDetailsView(LoginRequiredMixin, generic.DetailView):
     model = TDR
     template_name = 'suivi/activity_details.html'
@@ -458,5 +474,34 @@ class ActivityDetailsView(LoginRequiredMixin, generic.DetailView):
 class DecaissementListView(LoginRequiredMixin, generic.ListView):
     model = Decaissement
     template_name = 'suivi/decaissement_list.html'
+
+    def get_queryset(self):
+        return Decaissement.objects.filter(exercice__pk=self.request.session.get('exercice_id'),)
+
+    def get_context_data(self, **kwargs):
+        drf_form = DrfForm
+        decaissement_form = DecaisementForm
+        drfs = Drf.objects.filter(exercice_id=self.request.session.get('exercice_id'))
+        return {
+            **kwargs,
+            'drf_form': drf_form,
+            'drfs': drfs,
+            'decaissement_form': decaissement_form
+        }
+
+
+class DrfCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Decaissement
+    form_class = DrfForm
+
+    def form_valid(self, form):
+        drf = form.save(commit=False)
+        drf.exercice_id = self.request.session.get('exercice_id')
+        drf.save()
+        messages.success(self.request, "DRF Enregistré")
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return resolve_url(self.request.GET.get('next', '/'))
 
 

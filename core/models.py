@@ -62,3 +62,4 @@ class Exercice(TimeStampedModel, models.Model):
     def save(self, *args, **kwargs):
         #upload_ptba(self.file)
         return super().save(*args, **kwargs)
+

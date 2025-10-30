@@ -265,12 +265,45 @@ wheels = [
 ]
 
 [[package]]
+name = "django-lifecycle"
+version = "1.2.4"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "django" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/9c/ac/4e5ce8cb8b2eef726157bbfb6f227e79a4bf8e14d6346b21490b689464fb/django_lifecycle-1.2.4.tar.gz", hash = "sha256:b37add8a95d0e85f9f97e652fac989cd5914cddb2380d933b6568f80238ab61e", size = 12223, upload-time = "2024-06-07T10:40:33.678Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ab/31/85dd0766c135e8688d88849fc3d245c783cab435cedfb6d9041a911ee22f/django_lifecycle-1.2.4-py3-none-any.whl", hash = "sha256:b54aea17b50de45adb5c90a06eea0171afa0d547682f51990dffb578b82fc658", size = 15012, upload-time = "2024-06-07T10:40:31.822Z" },
+]
+
+[[package]]
 name = "django-mathfilters"
 version = "1.0.0"
 source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/ca/a6/1e8262e52aa3cbfae277bc97c23dd4f1f6c7d7c3adaf45fb41132c312a40/django-mathfilters-1.0.0.tar.gz", hash = "sha256:c9b892ef6dfc893683e75cfd0279c187a601ca68f4684c38f9da44657fb64b07", size = 5699, upload-time = "2020-02-10T12:02:06.569Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/8a/c6/107083a63a564664830e352af330563763654972d27d56e42d9b6e3c744f/django_mathfilters-1.0.0-py3-none-any.whl", hash = "sha256:64200a21bb249fbf27be601d4bbb788779e09c6e063170c097cd82c4d18ebb83", size = 5909, upload-time = "2020-02-10T12:02:09.819Z" },
+]
+
+[[package]]
+name = "django-rest-framework"
+version = "0.1.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "djangorestframework" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/ed/d2/61159bc6efd1bf16adc4a2a48f7ace2080d1f7aef054f606d1857cab490c/django-rest-framework-0.1.0.tar.gz", hash = "sha256:47a8f496fa69e3b6bd79f68dd7a1527d907d6b77f009e9db7cf9bb21cc565e4a", size = 969, upload-time = "2017-07-20T17:14:33.345Z" }
+
+[[package]]
+name = "djangorestframework"
+version = "3.16.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "django" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/8a/95/5376fe618646fde6899b3cdc85fd959716bb67542e273a76a80d9f326f27/djangorestframework-3.16.1.tar.gz", hash = "sha256:166809528b1aced0a17dc66c24492af18049f2c9420dbd0be29422029cfc3ff7", size = 1089735, upload-time = "2025-08-06T17:50:53.251Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b0/ce/bf8b9d3f415be4ac5588545b5fcdbbb841977db1c1d923f7568eeabe1689/djangorestframework-3.16.1-py3-none-any.whl", hash = "sha256:33a59f47fb9c85ede792cbf88bde71893bcda0667bc573f784649521f1102cec", size = 1080442, upload-time = "2025-08-06T17:50:50.667Z" },
 ]
 
 [[package]]
@@ -863,7 +896,9 @@ dependencies = [
     { name = "django" },
     { name = "django-debug-toolbar" },
     { name = "django-extensions" },
+    { name = "django-lifecycle" },
     { name = "django-mathfilters" },
+    { name = "django-rest-framework" },
     { name = "dotenv" },
     { name = "gevent" },
     { name = "gunicorn" },
@@ -888,7 +923,9 @@ requires-dist = [
     { name = "django", specifier = "==5.1.6" },
     { name = "django-debug-toolbar", specifier = ">=6.0.0" },
     { name = "django-extensions", specifier = "==3.2.3" },
+    { name = "django-lifecycle", specifier = ">=1.2.4" },
     { name = "django-mathfilters", specifier = ">=1.0.0" },
+    { name = "django-rest-framework", specifier = ">=0.1.0" },
     { name = "dotenv", specifier = ">=0.9.9" },
     { name = "gevent", specifier = ">=25.9.1" },
     { name = "gunicorn", specifier = ">=23.0.0" },

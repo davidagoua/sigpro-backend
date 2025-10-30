@@ -2,6 +2,8 @@ from django.db import models
 from django_extensions.db.models import TimeStampedModel
 from django.contrib.auth import get_user_model
 from django.dispatch import receiver
+from django_lifecycle import LifecycleModel, hook, AFTER_UPDATE
+from django_lifecycle.conditions import WhenFieldHasChanged
 
 from core.models import Departement, Exercice
 from planification.models import Tache, Drf
@@ -49,7 +51,7 @@ class TDR(TimeStampedModel,models.Model):
 
 
 
-class TDRProgramme(TimeStampedModel,models.Model):
+class TDRProgramme(TimeStampedModel,LifecycleModel):
     file = models.FileField(verbose_name='Fichier', upload_to='tdr', blank=False)
     file_final = models.FileField(verbose_name="TDR fin d'activité", upload_to='tdr', null=True, blank=True)
     label = models.TextField(null=True, blank=True)
@@ -70,28 +72,20 @@ class TDRProgramme(TimeStampedModel,models.Model):
     def __str__(self):
         return f'{self.label} - {self.state}'
 
-
-
-@receiver(models.signals.post_save, sender=TDR)
-def tdr_post_save(sender, instance, created, **kwargs):
-    if not created:
+    @hook(AFTER_UPDATE, condition=WhenFieldHasChanged("state", has_changed=True))
+    def on_after_update(self):
         try:
             channel_layer = get_channel_layer()
-            channel_name = f'tdr_{instance.id}'
+            channel_name = f'tdr_{self.pk}'
             async_to_sync(channel_layer.group_send)(
                 channel_name,
                 {
                     'type': 'tdr_update',
                     'data': {
-                        'id': instance.id,
-                        'state': instance.state
+                        'id': self.pk,
+                        'state': self.state
                     }
                 }
             )
         except Exception as e:
             print(e)
-
-
-
-        
-        
